@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
             # then reroute to home page "/"
             # except with personal greeting
             login(@user)
-            render "/"
+            render "api/users/home"
         else
             render json: { signUp: ["Invalid email or password"] }, status: 422
         end
