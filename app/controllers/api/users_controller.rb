@@ -7,7 +7,7 @@ class Api::UsersController < ApplicationController
             # after signing up, login
             # then reroute to home page "/"
             # except with personal greeting
-            login(@user)
+            signin(@user)
             render "/api/users/home"
         else
             errors = []
@@ -31,7 +31,7 @@ class Api::UsersController < ApplicationController
     end
 
     def invalid_password?(password)
-        !password.length >= 6
+        password.length >= 6 ? true : false
     end
     
 end
