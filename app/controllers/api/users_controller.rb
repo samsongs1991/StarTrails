@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
             # then reroute to home page "/"
             # except with personal greeting
             signin(@user)
-            render "/api/users/home"
+            render "/api/users/show"
         else
             errors = []
             errors.push("Email already exists") if invalid_email?(params[:user][:email])

@@ -8,9 +8,9 @@ class Api::SessionsController < ApplicationController
 
         if @user 
             signin(@user) 
-            render "/api/users/home"
+            render "/api/users/show"
         else
-            render json: { signIn: ["Invalid email or password"] }, status: 401
+            render json: { signin: ["Invalid email or password"] }, status: 401
         end
     end
 
@@ -18,17 +18,11 @@ class Api::SessionsController < ApplicationController
         @user = current_user
 
         if @user 
-            # if there's a user logged in
-            # log out the current user
             signout 
+            render "/api/users/show"
+        else
+            render json: { signOut: ["Already signed out"] }, status: 404
         end
-
-        # after clicking the logout button
-        # reroute to home page regardless
-        # only 2 cases
-        #  - current_user exists => log out and go to home page
-        #  - current_user doesn't exist => do nothing and go to home page
-        render "/api/users/home"
     end
     
 end
