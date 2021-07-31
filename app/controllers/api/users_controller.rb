@@ -10,7 +10,10 @@ class Api::UsersController < ApplicationController
             login(@user)
             render "/api/users/home"
         else
-            render json: { signUp: ["Invalid email or password"] }, status: 422
+            errors = []
+            errors.push("Email already exists") if invalid_email?(params[:user][:email])
+            errors.push("Password must be at least 6 characters") unless invalid_password?(params[:user][:password])
+            render json: { signUp: errors }, status: 422
         end
     end
 
@@ -20,6 +23,15 @@ class Api::UsersController < ApplicationController
 
     def user_params
         params.require(:user).permit(:email, :password)
+    end
+
+    def invalid_email?(email)
+        user = User.find_by(email: email)
+        !user.nil?
+    end
+
+    def invalid_password?(password)
+        !password.length >= 6
     end
     
 end
