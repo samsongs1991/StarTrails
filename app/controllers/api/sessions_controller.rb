@@ -20,7 +20,7 @@ class Api::SessionsController < ApplicationController
         if @user 
             # if there's a user logged in
             # log out the current user
-            logout 
+            signout 
         end
 
         # after clicking the logout button
