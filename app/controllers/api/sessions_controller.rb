@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
         )
 
         if @user 
-            login(@user) 
+            signin(@user) 
             render "/api/users/home"
         else
             render json: { signIn: ["Invalid email or password"] }, status: 401
