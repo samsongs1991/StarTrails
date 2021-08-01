@@ -13,9 +13,9 @@ const signoutCurrentUser = () => ({
     type: SIGNOUT_CURRENT_USER
 })
 
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
-const receiveErrors = (errors) => ({
-    type: RECEIVE_ERRORS, 
+export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+const receiveSessionErrors = (errors) => ({
+    type: RECEIVE_SESSION_ERRORS, 
     errors
 })
 
@@ -25,7 +25,7 @@ export const signin = user => dispatch => (
     SessionApiUtils.signin(user)
         .then(
             user => dispatch(receiveCurrentUser(user)),
-            errors => dispatch(receiveErrors(errors.responseJSON))
+            errors => dispatch(receiveSessionErrors(errors.responseJSON))
         )
 )
 
@@ -33,7 +33,7 @@ export const signout = () => dispatch => (
     SessionApiUtils.signout()
         .then(
             () => dispatch(signoutCurrentUser()), 
-            errors => dispatch(receiveErrors(errors.responseJSON))
+            errors => dispatch(receiveSessionErrors(errors.responseJSON))
         )
 )
 
@@ -41,6 +41,6 @@ export const signup = user => dispatch => (
     SessionApiUtils.signup(user)
         .then(
             user => dispatch(receiveCurrentUser(user)),
-            errors => dispatch(receiveErrors(errors.responseJSON))
+            errors => dispatch(receiveSessionErrors(errors.responseJSON))
         )
 )
