@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const mapStateToProps = ({ errors }) => ({
     errors: errors.session, 
     formType: "signup", 
-    navLink: <div>Already have an account? <Link to="/signin" >Log In</Link></div>
+    navLink: `Already have an account? ${<Link to="/signin" >Log In</Link>}`
 })
 
 const mapDispatchToProps = dispatch => ({
