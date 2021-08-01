@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./root"
+import configureStore from "./store/store";
 
 // for testing only
 import * as SessionActions from "./actions/session_actions";
-import configureStore from "./store/store";
 // ^^^^^^^^^^^^^^^^
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,5 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.signout = SessionActions.signout;
   // ^^^^^^^^^^^^^^^^
 
-  ReactDOM.render(<Root />, document.getElementById("root"));
+  const store = configureStore();
+  ReactDOM.render(<Root store={store} />, document.getElementById("root"));
 });
