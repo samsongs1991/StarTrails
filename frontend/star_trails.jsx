@@ -3,15 +3,17 @@ import ReactDOM from "react-dom";
 import Root from "./root"
 
 // for testing only
-import * as SessionApiUtils from "./util/session_api_util";
+import * as SessionActions from "./actions/session_actions";
+import configureStore from "./store/store";
 // ^^^^^^^^^^^^^^^^
 
 document.addEventListener("DOMContentLoaded", () => {
 
   // for testing only
-  window.signup = SessionApiUtils.signup;
-  window.signin = SessionApiUtils.signin;
-  window.signout = SessionApiUtils.signout;
+  window.store = configureStore();
+  window.signup = SessionActions.signup;
+  window.signin = SessionActions.signin;
+  window.signout = SessionActions.signout;
   // ^^^^^^^^^^^^^^^^
 
   ReactDOM.render(<Root />, document.getElementById("root"));

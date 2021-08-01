@@ -1,9 +1,8 @@
 import React from "react";
+import App from "./app";
 
 const Root = ({ store }) => (
-    <div>
-        <h1>React is working!</h1>
-    </div>
+    <App />
 )
 
 export default Root;
