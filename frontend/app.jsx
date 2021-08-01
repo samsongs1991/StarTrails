@@ -1,8 +1,12 @@
 import React from "react";
 
+import NavbarContainer from "./components/navbar/navbar_container";
+
 const App = () => (
     <div>
-        <h1>React is working - from App component</h1>
+        <header>
+            <NavbarContainer />
+        </header>
     </div>
 )
 
