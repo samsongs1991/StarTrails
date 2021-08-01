@@ -3,13 +3,13 @@ import SessionForm from "./session_form";
 import { signup } from "../../actions/session_actions";
 import { Link } from "react-router-dom";
 
-const mapStateToProps = ({ errors }, ownProps) => ({
+const mapStateToProps = ({ errors }) => ({
     errors: errors.session, 
     formType: "signup", 
-    navLink: <div>Already have an account? <Link>Log In</Link></div>
+    navLink: <div>Already have an account? <Link to="/signin" >Log In</Link></div>
 })
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = dispatch => ({
     processForm: (user) => dispatch(signup(user))
 })
 
