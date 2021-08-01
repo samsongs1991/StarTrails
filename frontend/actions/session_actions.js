@@ -8,8 +8,7 @@ const receiveCurrentUser = (currentUser) => ({
 
 export const SIGNOUT_CURRENT_USER = "SIGNOUT_CURRENT_USER";
 const signoutCurrentUser = () => ({
-    type: SIGNOUT_CURRENT_USER, 
-    currentUser: nil
+    type: SIGNOUT_CURRENT_USER
 })
 
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
