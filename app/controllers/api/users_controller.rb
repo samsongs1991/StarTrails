@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
             email_errors = "Email is not valid." if invalid_email?(params[:user][:email])
             email_errors = "Email already exists." if email_already_exists?(params[:user][:email])
             password_errors = "Password must be 6 characters long." unless invalid_password?(params[:user][:password])
-            render json: { email: email_errors, password: password_errors }, status: 422
+            render json: { email: email_errors, password: password_errors }, status: 422            
         end
     end
 
