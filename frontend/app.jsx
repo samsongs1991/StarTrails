@@ -10,7 +10,7 @@ const App = () => (
         <header>
             <NavbarContainer />
         </header>
-
+        
         <Route path="/signup" component={SignupFormContainer} ></Route>
         <Route path="/signin" component={SigninFormContainer} ></Route>
     </div>
