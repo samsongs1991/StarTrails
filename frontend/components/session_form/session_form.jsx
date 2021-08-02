@@ -71,7 +71,7 @@ class SessionForm extends React.Component {
                     {this.renderPasswordError()}
                     <button>{this.buttonText()}</button>
                 </form>
-                <div>{this.props.navLink}</div>
+                {this.props.navLink}
             </div>
         );
     }
