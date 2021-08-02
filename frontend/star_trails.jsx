@@ -7,15 +7,8 @@ import configureStore from "./store/store";
 import * as SessionActions from "./actions/session_actions";
 // ^^^^^^^^^^^^^^^^
 
-document.addEventListener("DOMContentLoaded", () => {
 
-  // for testing only
-  window.store = configureStore();
-  window.signup = SessionActions.signup;
-  window.signin = SessionActions.signin;
-  window.signout = SessionActions.signout;
-  // ^^^^^^^^^^^^^^^^
-
+const bootstrapCurrentUser = () => {
   let store;
   if (window.currentUser) {
     const preloadedState = {
@@ -29,6 +22,19 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-  
-  ReactDOM.render(<Root store={store} />, document.getElementById("root"));
-});
+  return store;
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    let store = bootstrapCurrentUser();
+    
+    ReactDOM.render(<Root store={store} />, document.getElementById("root"));
+    
+
+    // for testing only
+    window.store = store;
+    // ^^^^^^^^^^^^^^^^
+
+    
+  });
