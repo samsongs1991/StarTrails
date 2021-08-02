@@ -46,18 +46,18 @@ class SessionForm extends React.Component {
         return text;
     }
 
-    renderErrors() {
-        // check if props.errors exists
-        // if true, render something
-        // else do nothing
+    renderEmailError() {
+        const { errors } = this.props;
+        if (errors.email) {
+            return (<div>{errors.email}</div>);
+        }
+    }
 
-        // what to render?
-        // 
-        return (
-            <div>
-                
-            </div>
-        );
+    renderPasswordError() {
+        const { errors } = this.props;
+        if (errors.password) {
+            return (<div>{errors.password}</div>);
+        }
     }
 
     render() {
@@ -66,9 +66,9 @@ class SessionForm extends React.Component {
                 <h3>{this.sessionFormMessage()}</h3>
                 <form onSubmit={this.handleSubmit} >
                     <input onChange={this.update("email")} value={this.state.email} type="text" />
-                    {/* render email error message  */}
+                    {this.renderEmailError()}
                     <input onChange={this.update("password")} value={this.state.password} type="password" />
-                    {/* render password error message */}
+                    {this.renderPasswordError()}
                     <button>{this.buttonText()}</button>
                 </form>
                 <div>{this.props.navLink}</div>
