@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const Navbar = ({ currentUser, signout }) => { 
 
     const navbarHeader = () => (
-        // Explore - Plan - History - All Trails Logo - (profileIcon OR sessionLinks)
         <nav>
             <ul>
                 <li>Explore</li>
@@ -20,6 +19,8 @@ const Navbar = ({ currentUser, signout }) => {
         <div>
             <img src="images/BlankProfilePic.png" alt="Profile picture" />
             {/* ^^^ image above will by default show a blank profile pic until i get the AWS to work */}
+            {/* ^^^ below list will be hidden until above profile pic is clicked */}
+            {/* ^^^ when profile pic is clicked, a drop down menu will appear with the below list */}
             <ul>
                 <li><Link to="" >Profile</Link></li>
                 {/* ^^^ Profile link will render user show page and go to the profile tab --> rendering user info */}
@@ -40,9 +41,7 @@ const Navbar = ({ currentUser, signout }) => {
     const sessionLinks = () => (
         <ul>
             <li><Link to="/signup" >Sign Up</Link></li>
-            {/* Route with path /signup will render a signup page */}
             <li><Link to="/signin" >Log In</Link></li>
-            {/* Route with path /signin will render a signup page */}
         </ul>
     )
 
