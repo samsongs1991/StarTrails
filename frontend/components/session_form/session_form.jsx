@@ -52,31 +52,16 @@ class SessionForm extends React.Component {
         return text;
     }
 
-    // renderEmailError() {
-    //     const { errors } = this.props;
-    //     if (errors.email) {
-    //         return (<div>{errors.email}</div>);
-    //     }
-    // }
-
-    // renderPasswordError() {
-    //     const { errors } = this.props;
-    //     if (errors.password) {
-    //         return (<div>{errors.password}</div>);
-    //     }
-    // }
-
     render() {
         return (
             <div>
                 <h3>{this.sessionFormMessage()}</h3>
                 <form onSubmit={this.handleSubmit} >
                     <input onChange={this.update("email")} value={this.state.email} type="text" />
-                    {/* {this.renderEmailError()} */}
                     <div>{this.props.errors.email}</div>
                     <input onChange={this.update("password")} value={this.state.password} type="password" />
-                    {/* {this.renderPasswordError()} */}
                     <div>{this.props.errors.password}</div>
+                    <div>{this.props.errors.signin}</div> 
                     <button type="submit">{this.buttonText()}</button>
                 </form>
                 {this.props.navLink}

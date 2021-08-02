@@ -12,7 +12,8 @@ class Api::SessionsController < ApplicationController
         else
             email_errors = "Email is not valid." if invalid_email?(params[:user][:email])
             password_errors = "Password must be 6 characters long." unless invalid_password?(params[:user][:password])
-            render json: { email: email_errors, password: password_errors }, status: 401
+            signin_errors = "Login failed. Please check your email and password." unless email_errors && password_errors
+            render json: { email: email_errors, password: password_errors, signin: signin_errors }, status: 401
         end
     end
 
