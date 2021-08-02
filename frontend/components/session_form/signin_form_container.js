@@ -4,8 +4,7 @@ import SessionForm from "./session_form";
 import { signin, clear } from "../../actions/session_actions";
 import { Link } from "react-router-dom";
 
-const mapStateToProps = ({ errors, session }) => ({
-    currentUserId: session.currentUserId,
+const mapStateToProps = ({ errors }) => ({
     errors: errors.session, 
     formType: "signin", 
     navLink: <div>Don't have an account? <Link to="/signup" >Sign up for free</Link></div>

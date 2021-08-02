@@ -11,7 +11,7 @@ const Navbar = ({ currentUser, signout }) => {
                 <li>Plan</li>
                 <li>History</li>
             </ul>
-            <img src="images/StarTrailsLogo.png" alt="StarTrails logo" />
+            <Link to="/" ><img src="images/StarTrailsLogo.png" alt="StarTrails logo" /></Link>
             { currentUser ? profileIcon() : sessionLinks() }
         </nav>
     )
