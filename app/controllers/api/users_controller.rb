@@ -8,6 +8,7 @@ class Api::UsersController < ApplicationController
             render "/api/users/show"
         else
             email_errors = "Email is not valid." if invalid_email?(params[:user][:email])
+            email_errors = "Email already exists." if email_already_exists?(params[:user][:email])
             password_errors = "Password must be 6 characters long." unless invalid_password?(params[:user][:password])
             render json: { email: email_errors, password: password_errors }, status: 422
         end
@@ -22,6 +23,10 @@ class Api::UsersController < ApplicationController
     end
 
     def invalid_email?(email)
+        return true if email.length <=0 || !email.include?("@") || !email.include?(".com")
+    end
+
+    def email_already_exists?(email)
         user = User.find_by(email: email)
         !user.nil?
     end
