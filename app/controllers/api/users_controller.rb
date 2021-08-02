@@ -4,16 +4,12 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
 
         if @user.save
-            # after signing up, login
-            # then reroute to home page "/"
-            # except with personal greeting
             signin(@user)
             render "/api/users/show"
         else
-            errors = []
-            errors.push("Email already exists") if invalid_email?(params[:user][:email])
-            errors.push("Password must be at least 6 characters") unless invalid_password?(params[:user][:password])
-            render json: { signUp: errors }, status: 422
+            email_errors = "Email is not valid." if invalid_email?(params[:user][:email])
+            password_errors = "Password must be 6 characters long." unless invalid_password?(params[:user][:password])
+            render json: { email: email_errors, password: password_errors }, status: 422
         end
     end
 

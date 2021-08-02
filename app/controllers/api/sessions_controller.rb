@@ -10,7 +10,9 @@ class Api::SessionsController < ApplicationController
             signin(@user) 
             render "/api/users/show"
         else
-            render json: { signin: ["Invalid email or password"] }, status: 401
+            email_errors = "Email is not valid." if invalid_email?(params[:user][:email])
+            password_errors = "Password must be 6 characters long." unless invalid_password?(params[:user][:password])
+            render json: { email: email_errors, password: password_errors }, status: 401
         end
     end
 
@@ -21,8 +23,21 @@ class Api::SessionsController < ApplicationController
             signout 
             render "/api/users/show"
         else
-            render json: { signOut: ["Already signed out"] }, status: 404
+            render json: { signout: "Already signed out." }, status: 404
         end
+    end
+    
+    # -------------------------------------------------------- 
+
+    private
+
+    def invalid_email?(email)
+        user = User.find_by(email: email)
+        user.nil?
+    end
+
+    def invalid_password?(password)
+        password.length >= 6 ? true : false
     end
     
 end

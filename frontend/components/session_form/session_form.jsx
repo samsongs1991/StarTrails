@@ -46,11 +46,19 @@ class SessionForm extends React.Component {
         return text;
     }
 
-    // renderErrors() {
-    //     return (
+    renderErrors() {
+        // check if props.errors exists
+        // if true, render something
+        // else do nothing
 
-    //     );
-    // }
+        // what to render?
+        // 
+        return (
+            <div>
+                
+            </div>
+        );
+    }
 
     render() {
         return (
