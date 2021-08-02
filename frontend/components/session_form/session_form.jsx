@@ -11,10 +11,16 @@ class SessionForm extends React.Component {
     }
 
     update(field) {
-        return(
-            e => this.setState({
-                [field]: e.currentTarget.value, 
-            })
+        return (
+            e => {
+                this.props.clear();
+                return (
+                    this.setState({
+                        [field]: e.currentTarget.value, 
+                    })
+                ); 
+            }
+            
         );
     }
 
@@ -46,19 +52,19 @@ class SessionForm extends React.Component {
         return text;
     }
 
-    renderEmailError() {
-        const { errors } = this.props;
-        if (errors.email) {
-            return (<div>{errors.email}</div>);
-        }
-    }
+    // renderEmailError() {
+    //     const { errors } = this.props;
+    //     if (errors.email) {
+    //         return (<div>{errors.email}</div>);
+    //     }
+    // }
 
-    renderPasswordError() {
-        const { errors } = this.props;
-        if (errors.password) {
-            return (<div>{errors.password}</div>);
-        }
-    }
+    // renderPasswordError() {
+    //     const { errors } = this.props;
+    //     if (errors.password) {
+    //         return (<div>{errors.password}</div>);
+    //     }
+    // }
 
     render() {
         return (
@@ -66,10 +72,12 @@ class SessionForm extends React.Component {
                 <h3>{this.sessionFormMessage()}</h3>
                 <form onSubmit={this.handleSubmit} >
                     <input onChange={this.update("email")} value={this.state.email} type="text" />
-                    {this.renderEmailError()}
+                    {/* {this.renderEmailError()} */}
+                    <div>{this.props.errors.email}</div>
                     <input onChange={this.update("password")} value={this.state.password} type="password" />
-                    {this.renderPasswordError()}
-                    <button>{this.buttonText()}</button>
+                    {/* {this.renderPasswordError()} */}
+                    <div>{this.props.errors.password}</div>
+                    <button type="submit">{this.buttonText()}</button>
                 </form>
                 {this.props.navLink}
             </div>

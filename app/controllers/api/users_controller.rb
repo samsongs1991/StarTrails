@@ -23,7 +23,7 @@ class Api::UsersController < ApplicationController
     end
 
     def invalid_email?(email)
-        return true if email.length <=0 || !email.include?("@") || !email.include?(".com")
+        return true if email.length <=0 || !email.include?("@") || !email.include?(".")
     end
 
     def email_already_exists?(email)
