@@ -12,8 +12,14 @@ class Api::TrailsController < ApplicationController
         # @trails = trails.includes()
 
         @trails = Trail.all
-        render "/api/trails"
+        # render "/api/trails"
         # ^^^ need to add jbuilder to the views for above render
+        render :index
+    end
+
+    def show
+        @trail = Trail.find_by(id: params[:id])
+        render :show
     end
 
     def create
@@ -25,11 +31,12 @@ class Api::TrailsController < ApplicationController
 
             # currently, DB is set up so all fields can be null
             # so saving a trail to the DB will never fail
-            render "/api/trails/:id"
+            # render "/api/trails/show"
+            render :show
         else
             # else send back error messages for errors slice of state
         end
-    endd
+    end
     
     # -------------------------------------------------------- 
 
