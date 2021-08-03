@@ -1,7 +1,7 @@
 import { RECEIVE_TRAILS, RECEIVE_TRAIL } from "../actions/trail_actions";
 
 const TrailsReducer = (oldState={}, action) => {
-    Object.freeze(state);
+    Object.freeze(oldState);
     switch(action.type) {
         case RECEIVE_TRAILS:
             return action.trails; 
