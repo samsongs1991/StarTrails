@@ -3,7 +3,7 @@ class Trail < ApplicationRecord
     # validates :city, presence: true
     # validates :state, presence: true
     # validates :country, presence: true
-    validates :difficulty, inclusion: { in: ["easy", "moderate", "hard"]}
+    validates :difficulty, inclusion: { in: ["easy", "moderate", "hard"]}, allow_nil: true
 
     # -----------------------------------------------------------------------------
 
