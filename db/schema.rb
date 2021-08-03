@@ -16,22 +16,21 @@ ActiveRecord::Schema.define(version: 2021_08_03_160429) do
   enable_extension "plpgsql"
 
   create_table "trails", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.float "latitude"
     t.float "longitude"
     t.string "location"
-    t.string "city", null: false
-    t.string "state", null: false
-    t.string "country", null: false
+    t.string "city"
+    t.string "state"
+    t.string "country"
     t.string "difficulty"
     t.text "description"
     t.float "length"
     t.integer "gain"
-    t.string "type"
+    t.string "category"
     t.text "directions"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name", "city"], name: "index_trails_on_name_and_city", unique: true
   end
 
   create_table "users", force: :cascade do |t|

@@ -40,7 +40,7 @@ class Api::TrailsController < ApplicationController
             :name, :latitude, :longitude, 
             :location, :city, :state, :country, 
             :difficulty, :description, :length, 
-            :gain, :type, :directions
+            :gain, :category, :directions
         )
     end
     

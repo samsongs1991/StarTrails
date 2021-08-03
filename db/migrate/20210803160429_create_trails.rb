@@ -12,7 +12,7 @@ class CreateTrails < ActiveRecord::Migration[5.2]
       t.text :description
       t.float :length
       t.integer :gain
-      t.string :type
+      t.string :category
       t.text :directions
       t.timestamps
     end
