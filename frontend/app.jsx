@@ -14,6 +14,9 @@ const App = () => (
         
         <AuthRoute path="/signup" component={SignupFormContainer} ></AuthRoute>
         <AuthRoute path="/signin" component={SigninFormContainer} ></AuthRoute>
+
+        {/* Render a google map route */}
+
     </div>
 )
 
