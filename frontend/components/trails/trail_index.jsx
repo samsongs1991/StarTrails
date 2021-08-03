@@ -9,7 +9,11 @@ class TrailIndex extends React.Component {
     render() {
         return (
             <div>
-                <h1>TRAIL INDEX IS WORKING!</h1>
+                <ul>
+                    {this.props.trails.map(trail => (
+                        <li key={trail.id} >{trail.name}</li>
+                    ))}
+                </ul>
             </div>
         );
     }

@@ -13,12 +13,12 @@ const App = () => (
             <NavbarContainer />
         </header>
         
-        <AuthRoute path="/signup" component={SignupFormContainer} ></AuthRoute>
-        <AuthRoute path="/signin" component={SigninFormContainer} ></AuthRoute>
+        <AuthRoute path="/signup" component={SignupFormContainer} />
+        <AuthRoute path="/signin" component={SigninFormContainer} />
+
+        <Route exact path="/" component={TrailIndexContainer} />
 
         {/* Render a google map route */}
-
-        <TrailIndexContainer />
 
     </div>
 )
