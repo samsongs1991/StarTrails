@@ -5,7 +5,8 @@ import NavbarContainer from "./components/navbar/navbar_container";
 import SignupFormContainer from "./components/session_form/signup_form_container";
 import SigninFormContainer from "./components/session_form/signin_form_container";
 import { AuthRoute } from "./util/route_util";
-import TrailIndexContainer from "./components/trails/trail_index_container";
+// import TrailIndexContainer from "./components/trails/trail_index_container";
+import SearchContainer from "./components/search_map/search_container";
 
 const App = () => (
     <div>
@@ -16,7 +17,7 @@ const App = () => (
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <AuthRoute path="/signin" component={SigninFormContainer} />
 
-        <Route exact path="/" component={TrailIndexContainer} />
+        <Route exact path="/" component={SearchContainer} />
 
         {/* Render a google map route */}
 

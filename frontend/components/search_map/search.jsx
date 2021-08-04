@@ -4,8 +4,8 @@ import TrailIndex from "../trails/trail_index";
 
 const Search = ({ trails, fetchTrails }) => (
     <div>
-        <Map />
         <TrailIndex trails={trails} fetchTrails={fetchTrails} />
+        <Map />
     </div>
 ) 
 
