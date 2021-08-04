@@ -2,16 +2,17 @@ class Api::TrailsController < ApplicationController
     before_action :require_signed_in, only: [:create]
 
     def index
-        # if params[:bounds]
-        #     trails = Trail.in_bounds(params[:bounds])
-        #     # ^^^ trails that are within search bounds of google map
-        # else
-        #     trails = Trail.all
-        #     # ^^^ all trails on map because no search bounds provided
-        # end
+        if params[:bounds]
+            trails = Trail.in_bounds(params[:bounds])
+            # ^^^ trails that are within search bounds of google map
+        else
+            trails = Trail.all
+            # ^^^ all trails on map because no search bounds provided
+        end
         # @trails = trails.includes()
 
-        @trails = Trail.all
+        # @trails = Trail.all
+        
         # render "/api/trails"
         # ^^^ need to add jbuilder to the views for above render
         render :index

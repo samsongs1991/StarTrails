@@ -5,13 +5,22 @@ export default class MarkerManager {
     }
 
     updateMarkers(trails) {
-        // for each trail, if the id isn't a key in this.markers
-        // then make a new marker from it 
-        // and add it to the map and this.markers
+        trails.forEach (trail => {
+            if(this.markers[trail.id] === undefined) {
+                this.createMarkerFromTrail(trail);
+            }
+        });
     }
 
     createMarkerFromTrail(trail) {
-        // adds a marker to the map and this.markers
+        let marker = new google.maps.Marker({
+            position: {
+                lat: trail.latitude, 
+                lng: trail.longitude
+            }, 
+            map: this.map
+        });
+        this.markers[trail.id] = marker;
     }
 
 }

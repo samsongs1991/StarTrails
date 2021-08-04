@@ -8,10 +8,11 @@ class Trail < ApplicationRecord
     # -----------------------------------------------------------------------------
 
     def self.in_bounds(bounds)
-        self.where("latitude < ?", bounds[:northEast][:latitude])
-            .where("latitude > ?", bounds[:southWest][:latitude])
-            .where("longitude > ?", bounds[:southWest][:longitude])
-            .where("longitude < ?", bounds[:northEast][:longitude])
+        puts bounds
+        # self.where("lat < ?", bounds[:northEast][:lat])
+        #     .where("lng < ?", bounds[:northEast][:lng])
+        #     .where("lat > ?", bounds[:southWest][:lat])
+        #     .where("lng > ?", bounds[:southWest][:lng])
     end
     
 end
