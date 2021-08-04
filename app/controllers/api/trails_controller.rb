@@ -14,10 +14,11 @@ class Api::TrailsController < ApplicationController
             # @trails = Trail.in_bounds(params[:bounds])
         else
             puts "------------------------------------------------------"
-            puts "params bounds DOESNT exist"
+            puts "params bounds DOES NOT exist"
             puts "------------------------------------------------------"
             @trails = Trail.all
         end
+        
         render :index
     end
 
