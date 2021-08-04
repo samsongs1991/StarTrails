@@ -1,13 +1,13 @@
 import * as TrailApiUtils from "../util/trail_api_util";
 
 export const RECEIVE_TRAILS = "RECEIVE_TRAILS";
-const receiveTrails = (trails) => ({
+const receiveTrails = trails => ({
     type: RECEIVE_TRAILS, 
     trails
 })
 
 export const RECEIVE_TRAIL = "RECEIVE_TRAIL";
-const receiveTrail = (trail) => ({
+const receiveTrail = trail => ({
     type: RECEIVE_TRAIL, 
     trail
 })
@@ -19,7 +19,7 @@ export const fetchTrails = () => dispatch => (
         .then(trails => dispatch(receiveTrails(trails)))
 )
 
-export const fetchTrail = (trailId) => dispatch => (
+export const fetchTrail = trailId => dispatch => (
     TrailApiUtils.fetchTrail(trailId)
         .then(trail => dispatch(receiveTrail(trail)))
 )

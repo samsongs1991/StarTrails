@@ -7,10 +7,8 @@ class Map extends React.Component {
             center: { lat: 31.8124, lng: -106.4213 }, 
             zoom: 13
         };
-
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);
-        
         this.MarkerManager.updateMarkers(this.props.trails);
     }
 

@@ -12,6 +12,7 @@ class TrailIndex extends React.Component {
                 <ul>
                     {this.props.trails.map(trail => (
                         <li key={trail.id} >{trail.name}</li>
+                        // ^^^ create a trail index items component
                     ))}
                 </ul>
             </div>
