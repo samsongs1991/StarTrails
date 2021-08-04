@@ -5,6 +5,13 @@ export default class MarkerManager {
     }
 
     updateMarkers(trails) {
-        console.log(trails);
+        // for each trail, if the id isn't a key in this.markers
+        // then make a new marker from it 
+        // and add it to the map and this.markers
     }
+
+    createMarkerFromTrail(trail) {
+        // adds a marker to the map and this.markers
+    }
+
 }
