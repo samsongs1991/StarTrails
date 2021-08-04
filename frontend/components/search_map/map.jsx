@@ -1,4 +1,5 @@
 import React from "react";
+import MarkerManager from "../../util/marker_manager";
 
 class Map extends React.Component {
     componentDidMount() {
@@ -8,6 +9,13 @@ class Map extends React.Component {
         };
 
         this.map = new google.maps.Map(this.mapNode, mapOptions);
+        this.MarkerManager = new MarkerManager(this.map);
+        
+        this.MarkerManager.updateMarkers(this.props.trails);
+    }
+
+    componentDidUpdate() {
+        this.MarkerManager.updateMarkers(this.props.trails);
     }
 
     render() {

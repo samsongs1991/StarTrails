@@ -5,6 +5,6 @@ export default class MarkerManager {
     }
 
     updateMarkers(trails) {
-        console.log("UPDATE MARKERS IS WORKING");
+        console.log(trails);
     }
 }
