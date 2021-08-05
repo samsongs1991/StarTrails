@@ -4,7 +4,8 @@ import Search from "./search";
 import { updateFilter } from "../../actions/filter_actions";
 
 const mapStateToProps = ({ entities: { trails } }) => ({
-    trails: Object.values(trails)
+    // trails: Object.values(trails)
+    trails: trails
 })
 
 const mapDispatchToProps = dispatch => ({
