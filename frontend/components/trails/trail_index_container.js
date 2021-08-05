@@ -7,7 +7,7 @@ const mapStateToProps = ({ entities: { trails } }, ownProps) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    fetchTrails: () => dispatch(fetchTrails())
+    // fetchTrails: () => dispatch(fetchTrails())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TrailIndex);

@@ -1,8 +1,8 @@
-export const fetchTrails = () => (
+export const fetchTrails = filters => (
     $.ajax({
         url: "/api/trails", 
-        method: "GET"
-        
+        method: "GET",
+        data: filters
     })
 )
 

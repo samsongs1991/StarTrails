@@ -14,8 +14,8 @@ const receiveTrail = trail => ({
 
 // -------------------------------------------------
 
-export const fetchTrails = () => dispatch => (
-    TrailApiUtils.fetchTrails()
+export const fetchTrails = filters => dispatch => (
+    TrailApiUtils.fetchTrails(filters)
         .then(trails => dispatch(receiveTrails(trails)))
 )
 

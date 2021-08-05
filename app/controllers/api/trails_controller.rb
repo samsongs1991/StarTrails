@@ -2,23 +2,7 @@ class Api::TrailsController < ApplicationController
     before_action :require_signed_in, only: [:create]
 
     def index
-        
-        puts "------------------------------------------------------"
-        puts params
-        puts "------------------------------------------------------"
-        
-        if params[:bounds]
-            puts "------------------------------------------------------"
-            puts "params bounds exists!!!"
-            puts "------------------------------------------------------"
-            @trails = Trail.in_bounds(params[:bounds])
-        else
-            puts "------------------------------------------------------"
-            puts "params bounds DOES NOT exist"
-            puts "------------------------------------------------------"
-            @trails = Trail.all
-        end
-        
+        @trails = params[:bounds] ? Trail.in_bounds(params[:bounds]) : Trail.all
         render :index
     end
 
