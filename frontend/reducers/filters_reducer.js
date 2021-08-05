@@ -4,7 +4,7 @@ const defaultFilters = Object.freeze({
     bounds: { northEast, southWest }
 })
 
-const FilterReducer = (oldState = defaultFilters, action) => {
+const FiltersReducer = (oldState = defaultFilters, action) => {
     Object.freeze(oldState);
     switch(action.type) {
         case RECEIVE_FILTER: 
@@ -14,4 +14,4 @@ const FilterReducer = (oldState = defaultFilters, action) => {
     }
 }
 
-export default FilterReducer;
+export default FiltersReducer;
