@@ -3,6 +3,13 @@ export const fetchTrails = filters => (
         url: "/api/trails", 
         method: "GET",
         data: filters
+        // DB request --> fetchTrails(argument)
+        // filters = {
+        //     bounds: {
+        //         northEast: { lat: #, lng: # }, 
+        //         southWest: {lat: #, lng: # }
+        //     }
+        // }
     })
 )
 
