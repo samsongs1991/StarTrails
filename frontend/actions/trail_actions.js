@@ -1,7 +1,7 @@
 import * as TrailApiUtils from "../util/trail_api_util";
 
 export const RECEIVE_TRAILS = "RECEIVE_TRAILS";
-const receiveTrails = trails => ({
+export const receiveTrails = trails => ({
     type: RECEIVE_TRAILS, 
     trails
 })

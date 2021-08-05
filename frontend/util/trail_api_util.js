@@ -7,7 +7,7 @@ export const fetchTrails = filters => (
         // filters = {
         //     bounds: {
         //         northEast: { lat: #, lng: # }, 
-        //         southWest: {lat: #, lng: # }
+        //         southWest: { lat: #, lng: # }
         //     }
         // }
     })
