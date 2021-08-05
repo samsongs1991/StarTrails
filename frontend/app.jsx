@@ -19,8 +19,6 @@ const App = () => (
 
         <Route exact path="/" component={SearchContainer} />
 
-        {/* Render a google map route */}
-
     </div>
 )
 

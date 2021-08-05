@@ -4,6 +4,7 @@ import TrailIndex from "../trails/trail_index";
 
 const Search = ({ trails, updateFilter }) => (
     <div>
+        {/* add component HERE --> search filters bar */}
         <TrailIndex trails={trails} />
         <TrailsMap trails={trails} updateFilter={updateFilter} />
     </div>
