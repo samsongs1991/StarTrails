@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import TrailIndexItem from "./trail_index_item";
 
 class TrailIndex extends React.Component {
     // componentDidMount() {
@@ -11,7 +12,8 @@ class TrailIndex extends React.Component {
             <div>
                 <ul>
                     {this.props.trails.map(trail => (
-                        <li key={trail.id} >{trail.name}</li>
+                        <TrailIndexItem key={trail.id} trail={trail} />
+                        // <li key={trail.id} >{trail.name}</li>
                         // ^^^ create a trail index items component
                     ))}
                 </ul>

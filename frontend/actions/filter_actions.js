@@ -35,5 +35,5 @@ export const updateFilter = filter => dispatch => {
     // fetchTrails will auto update the 
     // local store's index to reflect the 
     // filtered trails
-    return fetchTrails(filter)(dispatch);
+    return dispatch(fetchTrails(filter));
 }

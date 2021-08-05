@@ -2,10 +2,10 @@ import React from "react";
 import TrailsMap from "./trails_map";
 import TrailIndex from "../trails/trail_index"; 
 
-const Search = ({ trails, fetchTrails }) => (
+const Search = ({ trails, updateFilter }) => (
     <div>
-        <TrailIndex trails={trails} fetchTrails={fetchTrails} />
-        <TrailsMap trails={trails} fetchTrails={fetchTrails} />
+        <TrailIndex trails={trails} />
+        <TrailsMap trails={trails} updateFilter={updateFilter} />
     </div>
 ) 
 
