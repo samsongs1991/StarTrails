@@ -11,7 +11,7 @@ class Api::TrailsController < ApplicationController
             puts "------------------------------------------------------"
             puts "params bounds exists!!!"
             puts "------------------------------------------------------"
-            # @trails = Trail.in_bounds(params[:bounds])
+            @trails = Trail.in_bounds(params[:bounds])
         else
             puts "------------------------------------------------------"
             puts "params bounds DOES NOT exist"

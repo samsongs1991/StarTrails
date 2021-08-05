@@ -2,6 +2,7 @@ export const fetchTrails = () => (
     $.ajax({
         url: "/api/trails", 
         method: "GET"
+        
     })
 )
 

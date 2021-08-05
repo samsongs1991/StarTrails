@@ -1,29 +1,24 @@
 import React from "react";
 import MarkerManager from "../../util/marker_manager";
 
-
-
-
-// const getCoordsObj = latLng = ({
-//     lat: latLng.lat(), 
-//     lng: latLng.lng()
-// })
-
 const mapOptions = {
     center: { lat: 31.8124, lng: -106.4213 }, 
     zoom: 13
 };
 
-class Map extends React.Component {
+class TrailsMap extends React.Component {
     componentDidMount() {
         this.map = new google.maps.Map(this.mapNode, mapOptions);
 
-        
-        // let bounds = this.map.getBounds();
-        console.log("------------------------");
-        console.log(this.map);
-        console.log("------------------------");
-        
+        google.maps.event.addListener(this.map, 'idle', () => {
+            let bounds =  this.map.getBounds();
+            let n = bounds.getNorthEast().lat();
+            let e = bounds.getNorthEast().lng();
+            let s = bounds.getSouthWest().lat();
+            let w = bounds.getSouthWest().lng();
+            console.log(n, e, s, w);
+        });        
+
         this.MarkerManager = new MarkerManager(this.map);
         this.MarkerManager.updateMarkers(this.props.trails);
     }
@@ -42,4 +37,4 @@ class Map extends React.Component {
     }
 }
 
-export default Map;
+export default TrailsMap;
