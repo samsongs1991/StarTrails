@@ -1,7 +1,7 @@
 import { RECEIVE_FILTER } from "../actions/filter_actions";
 
 const defaultFilters = Object.freeze({
-    bounds: { northEast, southWest }
+    bounds: { northEast: null, southWest: null }
 })
 
 const FiltersReducer = (oldState = defaultFilters, action) => {
