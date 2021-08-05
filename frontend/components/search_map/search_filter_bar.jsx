@@ -7,6 +7,8 @@ class SearchFilterBar extends React.Component {
             rating: 0
         };
         this.modal = this.modal.bind(this);
+        this.handleRatingClick = this.handleRatingClick.bind(this);
+        this.handleFilterClick = this.handleFilterClick.bind(this);
     }
 
     handleFilterClick(filterType) {
@@ -96,12 +98,18 @@ class SearchFilterBar extends React.Component {
         let rating = parseInt(e.currentTarget.name);
         let stars = document.getElementsByClassName("star");
 
-        // if the current star clicked is yellow AND it matches state rating reset all to gray
-        // else, reset all to gray and set correct stars to yellow
-
         for(let i = 0; i < 5; i++) {
-            if(parseInt(stars[i].name) <= rating) {
-                stars[i].setAttribute("src", "images/YellowRatingStar.png");
+            stars[i].setAttribute("src", "images/GreyRatingStar.png")
+        }
+
+        if(rating === this.state.rating) {
+            this.setState(() => ({ rating: 0 }));
+        } else {
+            this.setState(() => ({ rating: rating }));
+            for(let i = 0; i < 5; i++) {
+                if(parseInt(stars[i].name) <= rating) {
+                    stars[i].setAttribute("src", "images/YellowRatingStar.png");
+                }
             }
         }
     }
