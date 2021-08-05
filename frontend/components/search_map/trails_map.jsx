@@ -17,7 +17,6 @@ class TrailsMap extends React.Component {
             let e = bounds.getNorthEast().lng();
             let s = bounds.getSouthWest().lat();
             let w = bounds.getSouthWest().lng();
-            console.log(n, e, s, w);
 
             let filter = { bounds: {
                 northEast: { lat: n, lng: e }, 
