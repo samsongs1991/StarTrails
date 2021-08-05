@@ -3,9 +3,10 @@ import Search from "./search";
 // import { fetchTrails } from "../../actions/trail_actions";
 import { updateFilter } from "../../actions/filter_actions";
 
-const mapStateToProps = ({ entities: { trails } }) => ({
+const mapStateToProps = ({ entities: { trails }, filters }) => ({
     // trails: Object.values(trails)
-    trails: trails
+    trails: trails, 
+    filters: filters
 })
 
 const mapDispatchToProps = dispatch => ({
