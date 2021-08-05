@@ -1,7 +1,7 @@
 import { fetchTrails } from "./trail_actions"; 
 
 export const RECEIVE_FILTER = "RECEIVE_FILTER";
-export const receiveFilter = filter => ({
+const receiveFilter = filter => ({
     type: RECEIVE_FILTER, 
     filter
 // filter = {
