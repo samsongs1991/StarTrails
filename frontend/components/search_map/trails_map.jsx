@@ -17,6 +17,12 @@ class TrailsMap extends React.Component {
             let s = bounds.getSouthWest().lat();
             let w = bounds.getSouthWest().lng();
             console.log(n, e, s, w);
+
+            let filter = { bounds: {
+                northEast: { lat: n, lng: e }, 
+                southWest: { lat: s, lng: w }
+            }};
+            this.props.updateFilter(filter);
         });        
 
         this.MarkerManager = new MarkerManager(this.map);
