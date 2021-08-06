@@ -16,6 +16,7 @@ class SearchFilterBar extends React.Component {
         };
         this.modal = this.modal.bind(this);
         this.handleDifficultyClick = this.handleDifficultyClick.bind(this);
+        this.handleCategoryClick = this.handleCategoryClick.bind(this);
         this.handleRatingClick = this.handleRatingClick.bind(this);
         this.handleFilterClick = this.handleFilterClick.bind(this);
     }
@@ -126,14 +127,20 @@ class SearchFilterBar extends React.Component {
         );
     }
 
+    handleCategoryClick(e) {
+        let category = Object.assign({}, this.state.category);
+        category[e.currentTarget.value] = !this.state.category[e.currentTarget.value];
+        this.setState({ category: category });
+    }
+    
     category() {
         return (
             <form>
-                <input type="checkbox" value="loop" />
+                <input onClick={this.handleCategoryClick} type="checkbox" value="loop" />
                 <label>Loop</label>
-                <input type="checkbox" value="out and back" />
+                <input onClick={this.handleCategoryClick} type="checkbox" value="outAndBack" />
                 <label>Out and Back</label>
-                <input type="checkbox" value="point to point" />
+                <input onClick={this.handleCategoryClick} type="checkbox" value="pointToPoint" />
                 <label>Point to Point</label>
             </form>
         );
@@ -173,7 +180,7 @@ class SearchFilterBar extends React.Component {
 
 
     render() {
-        console.log(this.state.time);
+        console.log(this.state.category);
         return (
             <div>
                 {/* import search bar from home page HERE */}
