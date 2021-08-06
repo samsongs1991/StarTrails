@@ -5,11 +5,11 @@ class SearchFilterBar extends React.Component {
         super(props);
         this.state = {
             difficulty: { easy: false, moderate: false, hard: false }, 
-            length: { min: 0, max: 999999999999 },
-            gain: { min: 0, max: 999999999999 },
+            length: { min: "", max: "" },
+            gain: { min: "", max: "" },
             time: { 
-                min: { hrs: 0, mins: 0 }, 
-                max: { hrs: 999999999999, mins: 999999999999 }
+                min: { hrs: "", mins: "" }, 
+                max: { hrs: "", mins: "" }
             },
             category: { loop: false, outAndBack: false, pointToPoint: false },
             rating: 0
@@ -45,9 +45,7 @@ class SearchFilterBar extends React.Component {
     handleDifficultyClick(e) {
         let difficulty = Object.assign({}, this.state.difficulty);
         difficulty[e.currentTarget.value] = !this.state.difficulty[e.currentTarget.value];
-        this.setState({
-            difficulty: difficulty
-        });
+        this.setState({ difficulty: difficulty });
     }
 
     difficulty() {
@@ -63,13 +61,23 @@ class SearchFilterBar extends React.Component {
         );
     }
 
+    updateLength(field) {
+        return (
+            e => {
+                let length = Object.assign({}, this.state.length);
+                length[field] = e.currentTarget.value;
+                this.setState({ length: length })
+            }
+        );
+    }
+
     length() {
         return (
             <form>
                 <label>Min: </label>
-                <input type="text" placeholder="min miles" />           
+                <input onChange={this.updateLength("min")} type="text" placeholder="min miles" value={this.state.length.min} />           
                 <label>Max: </label>             
-                <input type="text" placeholder="max miles" />                        
+                <input onChange={this.updateLength("max")} type="text" placeholder="max miles" value={this.state.length.max} />                        
             </form>
         );
     }
@@ -145,6 +153,7 @@ class SearchFilterBar extends React.Component {
 
 
     render() {
+        console.log(this.state.length);
         return (
             <div>
                 {/* import search bar from home page HERE */}
