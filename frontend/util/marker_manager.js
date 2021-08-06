@@ -23,13 +23,26 @@ export default class MarkerManager {
     }
 
     createMarkerFromTrail(trail) {
-        let marker = new google.maps.Marker({
+        const marker = new google.maps.Marker({
             position: {
                 lat: trail.latitude, 
                 lng: trail.longitude
             }, 
-            map: this.map
+            map: this.map, 
+            title: trail.name
         });
+
+        // *** TEST CODE *** ------------------------------------
+
+        const infoWindow = new google.maps.InfoWindow();
+        marker.addListener("click", () => {
+            // infoWindow.close();
+            infoWindow.setContent(marker.getTitle());
+            infoWindow.open(marker.getMap(), marker)
+        })
+
+        // ^^^----------------------------------------------------
+
         this.markers[trail.id] = marker;
     }
 
