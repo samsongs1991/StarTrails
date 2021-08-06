@@ -4,9 +4,18 @@ class SearchFilterBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            difficulty: { easy: false, moderate: false, hard: false }, 
+            length: { min: 0, max: 999999999999 },
+            gain: { min: 0, max: 999999999999 },
+            time: { 
+                min: { hrs: 0, mins: 0 }, 
+                max: { hrs: 999999999999, mins: 999999999999 }
+            },
+            category: { loop: false, outAndBack: false, pointToPoint: false },
             rating: 0
         };
         this.modal = this.modal.bind(this);
+        this.handleDifficultyClick = this.handleDifficultyClick.bind(this);
         this.handleRatingClick = this.handleRatingClick.bind(this);
         this.handleFilterClick = this.handleFilterClick.bind(this);
     }
@@ -33,14 +42,22 @@ class SearchFilterBar extends React.Component {
         }
     }
 
+    handleDifficultyClick(e) {
+        let difficulty = Object.assign({}, this.state.difficulty);
+        difficulty[e.currentTarget.value] = !this.state.difficulty[e.currentTarget.value];
+        this.setState({
+            difficulty: difficulty
+        });
+    }
+
     difficulty() {
         return (
             <form>
-                <input type="checkbox" value="easy" />
+                <input onClick={this.handleDifficultyClick} type="checkbox" value="easy" />
                 <label>Easy</label>
-                <input type="checkbox" value="moderate" />
+                <input onClick={this.handleDifficultyClick} type="checkbox" value="moderate" />
                 <label>Moderate</label>
-                <input type="checkbox" value="hard" />
+                <input onClick={this.handleDifficultyClick} type="checkbox" value="hard" />
                 <label>Hard</label>
             </form>
         );
