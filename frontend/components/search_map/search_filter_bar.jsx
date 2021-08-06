@@ -82,13 +82,23 @@ class SearchFilterBar extends React.Component {
         );
     }
 
+    updateGain(field) {
+        return (
+            e => {
+                let gain = Object.assign({}, this.state.gain);
+                gain[field] = e.currentTarget.value;
+                this.setState({ gain: gain })
+            }
+        );
+    }
+
     gain() {
         return (
             <form>
                 <label>Min: </label>
-                <input type="text" placeholder="min ft" />           
+                <input onChange={this.updateGain("min")} type="text" placeholder="min ft" />           
                 <label>Max: </label>             
-                <input type="text" placeholder="max ft" />                        
+                <input onChange={this.updateGain("max")}type="text" placeholder="max ft" />                        
             </form>
         );
     }
@@ -153,7 +163,7 @@ class SearchFilterBar extends React.Component {
 
 
     render() {
-        console.log(this.state.length);
+        console.log(this.state.gain);
         return (
             <div>
                 {/* import search bar from home page HERE */}
