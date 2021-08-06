@@ -103,15 +103,25 @@ class SearchFilterBar extends React.Component {
         );
     }
 
+    updateTime(field1, field2) {
+        return (
+            e => {
+                let time = Object.assign({}, this.state.time);
+                time[field1][field2] = e.currentTarget.value;
+                this.setState({ time: time })
+            }
+        );  
+    }
+    
     time() {
         return (
             <form>
                 <label>Min: </label>
-                <input type="text" placeholder="hours" />           
-                <input type="text" placeholder="minutes" />   
+                <input onChange={this.updateTime("min", "hrs")} type="text" placeholder="hours" />           
+                <input onChange={this.updateTime("min", "mins")} type="text" placeholder="minutes" />   
                 <label>Max: </label>         
-                <input type="text" placeholder="hours" />               
-                <input type="text" placeholder="minutes" />                        
+                <input onChange={this.updateTime("max", "hrs")} type="text" placeholder="hours" />               
+                <input onChange={this.updateTime("max", "mins")} type="text" placeholder="minutes" />                        
             </form>
         );
     }
@@ -163,7 +173,7 @@ class SearchFilterBar extends React.Component {
 
 
     render() {
-        console.log(this.state.gain);
+        console.log(this.state.time);
         return (
             <div>
                 {/* import search bar from home page HERE */}
