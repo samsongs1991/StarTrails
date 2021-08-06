@@ -7,7 +7,7 @@ const Search = ({ trails, updateFilters, filters }) => (
     <div>
         <SearchFilterBar filters={filters} updateFilters={updateFilters} />
         <TrailIndex trails={trails} />
-        <TrailsMap trails={trails} updateFilters={updateFilters} />
+        <TrailsMap filters={filters} trails={trails} updateFilters={updateFilters} />
     </div>
 ) 
 
