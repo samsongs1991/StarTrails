@@ -237,7 +237,7 @@ class SearchFilterBar extends React.Component {
                     <button onClick={() => this.handleFilterClick("rating")} >Rating</button>
                     {this.modal("rating")}
                 </div>
-                <button onClick={() => this.props.updateFilters(this.state) } >Apply Filters</button>
+                <button onClick={() => this.props.updateFilters(Object.assign({}, this.props.filters, this.state)) } >Apply Filters</button>
             </div>
         );
     }

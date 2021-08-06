@@ -3,7 +3,7 @@ import Search from "./search";
 // import { fetchTrails } from "../../actions/trail_actions";
 import { updateFilters } from "../../actions/filter_actions";
 
-const mapStateToProps = ({ entities: { trails }, filters }) => ({
+const mapStateToProps = ({ entities: { trails }, ui: { filters } }) => ({
     // trails: Object.values(trails)
     trails: trails, 
     filters: filters

@@ -10,6 +10,18 @@ export const fetchTrails = filters => (
         //         southWest: { lat: #, lng: # }
         //     }
         // }
+        // ***  OR  ***
+        // filters = {
+        //     difficulty: { easy: false, moderate: false, hard: false }, 
+        //     length: { min: "", max: "" },
+        //     gain: { min: "", max: "" },
+        //     time: { 
+        //         min: { hrs: "", mins: "" }, 
+        //         max: { hrs: "", mins: "" }
+        //     },
+        //     category: { loop: false, outAndBack: false, pointToPoint: false },
+        //     rating: 0
+        // }
     })
 )
 

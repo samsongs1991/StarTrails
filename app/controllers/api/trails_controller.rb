@@ -2,7 +2,19 @@ class Api::TrailsController < ApplicationController
     before_action :require_signed_in, only: [:create]
 
     def index
-        @trails = params[:bounds] ? Trail.in_bounds(params[:bounds]) : Trail.all
+        if params[:bounds]
+            @trails = Trail.in_bounds(params[:bounds])
+            # use a class method from the model Trail
+            # to only return trails based on the filters
+            # the filters should be applied to the 
+            # trails already fetched by Trail.in_bounds
+            @trails = Trail.applyUserFilters(@trails, params)
+        else
+            # @trails = Trail.all
+            # actually, i don't think i will ever want to fetch all trails in DB
+            # it should by default fetch trails within a 10mi  radius of the user's location
+        end
+
         render :index
     end
 
