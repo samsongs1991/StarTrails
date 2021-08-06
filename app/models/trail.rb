@@ -28,12 +28,12 @@ class Trail < ApplicationRecord
     end
     
     def fitsFilters(params)
-        if fitsDifficulty(self[:difficulty], params[:difficulty]) && 
-            fitsLength(self[:length], params[:length]) &&
-            fitsGain(self[:gain], params[:gain]) # && 
-            # fitsTime(self[:length], params[:time]) &&
-            # fitsCategory(self[:category], params[:category])
-            # && fitsRating(self[:rating], params[:rating])
+        if fitsCheckbox(self[:difficulty], params[:difficulty]) && 
+            fitsInput(self[:length], params[:length]) &&
+            fitsInput(self[:gain], params[:gain]) && 
+            fitsInput(self[:length], params[:time]) &&
+            fitsCheckbox(self[:category], params[:category]) # &&
+            # fitsRating(self[:rating], params[:rating])
             return true
         else 
             return false
@@ -44,30 +44,64 @@ class Trail < ApplicationRecord
 
     private
 
-    def fitsDifficulty(trailDifficulty, filterDifficulty)
-        return true if filterDifficulty.values.all? { |val| val === "false" }
-        return true if filterDifficulty[trailDifficulty] === "true"
+    def fitsCheckbox(trailData, filterData)
+        return true if filterData.values.all? { |val| val === "false" }
+        return true if filterData[trailData] === "true"
         false
     end
 
-    def fitsLength(trailLength, filterLength)
-        return true if filterLength.values.all? { |val| val.empty? }
-        return false if trailLength.nil?
-        min, max = filterLength[:min].to_f, filterLength[:max].to_f
-        return true if trailLength > min && trailLength < max
+    def fitsInput(trailData, filterData)
+        return true if filterData.values.all? { |val| val.empty? }
+        return false if trailData.nil?
+        if filterData[:min].is_a? String
+            filterMin = filterData[:min].to_f
+            filterMax = filterData[:max].to_f
+            return true if trailData > filterMin && trailData < filterMax
+        else
+            filterMin = (filterData[:min][:hrs].to_f * 60) + filterData[:min][:mins].to_f
+            filterMax = (filterData[:max][:hrs].to_f * 60) + filterData[:max][:mins].to_f
+            trailMins = trailData * 30
+            return true if trailMins > filterMin && trailMins < filterMax
+        end
         false
     end
+
+    # def fitsDifficulty(trailDifficulty, filterDifficulty)
+    #     return true if filterDifficulty.values.all? { |val| val === "false" }
+    #     return true if filterDifficulty[trailDifficulty] === "true"
+    #     false
+    # end
+
+    # def fitsLength(trailLength, filterLength)
+    #     return true if filterLength.values.all? { |val| val.empty? }
+    #     return false if trailLength.nil?
+    #     min, max = filterLength[:min].to_f, filterLength[:max].to_f
+    #     return true if trailLength > min && trailLength < max
+    #     false
+    # end
 
     # def fitsGain(trailGain, filterGain)
     #     return true if filterGain.values.all? { |val| val.empty? }
+    #     return false if trailGain.nil?
+    #     min, max = filterGain[:min].to_i, filterGain[:max].to_i
+    #     return true if trailGain > min && trailGain < max
+    #     false
     # end
 
     # def fitsTime(trailLength, filterTime)
     #     return true if filterTime.values.all? { |val| val[:hrs].empty? && val[:mins].empty? }
+    #     return false if trailLength.nil?
+    #     trailMins = trailLength * 30
+    #     filterMin = (filterTime[:min][:hrs].to_f * 60) + filterTime[:min][:mins].to_f
+    #     filterMax = (filterTime[:max][:hrs].to_f * 60) + filterTime[:max][:mins].to_f
+    #     return true if trailMins > filterMin && trailMins < filterMax
+    #     false
     # end
 
     # def fitsCategory(trailCategory, filterCategory)
-    #     return true if filterCategory.values.all? { |val| val === false }
+    #     return true if filterCategory.values.all? { |val| val === "false" }
+    #     return true if filterCategory[trailCategory] === "true"
+    #     false
     # end
 
     # implement below method once the reviews has been built
