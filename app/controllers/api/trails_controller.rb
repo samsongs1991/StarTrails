@@ -8,13 +8,14 @@ class Api::TrailsController < ApplicationController
             # to only return trails based on the filters
             # the filters should be applied to the 
             # trails already fetched by Trail.in_bounds
-            @trails = Trail.applyUserFilters(@trails, params)
+            if params[:difficulty]
+                @trails = Trail.applyUserFilters(@trails, params)
+            end
         else
             # @trails = Trail.all
             # actually, i don't think i will ever want to fetch all trails in DB
             # it should by default fetch trails within a 10mi  radius of the user's location
         end
-
         render :index
     end
 

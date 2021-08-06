@@ -8,10 +8,7 @@ export const fetchTrails = filters => (
         //     bounds: {
         //         northEast: { lat: #, lng: # }, 
         //         southWest: { lat: #, lng: # }
-        //     }
-        // }
-        // ***  OR  ***
-        // filters = {
+        //     },
         //     difficulty: { easy: false, moderate: false, hard: false }, 
         //     length: { min: "", max: "" },
         //     gain: { min: "", max: "" },
