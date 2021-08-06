@@ -18,11 +18,15 @@ class SearchFilterBar extends React.Component {
         this.handleDifficultyClick = this.handleDifficultyClick.bind(this);
         this.handleCategoryClick = this.handleCategoryClick.bind(this);
         this.handleRatingClick = this.handleRatingClick.bind(this);
+        this.handleRatingHover = this.handleRatingHover.bind(this);
+        this.handleRatingOff = this.handleRatingOff.bind(this);
         this.handleFilterClick = this.handleFilterClick.bind(this);
     }
-
+    // ----------------------------------------------
     handleFilterClick(filterType) {
         // show modal with appropriate filters loaded
+        // implement by doing a setAttribute method to show vs hide
+        // can hide/show using the class in css
         return
     }
 
@@ -42,7 +46,7 @@ class SearchFilterBar extends React.Component {
                 return this.rating();
         }
     }
-
+    // ----------------------------------------------
     handleDifficultyClick(e) {
         let difficulty = Object.assign({}, this.state.difficulty);
         difficulty[e.currentTarget.value] = !this.state.difficulty[e.currentTarget.value];
@@ -61,7 +65,7 @@ class SearchFilterBar extends React.Component {
             </form>
         );
     }
-
+    // ----------------------------------------------
     updateLength(field) {
         return (
             e => {
@@ -82,7 +86,7 @@ class SearchFilterBar extends React.Component {
             </form>
         );
     }
-
+    // ----------------------------------------------
     updateGain(field) {
         return (
             e => {
@@ -103,7 +107,7 @@ class SearchFilterBar extends React.Component {
             </form>
         );
     }
-
+    // ----------------------------------------------
     updateTime(field1, field2) {
         return (
             e => {
@@ -126,7 +130,7 @@ class SearchFilterBar extends React.Component {
             </form>
         );
     }
-
+    // ----------------------------------------------
     handleCategoryClick(e) {
         let category = Object.assign({}, this.state.category);
         category[e.currentTarget.value] = !this.state.category[e.currentTarget.value];
@@ -145,7 +149,7 @@ class SearchFilterBar extends React.Component {
             </form>
         );
     }
-
+    // ----------------------------------------------
     handleRatingClick(e) {
         let rating = parseInt(e.currentTarget.name);
         let stars = document.getElementsByClassName("star");
@@ -166,21 +170,46 @@ class SearchFilterBar extends React.Component {
         }
     }
 
+    handleRatingHover(e) {
+        let rating = parseInt(e.currentTarget.name);
+        let stars = document.getElementsByClassName("star");
+
+        for(let i = 0; i < 5; i++) {
+            stars[i].setAttribute("src", "images/GreyRatingStar.png")
+        }
+
+        for(let i = 0; i < 5; i++) {
+            if(i < rating) {
+                stars[i].setAttribute("src", "images/YellowRatingStar.png");
+            }
+        }
+    }
+
+    handleRatingOff(e) {
+        let stars = document.getElementsByClassName("star");
+
+        for(let i = 0; i < 5; i++) {
+            if(i < this.state.rating) {
+                stars[i].setAttribute("src", "images/YellowRatingStar.png")
+            } else {
+                stars[i].setAttribute("src", "images/GreyRatingStar.png")
+            }
+        }
+    }
+
     rating() {
         return (
             <div>
-                <img className="star" name="1" src="images/GreyRatingStar.png" alt="Star" onClick={this.handleRatingClick} />
-                <img className="star" name="2" src="images/GreyRatingStar.png" alt="Star" onClick={this.handleRatingClick} />
-                <img className="star" name="3" src="images/GreyRatingStar.png" alt="Star" onClick={this.handleRatingClick} />
-                <img className="star" name="4" src="images/GreyRatingStar.png" alt="Star" onClick={this.handleRatingClick} />
-                <img className="star" name="5" src="images/GreyRatingStar.png" alt="Star" onClick={this.handleRatingClick} />
+                <img className="star" name="1" src="images/GreyRatingStar.png" alt="Star" onClick={this.handleRatingClick} onMouseEnter={this.handleRatingHover} onMouseLeave={this.handleRatingOff} />
+                <img className="star" name="2" src="images/GreyRatingStar.png" alt="Star" onClick={this.handleRatingClick} onMouseEnter={this.handleRatingHover} onMouseLeave={this.handleRatingOff} />
+                <img className="star" name="3" src="images/GreyRatingStar.png" alt="Star" onClick={this.handleRatingClick} onMouseEnter={this.handleRatingHover} onMouseLeave={this.handleRatingOff} />
+                <img className="star" name="4" src="images/GreyRatingStar.png" alt="Star" onClick={this.handleRatingClick} onMouseEnter={this.handleRatingHover} onMouseLeave={this.handleRatingOff} />
+                <img className="star" name="5" src="images/GreyRatingStar.png" alt="Star" onClick={this.handleRatingClick} onMouseEnter={this.handleRatingHover} onMouseLeave={this.handleRatingOff} />
             </div>
         );
     }
-
-
+    // ----------------------------------------------
     render() {
-        console.log(this.state.category);
         return (
             <div>
                 {/* import search bar from home page HERE */}
