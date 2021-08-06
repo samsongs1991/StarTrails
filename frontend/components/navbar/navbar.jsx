@@ -5,11 +5,7 @@ const Navbar = ({ currentUser, signout }) => {
 
     const navbarHeader = () => (
         <nav>
-            <ul>
-                <li>Explore</li>
-                <li>Plan</li>
-                <li>History</li>
-            </ul>
+            <Link to="/trails" ><div>Explore</div></Link>
             <Link to="/" ><img src="images/StarTrailsLogo.png" alt="StarTrails logo" /></Link>
             { currentUser ? profileIcon() : sessionLinks() }
         </nav>
