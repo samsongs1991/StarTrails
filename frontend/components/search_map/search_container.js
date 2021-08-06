@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import Search from "./search";
 // import { fetchTrails } from "../../actions/trail_actions";
-import { updateFilter } from "../../actions/filter_actions";
+import { updateFilters } from "../../actions/filter_actions";
 
 const mapStateToProps = ({ entities: { trails }, filters }) => ({
     // trails: Object.values(trails)
@@ -11,7 +11,7 @@ const mapStateToProps = ({ entities: { trails }, filters }) => ({
 
 const mapDispatchToProps = dispatch => ({
     // fetchTrails: filters => dispatch(fetchTrails(filters)),
-    updateFilter: filter => dispatch(updateFilter(filter))
+    updateFilters: filters => dispatch(updateFilters(filters))
     // updateFilter will dispatch fetchTrails for us
 })
 

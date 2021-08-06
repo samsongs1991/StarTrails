@@ -3,12 +3,11 @@ import SearchFilterBar from "./search_filter_bar";
 import TrailIndex from "../trails/trail_index"; 
 import TrailsMap from "./trails_map";
 
-const Search = ({ trails, filters, updateFilter }) => (
+const Search = ({ trails, updateFilters }) => (
     <div>
-        {/* add component HERE --> search filters bar */}
-        <SearchFilterBar filters={filters} />
+        <SearchFilterBar updateFilters={updateFilters} />
         <TrailIndex trails={trails} />
-        <TrailsMap trails={trails} updateFilter={updateFilter} />
+        <TrailsMap trails={trails} updateFilters={updateFilters} />
     </div>
 ) 
 
