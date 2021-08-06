@@ -31,7 +31,7 @@ class Trail < ApplicationRecord
         if fitsCheckbox(self[:difficulty], params[:difficulty]) && 
             fitsInput(self[:length], params[:length]) &&
             fitsInput(self[:gain], params[:gain]) && 
-            fitsInput(self[:length], params[:time]) &&
+            fitsTime(self[:length], params[:time]) &&
             fitsCheckbox(self[:category], params[:category]) # &&
             # fitsRating(self[:rating], params[:rating])
             return true
@@ -53,16 +53,9 @@ class Trail < ApplicationRecord
     def fitsInput(trailData, filterData)
         return true if filterData.values.all? { |val| val.empty? }
         return false if trailData.nil?
-        if filterData[:min].is_a? String
-            filterMin = filterData[:min].to_f
-            filterMax = filterData[:max].to_f
-            return true if trailData > filterMin && trailData < filterMax
-        else
-            filterMin = (filterData[:min][:hrs].to_f * 60) + filterData[:min][:mins].to_f
-            filterMax = (filterData[:max][:hrs].to_f * 60) + filterData[:max][:mins].to_f
-            trailMins = trailData * 30
-            return true if trailMins > filterMin && trailMins < filterMax
-        end
+        filterMin, filterMax = filterData[:min].to_f, filterData[:max].to_f
+        filterMax = 999999999999 if filterMax === 0
+        return true if trailData >= filterMin && trailData <= filterMax
         false
     end
 
@@ -88,15 +81,16 @@ class Trail < ApplicationRecord
     #     false
     # end
 
-    # def fitsTime(trailLength, filterTime)
-    #     return true if filterTime.values.all? { |val| val[:hrs].empty? && val[:mins].empty? }
-    #     return false if trailLength.nil?
-    #     trailMins = trailLength * 30
-    #     filterMin = (filterTime[:min][:hrs].to_f * 60) + filterTime[:min][:mins].to_f
-    #     filterMax = (filterTime[:max][:hrs].to_f * 60) + filterTime[:max][:mins].to_f
-    #     return true if trailMins > filterMin && trailMins < filterMax
-    #     false
-    # end
+    def fitsTime(trailLength, filterTime)
+        return true if filterTime.values.all? { |val| val[:hrs].empty? && val[:mins].empty? }
+        return false if trailLength.nil?
+        trailMins = trailLength * 30
+        filterMin = (filterTime[:min][:hrs].to_f * 60) + filterTime[:min][:mins].to_f
+        filterMax = (filterTime[:max][:hrs].to_f * 60) + filterTime[:max][:mins].to_f
+        filterMax = 999999999 if filterMax === 0.0
+        return true if trailMins >= filterMin && trailMins <= filterMax
+        false
+    end
 
     # def fitsCategory(trailCategory, filterCategory)
     #     return true if filterCategory.values.all? { |val| val === "false" }
