@@ -29,19 +29,16 @@ export default class MarkerManager {
                 lng: trail.longitude
             }, 
             map: this.map, 
-            title: trail.name
+            title: trail.name, 
         });
-
-        // *** TEST CODE *** ------------------------------------
 
         const infoWindow = new google.maps.InfoWindow();
         marker.addListener("click", () => {
-            // infoWindow.close();
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+            marker.setAnimation(null);
             infoWindow.setContent(marker.getTitle());
             infoWindow.open(marker.getMap(), marker)
         })
-
-        // ^^^----------------------------------------------------
 
         this.markers[trail.id] = marker;
     }
