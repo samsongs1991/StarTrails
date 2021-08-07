@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import UserIndex from "./user_index";
 
 const Users = props => (
     <div>
         {/* Members > Samuel Song        <search bar> */}
         {/* ^ render users nav component */}
         
+        <UserIndex fetchUsers={props.fetchUsers} users={props.users} />
         {/* render users index component*/}
         
         {/* render user show component */}

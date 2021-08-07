@@ -8,8 +8,7 @@ const mapStateToProps = ({ entities: { users }, session: { currentUserId } }, ow
 })
 
 const mapDispatchToProps = dispatch => ({
-    // fetchUsers: () => dispatch(fetchTrails())
-    // still have to do redux
+    fetchUsers: () => dispatch(fetchTrails())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Users);

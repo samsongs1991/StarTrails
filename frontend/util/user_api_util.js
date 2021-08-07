@@ -11,7 +11,3 @@ export const fetchUser = userId => (
         method: "GET"
     })
 )
-
-// backend still needs to be done
-// must format the returning data from the DB
-// using jbuilder

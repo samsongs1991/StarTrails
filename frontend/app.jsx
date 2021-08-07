@@ -10,7 +10,7 @@ import SearchContainer from "./components/search_map/search_container";
 
 
 // TEST CODE ----------------------------------------
-// import UsersContainer from "./components/users/user_container";
+import UserContainer from "./components/users/user_container";
 // --------------------------------------------------
 
 
@@ -25,6 +25,7 @@ const App = () => (
 
 
         {/* // TEST CODE ---------------------------------------- */}
+        <Route exact path="/users" component={UserContainer} />
         {/* <ProtectedRoute path="/users" component={UsersContainer} /> */}
         {/* ABOVE PAGE = show all users (users index page) */}
         {/* must be signed in to view all users */}
