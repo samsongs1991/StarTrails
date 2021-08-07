@@ -17,7 +17,6 @@ class UserIndex extends React.Component {
                     {Object.values(this.props.users).map(user => (
                         <UserIndexItem key={user.id} user={user} />
                     ))}
-                    {/* user.email will be replaced with profile pic */}
                 </ul>
             </div>
         );
