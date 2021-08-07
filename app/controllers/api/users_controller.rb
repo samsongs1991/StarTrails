@@ -1,5 +1,15 @@
 class Api::UsersController < ApplicationController
 
+    def index
+        @users = User.limit(50)
+        render :index
+    end
+
+    def show
+        @user = User.fin_by(id: params[:id])
+        render :show
+    end
+
     def create
         @user = User.new(user_params)
 
