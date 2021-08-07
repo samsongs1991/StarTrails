@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Users from "./users";
-// import { fetchUsers } from "../../actions/user_actions";
+import { fetchUsers } from "../../actions/user_actions";
 
 const mapStateToProps = ({ entities: { users }, session: { currentUserId } }, ownProps ) => ({
     users: users, 
@@ -8,7 +8,7 @@ const mapStateToProps = ({ entities: { users }, session: { currentUserId } }, ow
 })
 
 const mapDispatchToProps = dispatch => ({
-    fetchUsers: () => dispatch(fetchTrails())
+    fetchUsers: () => dispatch(fetchUsers())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Users);
