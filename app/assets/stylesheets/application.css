@@ -233,6 +233,12 @@ nav .profile-icon ul {
     color: #428a13;
 }
 
+/* Search filter modals */
+.search-filter-bar div > div {
+    visibility: hidden;
+}
+
+
 /* Trail index  */
 .index-map > div:first-child {
     width: 25%;
