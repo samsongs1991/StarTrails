@@ -35,7 +35,7 @@ const Navbar = ({ currentUser, signout }) => {
     )
 
     const sessionLinks = () => (
-        <ul>
+        <ul className="session-links" >
             <li><Link to="/signup" >Sign Up</Link></li>
             <li><Link to="/signin" >Log In</Link></li>
         </ul>
