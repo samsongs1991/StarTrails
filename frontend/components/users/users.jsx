@@ -14,6 +14,7 @@ const Users = props => (
         {/* render users index component*/}
         
         <Route path="/users/:userId" >
+            <div>USER SHOW ROUTE HERE</div>
             <UserShow fetchUser={props.fetchUser} />
         </Route>
         {/* render user show component */}
