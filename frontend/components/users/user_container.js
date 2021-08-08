@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Users from "./users";
-import { fetchUsers } from "../../actions/user_actions";
+import { fetchUsers, fetchUser } from "../../actions/user_actions";
 
 const mapStateToProps = ({ entities: { users }, session: { currentUserId } }, ownProps ) => ({
     users: users, 
