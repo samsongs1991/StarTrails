@@ -9,14 +9,17 @@ const Users = props => (
         {/* ^ render users nav component */}
         
         <Route exact path="/users" >
-            <UserIndex fetchUsers={props.fetchUsers} users={props.users} />
+            <div>ALL USERS</div>
+            {/* <UserIndex fetchUsers={props.fetchUsers} users={props.users} /> */}
         </Route>
         {/* render users index component*/}
         
-        <Route path="/users" >
-        {/* <Route path="/users/:userId" > ISN'T WORKING! */}
-            <div>USER SHOW ROUTE HERE</div>
-            <UserShow fetchUser={props.fetchUser} />
+        <Route exact path="/users/:userId" >
+        {/* <Route path="/users/:userId" > */}
+            <div>
+                USER SHOW ROUTE HERE
+            </div>
+            {/* <UserShow fetchUser={props.fetchUser} /> */}
         </Route>
         {/* render user show component */}
         {/* user show component will contain the profile, lists, etc components */}

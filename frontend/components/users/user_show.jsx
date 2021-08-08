@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 // props = fetchUser
 
@@ -8,6 +8,7 @@ class UserShow extends React.Component {
     //     super(props);
     //     this.state = {
     //         userId: this.userIdFromParams()
+    //         userId: props.match.params.userId
     //     }
     // }
 
@@ -25,6 +26,7 @@ class UserShow extends React.Component {
         return (
             <div>
                 USER SHOW IS WORKING
+                {console.log("USER SHOW IS WORKING")}
             </div>
         );
     }
