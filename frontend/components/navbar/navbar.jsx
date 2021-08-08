@@ -12,7 +12,7 @@ const Navbar = ({ currentUser, signout }) => {
     )
 
     const profileIcon = () => (
-        <div>
+        <div className="profile-icon" >
             <img src="images/BlankProfilePic.png" alt="Profile picture" />
             {/* ^^^ image above will by default show a blank profile pic until i get the AWS to work */}
             {/* ^^^ below list will be hidden until above profile pic is clicked */}

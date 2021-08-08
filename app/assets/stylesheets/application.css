@@ -29,7 +29,6 @@ nav {
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     box-shadow: 0 0 1px 0px rgb(211, 211, 211);
-    overflow: hidden;
     position: fixed;
     top: 0;
 }
@@ -89,6 +88,15 @@ nav .session-links li a {
 
 nav .session-links li:first-child a {
     color: white;
+}
+
+/* Profile icon */
+nav .profile-icon img {
+    margin: 102px 20px 0px 92px;    
+}
+
+nav .profile-icon ul {
+    /* visibility: hidden; */
 }
 
 /* #################################### */
@@ -231,6 +239,11 @@ nav .session-links li:first-child a {
     height: 676px;
     overflow: scroll;
 }
+
+/* Trail index item */
+/* .index-map ul li {
+
+} */
 
 /* Trails map */
 #map-container {
