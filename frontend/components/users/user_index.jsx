@@ -18,6 +18,7 @@ class UserIndex extends React.Component {
                     {Object.values(this.props.users).map(user => (
                         <UserIndexItem key={user.id} user={user} />
                     ))}
+                    {/* need to make each user index item a link to a show page route */}
                 </ul>
             </div>
         );

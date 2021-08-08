@@ -18,7 +18,7 @@ const Navbar = ({ currentUser, signout }) => {
             {/* ^^^ below list will be hidden until above profile pic is clicked */}
             {/* ^^^ when profile pic is clicked, a drop down menu will appear with the below list */}
             <ul>
-                <li><Link to="" >Profile</Link></li>
+                <li><Link to={`/users/${currentUser.id}`} >Profile</Link></li>
                 {/* ^^^ Profile link will render user show page and go to the profile tab --> rendering user info */}
                 <li><Link to="" >Reviews</Link></li>
                 {/* ^^^ Reviews link will render user show page and go to the reviews tab */}
