@@ -26,7 +26,6 @@ class UserShow extends React.Component {
         return (
             <div>
                 USER SHOW IS WORKING
-                {console.log("USER SHOW IS WORKING")}
             </div>
         );
     }
