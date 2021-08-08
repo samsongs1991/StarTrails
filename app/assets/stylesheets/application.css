@@ -247,9 +247,11 @@ nav .profile-icon ul {
 }
 
 /* Trail index item */
-/* .index-map ul li {
-
-} */
+.index-map ul li {
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgb(190, 190, 190);
+    margin: 30px;
+}
 
 /* Trails map */
 #map-container {
