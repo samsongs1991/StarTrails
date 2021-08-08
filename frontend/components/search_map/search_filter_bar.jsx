@@ -211,7 +211,7 @@ class SearchFilterBar extends React.Component {
     // ----------------------------------------------
     render() {
         return (
-            <div>
+            <div className="search-filter-bar" >
                 {/* import search bar from home page HERE */}
                 <div>
                     <button onClick={() => this.handleFilterClick("difficulty")} >Difficulty</button>
