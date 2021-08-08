@@ -28,7 +28,7 @@ const Navbar = ({ currentUser, signout }) => {
                 {/* ^^^ Members link will render index page showing all members */}
                 <li><Link to="" >Settings</Link></li>
                 {/* ^^^ Settings link will render user show page and go to the profile tab --> rendering edit profile form */}
-                <li><button onClick={() => signout()} >Logout</button></li>
+                <li><Link to="/" ><button onClick={() => signout()} >Logout</button></Link></li>
                 {/* ^^^ Logout button will trigger signout onClick and reroute to home page */}
             </ul>
         </div>

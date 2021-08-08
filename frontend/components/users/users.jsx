@@ -23,6 +23,7 @@ const Users = props => (
         {/* user show component will contain the profile, lists, etc components */}
 
         {/* the above 2 components can't be rendered at same time */}
+        {/* all user show routes will be PROTECTED */}
     </div>
 )
 
