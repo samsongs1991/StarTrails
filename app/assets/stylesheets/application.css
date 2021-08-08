@@ -28,7 +28,7 @@ nav {
     height: 65px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    box-shadow: 0 0 15px 0.2px rgb(211, 211, 211);
+    box-shadow: 0 0 1px 0px rgb(211, 211, 211);
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -191,16 +191,49 @@ nav .session-links li:first-child a {
 /* ########## -- P A G E -- ########### */
 /* #################################### */
 
+/* Explore page container */
+.index-map {
+    display: flex;
+}
+
 /* Search filter bar */
 .search-filter-bar {
     display: flex;
     margin-top: 65px;
+    padding: 12px 0px 20px 0px;
+    background-color: rgb(248, 248, 248);
+    width: 100%;
+    height: 20px;
+}
+
+/* Search filter buttons */
+.search-filter-bar button {
+    border-radius: 6px;
+    border: 1px solid white;
+    box-shadow: 0 0 2px 0.2px rgb(190, 190, 190);
+    color: gray;
+    background-color: white;
+    transition: all 0.5s ease;
+    font-size: 14px;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 5px 15px 5px 15px;
+}
+
+.search-filter-bar button:hover {
+    border: 1.5px solid #428a13;
+    color: #428a13;
 }
 
 /* Trail index  */
+.index-map > div:first-child {
+    width: 25%;
+    height: 676px;
+    overflow: scroll;
+}
 
 /* Trails map */
 #map-container {
-    width: 1000px;
-    height: 700px;
+    width: 75%;
+    height: 676px;
 }
