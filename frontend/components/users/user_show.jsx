@@ -23,7 +23,7 @@ class UserShow extends React.Component {
     render() {
         return (
             <div>
-                {this.state.userId}
+                USER SHOW IS WORKING
             </div>
         );
     }

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const UserIndexItem = props => (
     <li>
-        <Link to="" params={{ userId: props.user.id }} >
+        <Link to={`/users/${props.user.id}`} >
             {props.user.email}    
         </Link>
     </li>
