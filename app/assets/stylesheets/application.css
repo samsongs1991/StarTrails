@@ -97,6 +97,7 @@ nav .profile-icon img {
 
 nav .profile-icon ul {
     /* visibility: hidden; */
+    visibility: visible;
 }
 
 /* #################################### */
