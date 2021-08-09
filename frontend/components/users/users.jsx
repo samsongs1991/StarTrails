@@ -9,14 +9,14 @@ const Users = props => (
         {/* ^ render users nav component */}
         
         <Route exact path="/users" >
-            <div>ALL USERS</div>
+            <div className="user-index" >ALL USERS</div>
             {/* <UserIndex fetchUsers={props.fetchUsers} users={props.users} /> */}
         </Route>
         {/* render users index component*/}
         
         <Route exact path="/users/:userId" >
         {/* <Route path="/users/:userId" > */}
-            <div>USER SHOW ROUTE HERE</div>
+            <div className="user-show" >USER SHOW ROUTE HERE</div>
             {/* <UserShow fetchUser={props.fetchUser} /> */}
         </Route>
         {/* render user show component */}

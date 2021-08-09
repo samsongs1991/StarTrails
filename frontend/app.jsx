@@ -25,14 +25,14 @@ const App = () => (
 
 
         {/* // TEST CODE ---------------------------------------- */}
-        <Route exact path="/users" component={UserContainer} />
+        <Route path="/users" component={UserContainer} />
         {/* <ProtectedRoute path="/users" component={UsersContainer} /> */}
         {/* ABOVE PAGE = show all users (users index page) */}
         {/* must be signed in to view all users */}
         {/* // -------------------------------------------------- */}
 
 
-        <Route exact path="/trails" component={SearchContainer} />
+        <Route path="/trails" component={SearchContainer} />
 
     </div>
 )

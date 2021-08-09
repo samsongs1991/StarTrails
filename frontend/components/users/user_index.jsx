@@ -9,7 +9,7 @@ class UserIndex extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="user-index" >
                 <div>
                     <h3>Members</h3>
                     {/* search bar for member names */}
