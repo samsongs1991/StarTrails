@@ -9,9 +9,7 @@ class User < ApplicationRecord
     attr_reader :password
     
     # AWS ------------------------------------
-
     has_one_attached :photo
-
     # ^^^ ------------------------------------
 
     def self.find_by_credentials(email, password)

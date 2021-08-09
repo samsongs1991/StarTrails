@@ -54,21 +54,6 @@ ActiveRecord::Schema.define(version: 2021_08_09_203254) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_details", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.text "about_me"
-    t.string "city"
-    t.string "state"
-    t.string "gender"
-    t.date "bday"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_user_details_on_user_id", unique: true
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
