@@ -4,27 +4,20 @@ import React from "react";
 // props = fetchUser
 
 class UserShow extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         userId: this.userIdFromParams()
-    //         userId: props.match.params.userId
-    //     }
-    // }
+    constructor(props) {
+        super(props);
+        this.state = {
+            userId: 1
+        }
+    }
 
-    // userIdFromParams() {
-    //     let { userId } = useParams();
-    //     return userId;
-    // }
-
-    // componentDidMount() {
-    //     console.log("COMPONENT IS MOUNTING?");
-    //     this.props.fetchUser(this.state.userId);
-    // }
+    componentDidMount() {
+        this.props.fetchUser(this.state.userId);
+    }
 
     render() {
         return (
-            <div>
+            <div className="user-show" >
                 USER SHOW IS WORKING
             </div>
         );
