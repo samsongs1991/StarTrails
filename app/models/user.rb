@@ -8,7 +8,9 @@ class User < ApplicationRecord
 
     attr_reader :password 
 
-    has_one :detail
+    has_many :detail,
+        foreign_key: :user_id,
+        class_name: :UserDetail
     
     # AWS ------------------------------------
 
