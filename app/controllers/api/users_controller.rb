@@ -32,6 +32,8 @@ class Api::UsersController < ApplicationController
         params.require(:user).permit(:email, :password)
     end
 
+    # CREATE A EDIT_USER_PARAMS FOR THE UPDATE METHOD
+
     def invalid_email?(email)
         return true if email.length <=0 || !email.include?("@") || !email.include?(".")
     end

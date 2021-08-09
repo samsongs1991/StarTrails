@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_09_203254) do
+ActiveRecord::Schema.define(version: 2021_08_07_002305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,13 @@ ActiveRecord::Schema.define(version: 2021_08_09_203254) do
     t.string "email", null: false
     t.string "password_digest", null: false
     t.string "session_token", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.text "about_me"
+    t.string "city"
+    t.string "state"
+    t.string "gender"
+    t.date "bday"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
