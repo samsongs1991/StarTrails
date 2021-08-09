@@ -11,7 +11,10 @@ class UserShow extends React.Component {
     render() {
         return (
             <div className="user-show" >
-                USER SHOW IS WORKING
+                <div>
+                    {/* Members > Samuel Song */}
+                </div>
+                
             </div>
         );
     }
