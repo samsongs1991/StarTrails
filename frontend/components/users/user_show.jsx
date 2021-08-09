@@ -5,6 +5,7 @@ import Lists from "./user_show_tabs/lists";
 import Activities from "./user_show_tabs/activities";
 import Reviews from "./user_show_tabs/reviews";
 import Photos from "./user_show_tabs/photos";
+import Settings from "./user_show_tabs/settings";
 
 
 class UserShow extends React.Component {
@@ -29,6 +30,8 @@ class UserShow extends React.Component {
                     <Route path={`/users/${this.props.userId}/activities`} component={Activities} />
                     <Route path={`/users/${this.props.userId}/reviews`} component={Reviews} />
                     <Route path={`/users/${this.props.userId}/photos`} component={Photos} />
+                    <Route path={`/users/${this.props.userId}/settings`} component={Settings} />
+                    {/* Above route for settings will be PROTECTED */}
                 </Switch>
             </div>
         );

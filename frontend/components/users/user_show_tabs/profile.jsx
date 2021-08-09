@@ -17,7 +17,7 @@ class Profile extends React.Component {
                             {/* Name */}
                             {/* City, State */}
                         </div>
-                        
+
                         <div>
                             {/* Recent Activity */}
                         </div>
