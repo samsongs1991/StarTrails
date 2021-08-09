@@ -4,15 +4,8 @@ import React from "react";
 // props = fetchUser
 
 class UserShow extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            userId: 1
-        }
-    }
-
     componentDidMount() {
-        this.props.fetchUser(this.state.userId);
+        this.props.fetchUser(this.props.userId);
     }
 
     render() {

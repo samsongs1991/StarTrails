@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 import UserIndex from "./user_index";
-import UserShow from "./user_show";
+import UserShowContainer from "./user_show_container";
 
 const Users = props => (
     <div>
@@ -13,9 +13,7 @@ const Users = props => (
         </Route>
         {/* render users index component*/}
         
-        <Route exact path="/users/:userId" >
-            <UserShow fetchUser={props.fetchUser} />
-        </Route>
+        <Route exact path="/users/:userId" component={UserShowContainer} />
         {/* render user show component */}
         {/* user show component will contain the profile, lists, etc components */}
 
