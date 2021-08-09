@@ -1,10 +1,4 @@
 class Api::UserDetailsController < ApplicationController
-
-    def create
-        @detail = User.new(detail_params)
-        @detail.save 
-        render "/api/user_details/show"
-    end
     
     def show
         @detail = UserDetail.find_by(user_id: params[:id])
@@ -13,7 +7,10 @@ class Api::UserDetailsController < ApplicationController
 
     def update
         @detail = UserDetail.find_by(user_id: params[:id])
-        @detail.update
+        unless @detail.update
+            @detail = User.new(detail_params)
+            @detail.save
+        end
         render :show
     end
 
