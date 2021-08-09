@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
     attr_reader :password 
 
-    has_one :detail, dependent: :destroy
+    has_one :detail
     
     # AWS ------------------------------------
 
