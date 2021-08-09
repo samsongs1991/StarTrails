@@ -4,14 +4,14 @@ class Settings extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstName = "", 
-            lastName = "", 
-            email = "", 
-            aboutMe = "", 
-            city = "", 
-            state = "", 
-            gender = "", 
-            bday = ""
+            firstName: "", 
+            lastName: "", 
+            email: "", 
+            aboutMe: "", 
+            city: "", 
+            state: "", 
+            gender: "", 
+            bday: ""
         }
         // set the above state to values from the DB
         this.handleSubmit = this.handleSubmit.bind(this);
