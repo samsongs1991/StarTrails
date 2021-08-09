@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps ) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    fetchUser: userId => dispatch(fetchUser(userId))
+    fetchUser: userId => dispatch(fetchUser(userId)), 
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserShow);
