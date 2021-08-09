@@ -10,8 +10,9 @@ class CreateUserDetails < ActiveRecord::Migration[5.2]
       t.string :state 
       t.string :gender 
       t.date :bday
+      
       t.timestamps
     end
-    index_on :user_details, :user_id, unique: true
+    add_index :user_details, :user_id, unique: true
   end
 end
