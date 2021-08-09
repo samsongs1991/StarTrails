@@ -2,11 +2,15 @@ class Api::UserDetailsController < ApplicationController
     
     def show
         @detail = UserDetail.find_by(user_id: params[:id])
+        # above params[:id] may be incorrect !!!!!!!!
+        
         render :show
     end
 
     def update
         @detail = UserDetail.find_by(user_id: params[:id])
+        # above params[:id] may be incorrect !!!!!!!!
+
         unless @detail.update
             @detail = User.new(detail_params)
             @detail.save
