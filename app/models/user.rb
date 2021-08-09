@@ -6,11 +6,7 @@ class User < ApplicationRecord
     
     after_initialize :ensure_session_token
 
-    attr_reader :password 
-
-    has_many :detail,
-        foreign_key: :user_id,
-        class_name: :UserDetail
+    attr_reader :password
     
     # AWS ------------------------------------
 

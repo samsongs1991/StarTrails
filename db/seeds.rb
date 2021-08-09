@@ -37,18 +37,6 @@ trails_list.each do |name, latitude, longitude, location, city, state, country, 
     )
 end
 
-UserDetail.create(
-    user_id: 1, 
-    first_name: "Sam", 
-    last_name: "Song", 
-    email: "sam@sam.com", 
-    about_me: "", 
-    city: "El Paso", 
-    state: "Texas", 
-    gender: "male", 
-    bday: ""
-)
-
 User.create(
     email: "sam@sam.com", 
     password: "123456"
