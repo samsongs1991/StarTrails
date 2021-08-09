@@ -20,9 +20,9 @@ const Navbar = ({ currentUser, signout }) => {
             <ul>
                 <li><Link to={`/users/${currentUser.id}`} >Profile</Link></li>
                 {/* ^^^ Profile link will render user show page and go to the profile tab --> rendering user info */}
-                <li><Link to="" >Reviews</Link></li>
+                <li><Link to={`/users/${currentUser.id}/reviews`} >Reviews</Link></li>
                 {/* ^^^ Reviews link will render user show page and go to the reviews tab */}
-                <li><Link to="" >Photos</Link></li>
+                <li><Link to={`/users/${currentUser.id}/photos`} >Photos</Link></li>
                 {/* ^^^ Photos link will render user show page and go to the photos tab */}
                 <li><Link to="/users" >Members</Link></li>
                 {/* ^^^ Members link will render index page showing all members */}
