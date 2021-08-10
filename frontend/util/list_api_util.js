@@ -28,3 +28,10 @@ export const updateList = list => (
         data: { list }
     })
 )
+
+export const destroyList = listId => (
+    $.ajax({
+        url: `/api/lists/${listId}`, 
+        method: "DELETE"
+    })
+)
