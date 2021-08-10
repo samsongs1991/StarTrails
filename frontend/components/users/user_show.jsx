@@ -1,12 +1,11 @@
 import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
-import Profile from "./user_show_tabs/profile";
+import ProfileContainer from "./user_show_tabs/profile_container";
 import Lists from "./user_show_tabs/lists";
 import Activities from "./user_show_tabs/activities";
 import Reviews from "./user_show_tabs/reviews";
 import Photos from "./user_show_tabs/photos";
 import SettingsContainer from "./user_show_tabs/settings_container";
-
 
 class UserShow extends React.Component {
     // componentDidMount() {
@@ -29,7 +28,7 @@ class UserShow extends React.Component {
                 </ul>
 
                 <Switch>
-                    <Route exact path="/users/:userId" component={Profile} />
+                    <Route exact path="/users/:userId" component={ProfileContainer} />
                     <Route path="/users/:userId/lists" component={Lists} />
                     <Route path="/users/:userId/activities" component={Activities} />
                     <Route path="/users/:userId/reviews" component={Reviews} />

@@ -2,6 +2,7 @@ import React from "react";
 
 class Profile extends React.Component {
     render() {
+        const { user } = this.props;
         return (
             <div>
                 <div>
@@ -9,14 +10,16 @@ class Profile extends React.Component {
                     <div>
                         <div>
                             {/* Profile pic */}
+                            <p>Member Since</p>
+                            <p></p>
                             {/* Member Since */}
                         </div>
                         <div>
-                            {/* Name */}
-                            {/* City, State */}
-                            {/* About me */}
-                            {/* Gender */}
-                            {/* Bday */}
+                            <p>{user.first_name} {user.last_name}</p>
+                            <p>{user.city}, {user.state}</p>
+                            <p>About Me: {user.about_me}</p>
+                            <p>Gender: {user.gender}</p>
+                            <p>Birthdate: {user.bday}</p>
                         </div>
                     </div>
                 </div>
