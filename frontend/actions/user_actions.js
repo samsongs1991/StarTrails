@@ -30,3 +30,16 @@ export const updateUser = user => dispatch => {
     UserApiUtils.updateUser(user)
         .then(user => dispatch(receiveUser(user)))
 }
+
+
+
+export const REMOVE_USER = "REMOVE_USER";
+const removeUser = userId => ({
+    type: REMOVE_USER, 
+    userId
+})
+
+export const destroyUser = userId => dispatch => {
+    UserApiUtils.destroyUser(userId)
+        .then(user => dispatch(removeUser(user.id)))
+}

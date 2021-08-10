@@ -27,12 +27,19 @@ class Api::UsersController < ApplicationController
     def update 
         @user = User.find_by(id: params[:user][:id])
         if @user.update(edit_user_params)
-            render "/api/users/show"
+            render :show
         else
             puts "------------------------------------------"
             puts "ERROR IN UPDATE METHOD OF USERS CONTROLLER"
             puts "------------------------------------------"
         end
+    end
+
+    def destroy
+        @user = current_user
+        signout
+        @user.delete
+        render :show
     end
 
     # -------------------------------------------------------- 
