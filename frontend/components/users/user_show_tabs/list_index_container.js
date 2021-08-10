@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Lists from "./lists";
+import ListIndex from "./list_index";
 import { fetchLists, createList } from "../../../actions/list_actions";
 
 const mapStateToProps = ({ entities: { lists }, session: { currentUserId } }, ownProps ) => ({
@@ -13,4 +13,4 @@ const mapDispatchToProps = dispatch => ({
     createList: list => dispatch(createList(list))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Lists);
+export default connect(mapStateToProps, mapDispatchToProps)(ListIndex);

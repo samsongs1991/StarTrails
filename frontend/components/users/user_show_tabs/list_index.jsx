@@ -1,8 +1,8 @@
 import React from "react";
 import ListForm from "./list_form";
-import ListItem from "./list_item";
+import ListIndexItem from "./list_index_item";
 
-class Lists extends React.Component {
+class ListIndex extends React.Component {
     constructor(props) {
         super(props);
         this.showCreateListButton = this.showCreateListButton.bind(this);
@@ -34,7 +34,7 @@ class Lists extends React.Component {
                 <div>
                     <ul>
                         {Object.values(lists).map(list => (
-                            <ListItem list={list} key={list.id} />
+                            <ListIndexItem list={list} key={list.id} />
                         ))}
                     </ul>
                 </div>
@@ -43,4 +43,4 @@ class Lists extends React.Component {
     }
 }
 
-export default Lists;
+export default ListIndex;

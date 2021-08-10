@@ -1,10 +1,10 @@
 import React from "react";
 
-const ListItem = props => (
+const ListIndexItem = props => (
     <li>
         {props.list.title}
         {/* eventually add a list of the trails in the list */}
     </li>
 )
 
-export default ListItem;
+export default ListIndexItem;
