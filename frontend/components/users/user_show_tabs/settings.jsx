@@ -56,9 +56,6 @@ class Settings extends React.Component {
                             <label>Last name</label>
                             <input onChange={this.update("last_name")} type="text" value={this.state.user.last_name} />
 
-                            {/* <label>Email</label>
-                            <input onChange={this.update("email")} type="text" value={this.state.user.email} /> */}
-                            
                             <label>About Me</label>
                             <input onChange={this.update("about_me")} type="text" value={this.state.user.about_me} />
                             
