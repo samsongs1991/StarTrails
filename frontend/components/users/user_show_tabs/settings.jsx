@@ -27,7 +27,7 @@ class Settings extends React.Component {
         e.preventDefault();
         const userInput = Object.assign({}, this.state);
         return (
-            this.props.editProfile(userInput)
+            this.props.updateUser(userInput)
             // need to pass editProfile in props through redux
         );
     }

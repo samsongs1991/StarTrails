@@ -23,3 +23,10 @@ export const fetchUser = userId => dispatch => {
     UserApiUtils.fetchUser(userId)
         .then(user => dispatch(receiveUser(user)))
 }
+
+
+
+export const updateUser = user => dispatch => {
+    UserApiUtils.updateUser(user)
+        .then(user => dispatch(recieveUser(user)))
+}
