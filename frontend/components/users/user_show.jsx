@@ -9,9 +9,13 @@ import Settings from "./user_show_tabs/settings";
 
 
 class UserShow extends React.Component {
-    componentDidMount() {
-        this.props.fetchUser(this.props.userId);
-    }
+    // componentDidMount() {
+    //     this.props.fetchUser(this.props.userId);
+    // }
+    // how i currently have it set up, the only way to access another user's 
+    // show page is through the members tab which fetches all the users upon mounting
+    // i will refactor my code so that fetchUsers fetches ALL user details from the DB
+    // and not just id and email
 
     render() {
         return (

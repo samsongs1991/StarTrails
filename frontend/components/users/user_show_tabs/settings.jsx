@@ -4,6 +4,7 @@ class Settings extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            email: "", 
             firstName: "", 
             lastName: "", 
             email: "", 
@@ -28,7 +29,6 @@ class Settings extends React.Component {
         const userInput = Object.assign({}, this.state);
         return (
             this.props.updateUser(userInput)
-            // need to pass editProfile in props through redux
         );
     }
 
