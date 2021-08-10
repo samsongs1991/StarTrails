@@ -28,7 +28,7 @@ class Lists extends React.Component {
 
     render() {
         console.log(this.props);
-        const { userId, currentUserId } = this.props
+        const { userId, currentUserId, lists } = this.props
         return (
             <div>
                 <div>
@@ -40,8 +40,9 @@ class Lists extends React.Component {
 
                 <div>
                     <ul>
-
-                        {/* Create list item components */}
+                        {Object.values(lists).map(list => (
+                            <ListItem list={list} key={list.id} />
+                        ))}
                     </ul>
                 </div>
             </div>
