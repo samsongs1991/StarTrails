@@ -35,7 +35,6 @@ class Settings extends React.Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <div>
                 <h3>Edit Profile</h3>
