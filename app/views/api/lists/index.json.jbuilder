@@ -1,4 +1,4 @@
-if @ lists
+if @lists
     @lists.each do |list|
         json.set! list.id do
             json.extract! list, 

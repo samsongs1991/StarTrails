@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import ProfileContainer from "./user_show_tabs/profile_container";
-import Lists from "./user_show_tabs/lists";
+import ListsContainer from "./user_show_tabs/lists_container";
 import Activities from "./user_show_tabs/activities";
 import Reviews from "./user_show_tabs/reviews";
 import Photos from "./user_show_tabs/photos";
@@ -29,7 +29,7 @@ class UserShow extends React.Component {
 
                 <Switch>
                     <Route exact path="/users/:userId" component={ProfileContainer} />
-                    <Route path="/users/:userId/lists" component={Lists} />
+                    <Route path="/users/:userId/lists" component={ListsContainer} />
                     <Route path="/users/:userId/activities" component={Activities} />
                     <Route path="/users/:userId/reviews" component={Reviews} />
                     <Route path="/users/:userId/photos" component={Photos} />
