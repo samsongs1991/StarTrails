@@ -12,6 +12,12 @@ const receiveLists = lists => ({
     lists
 })
 
+export const REMOVE_LIST = "REMOVE_LIST";
+const removeList = listId => ({
+    type: REMOVE_LIST, 
+    listId
+})
+
 // -------------------------------------------------
 
 export const fetchList = listId => dispatch => (
@@ -24,3 +30,7 @@ export const fetchLists = userId => dispatch => (
         .then(lists => dispatch(receiveLists(lists)))
 )
 
+export const destroyList = listId => dispatch => (
+    ListApiUtils.destroyList
+        .then(list => removeList(list.id))
+)
