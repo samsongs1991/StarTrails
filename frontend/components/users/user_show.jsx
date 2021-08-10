@@ -18,6 +18,8 @@ class UserShow extends React.Component {
     // and not just id and email
 
     render() {
+        console.log(this.props);
+
         return (
             <div className="user-show" >
                 <ul>
