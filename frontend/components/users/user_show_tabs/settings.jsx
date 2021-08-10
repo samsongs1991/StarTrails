@@ -20,8 +20,6 @@ class Settings extends React.Component {
     }
 
     update(field) {
-        // let user = Object.assign({}, this.state.user, { [field]: e.currentTarget.value });
-        console.log(this.state);
         return (
             e => this.setState({ user: Object.assign({}, this.state.user, { [field]: e.currentTarget.value }) })
         );
@@ -30,13 +28,14 @@ class Settings extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const userInput = Object.assign({}, this.state);
+        this.props.history.push(`/users/${this.props.user.id}`);
         return (
             this.props.updateUser(userInput)
         );
     }
 
     render() {
-        console.log(this.state);
+        console.log(this.props);
         return (
             <div>
                 <h3>Edit Profile</h3>
