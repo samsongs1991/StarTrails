@@ -19,6 +19,7 @@ class ListForm extends React.Component {
 
     handleCreateList() {
         this.props.createList(this.state);
+        this.setState({ title: "" });
     }
     
     render() {
@@ -27,10 +28,8 @@ class ListForm extends React.Component {
                 <div>
                     <h3>Create a new list</h3>
                     <input onChange={this.update("title")} type="text" value={this.state.title} />
-                    <button onClick={e => console.log("this button will hide list form - toggle show:false")}>Cancel</button>
-                    {/* cancel button will toggle the list form show */}
+                    <button onClick={this.props.hideFormModal}>Cancel</button>
                     <button onClick={this.handleCreateList} >Create</button>
-                    {/* create will fire an action */}
                 </div>
             );
         } else {

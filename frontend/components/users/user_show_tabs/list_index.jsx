@@ -8,11 +8,16 @@ class ListIndex extends React.Component {
         this.state = { show: false }
         this.showCreateListButton = this.showCreateListButton.bind(this);
         this.showFormModal = this.showFormModal.bind(this);
+        this.hideFormModal = this.hideFormModal.bind(this);
     }
 
     showFormModal() {
         this.setState({ show: true });
     } 
+
+    hideFormModal() {
+        this.setState({ show: false });
+    }
 
     componentDidMount() {
         this.props.fetchLists(this.props.userId);
@@ -28,7 +33,6 @@ class ListIndex extends React.Component {
 
     render() {
         const { userId, currentUserId, lists, createList } = this.props
-        console.log(this.state);
         return (
             <div>
                 <div>
@@ -36,7 +40,7 @@ class ListIndex extends React.Component {
                     {this.showCreateListButton(userId, currentUserId)}
                 </div>
 
-                <ListForm show={this.state.show} createList={createList} currentUserId={currentUserId} show={false} />
+                <ListForm hideFormModal={this.hideFormModal} show={this.state.show} createList={createList} currentUserId={currentUserId} />
 
                 <div>
                     <ul>
