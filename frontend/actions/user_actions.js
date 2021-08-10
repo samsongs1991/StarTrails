@@ -28,5 +28,5 @@ export const fetchUser = userId => dispatch => {
 
 export const updateUser = user => dispatch => {
     UserApiUtils.updateUser(user)
-        .then(user => dispatch(recieveUser(user)))
+        .then(user => dispatch(receiveUser(user)))
 }

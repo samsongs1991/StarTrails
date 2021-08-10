@@ -25,9 +25,9 @@ class Api::UsersController < ApplicationController
     end
 
     def update 
-        @user = User.find_by(id: params[:id])
+        @user = User.find_by(id: params[:user][:id])
         if @user.update(edit_user_params)
-            render :show
+            render "/api/users/show"
         else
             puts "------------------------------------------"
             puts "ERROR IN UPDATE METHOD OF USERS CONTROLLER"
@@ -43,7 +43,6 @@ class Api::UsersController < ApplicationController
         params.require(:user).permit(:email, :password)
     end
 
-    # CREATE A EDIT_USER_PARAMS FOR THE UPDATE METHOD
     def edit_user_params 
         params.require(:user).permit(
             :email, :first_name, :last_name, :about_me, 

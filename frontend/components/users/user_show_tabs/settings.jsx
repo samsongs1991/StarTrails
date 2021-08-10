@@ -3,7 +3,9 @@ import React from "react";
 class Settings extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.user();
+        this.state = {
+            user: this.user()
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -18,8 +20,10 @@ class Settings extends React.Component {
     }
 
     update(field) {
+        // let user = Object.assign({}, this.state.user, { [field]: e.currentTarget.value });
+        console.log(this.state);
         return (
-            e => this.setState({ [field]: e.currentTarget.value })
+            e => this.setState({ user: Object.assign({}, this.state.user, { [field]: e.currentTarget.value }) })
         );
     }
 
@@ -40,28 +44,28 @@ class Settings extends React.Component {
                     <img src="" alt="Profile picture" />
                     <form onSubmit={this.handleSubmit} >
                         <label>First name</label>
-                        <input onChange={this.update("firstName")} type="text" value={this.state.firstName} />
+                        <input onChange={this.update("first_name")} type="text" value={this.state.user.first_name} />
 
                         <label>Last name</label>
-                        <input onChange={this.update("lastName")} type="text" value={this.state.lastName} />
+                        <input onChange={this.update("last_name")} type="text" value={this.state.user.last_name} />
 
                         <label>Email</label>
-                        <input onChange={this.update("email")} type="text" value={this.state.email} />
+                        <input onChange={this.update("email")} type="text" value={this.state.user.email} />
                         
                         <label>About Me</label>
-                        <input onChange={this.update("aboutMe")} type="text" value={this.state.aboutMe} />
+                        <input onChange={this.update("about_me")} type="text" value={this.state.user.about_me} />
                         
                         <label>City</label>
-                        <input onChange={this.update("city")} type="text" value={this.state.city} />
+                        <input onChange={this.update("city")} type="text" value={this.state.user.city} />
                         
                         <label>State</label>
-                        <input onChange={this.update("state")} type="text" value={this.state.state} />
+                        <input onChange={this.update("state")} type="text" value={this.state.user.state} />
                         
                         <label>Gender</label>
-                        <input onChange={this.update("gender")} type="text" value={this.state.gender} />
+                        <input onChange={this.update("gender")} type="text" value={this.state.user.gender} />
                         
                         <label>Birthday</label>
-                        <input onChange={this.update("bday")} type="date" value={this.state.bday} />
+                        <input onChange={this.update("bday")} type="date" value={this.state.user.bday} />
 
                         <button type="submit">Save</button>
                     </form>
