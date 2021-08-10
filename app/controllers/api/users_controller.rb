@@ -15,12 +15,23 @@ class Api::UsersController < ApplicationController
 
         if @user.save
             signin(@user)
-            render "/api/users/show"
+            render :show
         else
             email_errors = "Email is not valid." if invalid_email?(params[:user][:email])
             email_errors = "Email already exists." if email_already_exists?(params[:user][:email])
             password_errors = "Password must be 6 characters long." unless invalid_password?(params[:user][:password])
             render json: { email: email_errors, password: password_errors }, status: 422            
+        end
+    end
+
+    def update 
+        @user = User.find_by(id: params[:id])
+        if @user.update(edit_user_params)
+            render :show
+        else
+            puts "------------------------------------------"
+            puts "ERROR IN UPDATE METHOD OF USERS CONTROLLER"
+            puts "------------------------------------------"
         end
     end
 
@@ -33,6 +44,12 @@ class Api::UsersController < ApplicationController
     end
 
     # CREATE A EDIT_USER_PARAMS FOR THE UPDATE METHOD
+    def edit_user_params 
+        params.require(:user).permit(
+            :email, :first_name, :last_name, :about_me, 
+            :city, :state, :gender, :bday
+        )
+    end
 
     def invalid_email?(email)
         return true if email.length <=0 || !email.include?("@") || !email.include?(".")
