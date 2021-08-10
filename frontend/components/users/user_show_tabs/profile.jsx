@@ -4,7 +4,6 @@ class Profile extends React.Component {
     render() {
         return (
             <div>
-                {/* <div>Profile component works</div> */}
                 <div>
                     <h3>Profile</h3>
                     <div>
@@ -12,16 +11,18 @@ class Profile extends React.Component {
                             {/* Profile pic */}
                             {/* Member Since */}
                         </div>
-
                         <div>
                             {/* Name */}
                             {/* City, State */}
-                        </div>
-
-                        <div>
-                            {/* Recent Activity */}
+                            {/* About me */}
+                            {/* Gender */}
+                            {/* Bday */}
                         </div>
                     </div>
+                </div>
+                <div>
+                    <h3>Recent Activity</h3>
+                    <p>Nothing here yet. To be filled in later</p>
                 </div>
             </div>
         );
