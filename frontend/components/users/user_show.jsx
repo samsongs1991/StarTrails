@@ -5,7 +5,7 @@ import Lists from "./user_show_tabs/lists";
 import Activities from "./user_show_tabs/activities";
 import Reviews from "./user_show_tabs/reviews";
 import Photos from "./user_show_tabs/photos";
-import Settings from "./user_show_tabs/settings";
+import SettingsContainer from "./user_show_tabs/settings_container";
 
 
 class UserShow extends React.Component {
@@ -18,8 +18,6 @@ class UserShow extends React.Component {
     // and not just id and email
 
     render() {
-        console.log(this.props);
-
         return (
             <div className="user-show" >
                 <ul>
@@ -31,12 +29,12 @@ class UserShow extends React.Component {
                 </ul>
 
                 <Switch>
-                    <Route exact path={`/users/${this.props.userId}`} component={Profile} />
-                    <Route exact path={`/users/${this.props.userId}/lists`} component={Lists} />
-                    <Route path={`/users/${this.props.userId}/activities`} component={Activities} />
-                    <Route path={`/users/${this.props.userId}/reviews`} component={Reviews} />
-                    <Route path={`/users/${this.props.userId}/photos`} component={Photos} />
-                    <Route path={`/users/${this.props.userId}/settings`} component={Settings} />
+                    <Route exact path="/users/:userId" component={Profile} />
+                    <Route path="/users/:userId/lists" component={Lists} />
+                    <Route path="/users/:userId/activities" component={Activities} />
+                    <Route path="/users/:userId/reviews" component={Reviews} />
+                    <Route path="/users/:userId/photos" component={Photos} />
+                    <Route path="/users/:userId/settings" component={SettingsContainer} />
                     {/* Above route for settings will be PROTECTED */}
                 </Switch>
             </div>

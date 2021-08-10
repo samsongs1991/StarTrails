@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 import Settings from "./settings";
-import { updateUser } from "../../actions/user_detail_api_util";
+import { updateUser } from "../../../actions/user_actions";
 
-const mapStateToProps = (state, ownProps ) => ({
-    user: 
+const mapStateToProps = ({ entities: { users } }, ownProps ) => ({
+    user: users[ownProps.match.params.userId]
 })
 
 const mapDispatchToProps = dispatch => ({
