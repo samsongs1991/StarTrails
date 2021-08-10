@@ -1,5 +1,10 @@
 class Api::ListsController < ApplicationController
 
+    def index 
+        @lists = List.find_by(user_id: params[:userId])
+        render :index
+    end
+
     def create
         @list = List.new(list_params)
         if @list.save 
