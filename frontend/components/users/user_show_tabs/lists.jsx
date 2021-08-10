@@ -9,7 +9,6 @@ class Lists extends React.Component {
     }
 
     componentDidMount() {
-        // console.log(this.props);
         this.props.fetchLists(this.props.userId);
     }
 
@@ -17,7 +16,6 @@ class Lists extends React.Component {
         if(userId === currentUserId) {
             return (
                 <button onClick={e => console.log("this button will show the list form - toggle show:true")} >Create a list</button>
-                // onClick will somehow toggle the modal show
             );
         }
     }
