@@ -36,8 +36,3 @@ trails_list.each do |name, latitude, longitude, location, city, state, country, 
         directions: directions
     )
 end
-
-User.create(
-    email: "sam@sam.com", 
-    password: "123456"
-)
