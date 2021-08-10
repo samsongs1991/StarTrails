@@ -1,7 +1,7 @@
 class Api::ListsController < ApplicationController
 
     def index 
-        @lists = List.find_by(user_id: params[:user_id])
+        @lists = List.fromUser(params[:userId])
         render :index
     end
 

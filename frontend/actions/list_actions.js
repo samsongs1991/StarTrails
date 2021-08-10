@@ -27,7 +27,8 @@ export const fetchList = listId => dispatch => (
 
 export const fetchLists = userId => dispatch => (
     ListApiUtils.fetchLists(userId)
-        .then(lists => dispatch(receiveLists(lists)))
+        .then(lists => console.log(lists))
+        // .then(lists => dispatch(receiveLists(lists)))
 )
 
 export const updateList = list => dispatch => (
@@ -37,8 +38,7 @@ export const updateList = list => dispatch => (
 
 export const createList = list => dispatch => (
     ListApiUtils.createList(list) 
-        .then(list => console.log(list))
-        // .then(list => dispatch(receiveList(list)))
+        .then(list => dispatch(receiveList(list)))
 )
 
 export const destroyList = listId => dispatch => (

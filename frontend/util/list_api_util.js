@@ -2,7 +2,7 @@ export const fetchLists = userId => (
     $.ajax({
         url: "/api/lists", 
         method: "GET", 
-        data: userId
+        data: { userId }
     })
 )
 

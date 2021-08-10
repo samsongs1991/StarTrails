@@ -5,4 +5,10 @@ class List < ApplicationRecord
     
     belongs_to :user
 
+    # -------------------------------------------------------
+
+    def self.fromUser(userId)
+        self.where("user_id = ?", userId)
+    end
+
 end

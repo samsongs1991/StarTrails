@@ -9,6 +9,7 @@ class Lists extends React.Component {
     }
 
     componentDidMount() {
+        // console.log(this.props);
         this.props.fetchLists(this.props.userId);
     }
 
