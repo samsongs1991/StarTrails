@@ -35,7 +35,13 @@ export const updateList = list => dispatch => (
         .then(list => dispatch(receiveList(list)))
 )
 
+export const createList = list => dispatch => (
+    ListApiUtils.createList(list) 
+        .then(list => console.log(list))
+        // .then(list => dispatch(receiveList(list)))
+)
+
 export const destroyList = listId => dispatch => (
-    ListApiUtils.destroyList
-        .then(list => removeList(list.id))
+    ListApiUtils.destroyList(listId)
+        .then(list => dispatch(removeList(list.id)))
 )

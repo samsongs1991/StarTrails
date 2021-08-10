@@ -1,7 +1,7 @@
 class Api::ListsController < ApplicationController
 
     def index 
-        @lists = List.find_by(user_id: params[:userId])
+        @lists = List.find_by(user_id: params[:user_id])
         render :index
     end
 
@@ -49,11 +49,11 @@ class Api::ListsController < ApplicationController
     private
 
     def list_params
-        params.require(:list).require(:title, :user_id);
+        params.require(:list).permit(:title, :user_id);
     end
 
     def edit_list_params 
-        params.require(:list).require(:title, :user_id);
+        params.require(:list).permit(:title, :user_id);
     end
     
 end

@@ -1,11 +1,6 @@
 import React from "react";
-
-const ListForm = props => {
-    console.log(props);
-    return (
-        <div>List Form is here</div>
-    );
-}
+import ListForm from "./list_form";
+import ListItem from "./list_item";
 
 class Lists extends React.Component {
     constructor(props) {
@@ -20,15 +15,14 @@ class Lists extends React.Component {
     showCreateListButton(userId, currentUserId) {
         if(userId === currentUserId) {
             return (
-                <button onClick={e => console.log("button was clicked")} >Create a list</button>
+                <button onClick={e => console.log("this button will show the list form - toggle show:true")} >Create a list</button>
                 // onClick will somehow toggle the modal show
             );
         }
     }
 
     render() {
-        console.log(this.props);
-        const { userId, currentUserId, lists } = this.props
+        const { userId, currentUserId, lists, createList } = this.props
         return (
             <div>
                 <div>
@@ -36,7 +30,7 @@ class Lists extends React.Component {
                     {this.showCreateListButton(userId, currentUserId)}
                 </div>
 
-                <ListForm show={false} />
+                <ListForm createList={createList} currentUserId={currentUserId} show={false} />
 
                 <div>
                     <ul>

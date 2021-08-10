@@ -5,7 +5,7 @@ const ListsReducer = (oldState={}, action) => {
     switch(action.type) {
         case RECEIVE_LISTS:
             return action.lists; 
-        case RECEIVE_LIST: 
+        case RECEIVE_LIST:
             return Object.assign({}, oldState, { [action.list.id]: action.list });
         case REMOVE_LIST:
             let newState = Object.assign({}, oldState);
