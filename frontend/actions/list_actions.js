@@ -30,6 +30,11 @@ export const fetchLists = userId => dispatch => (
         .then(lists => dispatch(receiveLists(lists)))
 )
 
+export const updateList = list => dispatch => (
+    ListApiUtils.updateList(list)
+        .then(list => dispatch(receiveList(list)))
+)
+
 export const destroyList = listId => dispatch => (
     ListApiUtils.destroyList
         .then(list => removeList(list.id))
