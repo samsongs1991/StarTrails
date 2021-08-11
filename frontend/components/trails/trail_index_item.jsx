@@ -23,27 +23,6 @@ class TrailIndexItem extends React.Component {
     //     return ();
     // }
 
-    trailLocation(trail) {
-        if(trail.location) {
-            return trail.location;
-        } else {
-            return `${trail.city}, ${trail.state}`;
-        }
-    }
-
-    trailTime(trail) {
-        let time = "";
-        let min = trail.length * 30;
-        if(min >= 60) {
-            let hr = Math.floor(min / 60);
-            min = min % 60;
-            time = `${hr} h ${min} m`
-        } else {
-            time = `${min} m`
-        }
-        return time;
-    }
-
     render() {
         const trail = this.props.trail;
         return (
@@ -53,7 +32,7 @@ class TrailIndexItem extends React.Component {
                     <div>
                         <img src="" alt={"Image of " + trail.name} />
                         <h3>{trail.name}</h3>
-                        <div>{this.trailLocation(trail)}</div>
+                        <div>{TrailShowUtil.trailLocation(trail)}</div>
                         <div>
                             {TrailShowUtil.difficultyLabel(trail)}
                             {/* --- BELOW --- uncomment after reviews portion of DB is built */}
@@ -63,7 +42,7 @@ class TrailIndexItem extends React.Component {
                         <div>
                             <p>Length: {trail.length} mi</p>
                             <p> - </p>
-                            <p>Est. {this.trailTime(trail)}</p>
+                            <p>Est. {TrailShowUtil.trailTime(trail)}</p>
                         </div>
                     </div>
 
