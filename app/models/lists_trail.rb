@@ -1,2 +1,0 @@
-class ListsTrail < ApplicationRecord
-end

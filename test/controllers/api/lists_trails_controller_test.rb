@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ListsTrailTest < ActiveSupport::TestCase
+class Api::ListsTrailsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

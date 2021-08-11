@@ -20,6 +20,7 @@ class ListForm extends React.Component {
     handleCreateList() {
         this.props.createList(this.state);
         this.setState({ title: "" });
+        this.props.hideFormModal();
     }
     
     render() {
