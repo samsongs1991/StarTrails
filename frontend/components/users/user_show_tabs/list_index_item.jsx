@@ -20,9 +20,8 @@ class ListIndexItem extends React.Component {
     render() {
         return (
             <li>
-                <button onClick={this.showListTrailsModal} >
-                    {this.props.list.title}
-                </button>
+                <button onClick={this.showListTrailsModal} >{this.props.list.title}</button>
+                <button onClick={() => this.props.destroyList(this.props.list.id)} >Delete list</button>
                 <ListTrails hideListTrailsModal={this.hideListTrailsModal} show={this.state.show} />
             </li>
         );

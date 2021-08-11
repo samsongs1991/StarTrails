@@ -39,7 +39,7 @@ class Api::ListsController < ApplicationController
     end
 
     def destroy 
-        @list = List.find_by(id:params[:id])
+        @list = List.find_by(id: params[:id])
         @list.delete
         render :show
     end

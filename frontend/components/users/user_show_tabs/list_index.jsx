@@ -32,7 +32,7 @@ class ListIndex extends React.Component {
     }
 
     render() {
-        const { userId, currentUserId, lists, createList } = this.props
+        const { userId, currentUserId, lists, createList, destroyList } = this.props
         return (
             <div>
                 <div>
@@ -45,7 +45,7 @@ class ListIndex extends React.Component {
                 <div>
                     <ul>
                         {Object.values(lists).map(list => (
-                            <ListIndexItem list={list} key={list.id} />
+                            <ListIndexItem destroyList={destroyList} list={list} key={list.id} />
                         ))}
                     </ul>
                 </div>
