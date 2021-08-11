@@ -14,10 +14,10 @@ class Api::ListsTrailsController < ApplicationController
         @list_trail.delete
     end
 
-    def index 
-        # @list_trail = ListTrail. (custom query method to only fetch the relations for a particular list)
-        
-    end
+    # def index 
+    #     @list_trail = ListTrail.byList(params[:list_id])
+
+    # end
 
     # -----------------------------------------------
 

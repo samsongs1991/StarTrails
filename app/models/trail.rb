@@ -6,7 +6,9 @@ class Trail < ApplicationRecord
     validates :difficulty, inclusion: { in: ["easy", "moderate", "hard"]}, allow_nil: true
 
     has_many :lists, 
-        through: :lists_trails
+        through: :lists_trails, 
+        dependent: :destroy
+    # has_many :lists_trails
     
     # -----------------------------------------------------------------------------
 

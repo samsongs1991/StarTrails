@@ -6,7 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-trails_list = [
+
+
+
+# *************************************
+# *********** S E E D I N G ***********
+# ************ T R A I L S ************
+# *************************************
+
+trails_seed = [
     ["Tin Mines Trail", 31.93248, -106.44919, "Franklin Mountains State Park", "El Paso", "Texas", "United States", "easy", "El Paso Tin Mines Trail is a 6.6 mile heavily trafficked out and back trail located near El Paso, Texas that features beautiful wild flowers and is good for all skill levels. The trail offers a number of activity options and is best used from March until October. Dogs are also able to use this trail.", 6.6, 1023, "outAndBack", "On eastern side of the Franklin Mountains, go to the western end of Jon Cunningham Blvd to reach the trail head. There is a parking lot right at the trail head."], 
     ["Aztec Cave Trail", 31.9282, -106.50939, "Franklin Mountains State Park", "El Paso", "Texas", "United States", "moderate", "Aztec Cave Trail is a 1.2 mile out and back trail located near El Paso, Texas that features a cave and is rated as moderate. The trail is primarily used for hiking, walking, nature trips, and bird watching and is accessible year-round. Dogs are also able to use this trail.", 1.2, 419, "outAndBack", "From the trailhead, follow the trail up in a S-SE direction for 0.72 miles to arrive at the cave.  There are benches for resting at several scenic overlooks along the trail. This is a good trail for kids and dogs."], 
     ["Mundys Gap Overlook", 31.91675, -106.50923, "Franklin Mountains State Park", "El Paso", "Texas", "United States", "hard", "Mundys Gap Overlook is a 3.9 mile heavily trafficked out and back trail located near El Paso, Texas that features beautiful wild flowers and is rated as difficult. The trail is primarily used for hiking, running, horses, and mountain biking and is best used from September until May. Dogs and horses are also able to use this trail.", 3.9, 1003, "outAndBack", "Follow the main trail. At 0.58 miles there is a junction. Follow the main trail left. At 1.22 miles there is a wooden bridge. At 1.68 miles you arrive at Mundys Gap."], 
@@ -19,7 +27,7 @@ trails_list = [
     ["Schaeffer Shuffle Trail", 31.93106, -106.51326, "Franklin Mountains State Park", "El Paso", "Texas", "United States", "moderate", "Schaeffer Shuffle Trail is a 2.6 mile moderately trafficked loop trail located near El Paso, Texas that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options and is best used from March until October. Dogs are also able to use this trail but must be kept on leash.", 2.6, 698, "loop", "Start downhill from the trailhead.  Several plants are marked with signs, and benches are provided to rest on at several points on the hike.   Proceed 0.43 mi downhill to the junction marked with a sign.  Take the trail left.  Follow the trail into the canyon, up over the hilltop, and back down and around into the main valley.  When you rejoin the main trail at 1.90 mi, follow it southeast and up-hill, past the previous junction, and back up to the starting point."], 
 ]
 
-trails_list.each do |name, latitude, longitude, location, city, state, country, difficulty, description, length, gain, category, directions|
+trails_seed.each do |name, latitude, longitude, location, city, state, country, difficulty, description, length, gain, category, directions|
     Trail.create( 
         name: name, 
         latitude: latitude, 
@@ -34,5 +42,54 @@ trails_list.each do |name, latitude, longitude, location, city, state, country, 
         gain: gain, 
         category: category, 
         directions: directions
+    )
+end
+
+# *************************************
+# *********** S E E D I N G ***********
+# ************* U S E R S *************
+# *************************************
+
+User.create(
+    email: "demo@gmail.com", 
+    password: "123456", 
+    first_name: "Rick", 
+    last_name: "Fulano", 
+    about_me: "I love the outdoors! I always take my dog, Yippy, along with me on every hike. All you dog-lovers out there, I will see you on the trail!", 
+    city: "El Paso", 
+    state: "Texas", 
+    gender: "Male", 
+    bday: "1991-10-28"
+)
+
+# *************************************
+# *********** S E E D I N G ***********
+# ************* L I S T S *************
+# *************************************
+
+List.create(
+    title: "Favorites", 
+    user_id: 1
+)
+
+List.create(
+    title: "Family-Friendly", 
+    user_id: 1
+)
+
+# *************************************
+# *********** S E E D I N G ***********
+# ***** L I S T S - T R A I L S *******
+# *************************************
+
+lists_trails_seed = [
+    [1, 0], [1, 2], [1, 4], [1, 6],
+    [2, 1], [2, 3], [2, 6]
+]
+
+lists_trails_seed.each do |list_id, trail_id|
+    ListsTrail.create(
+        list_id: list_id, 
+        trail_id: trail_id
     )
 end

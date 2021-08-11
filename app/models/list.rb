@@ -4,8 +4,10 @@ class List < ApplicationRecord
     validates :user_id, presence: true
     
     belongs_to :user
-    has_many :trails ,
-        through: :lists_trails 
+    has_many :trails,
+        through: :lists_trails, 
+        dependent: :destroy
+    # has_many :lists_trails
 
     # -------------------------------------------------------
 
