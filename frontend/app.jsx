@@ -7,6 +7,7 @@ import SigninFormContainer from "./components/session_form/signin_form_container
 import { AuthRoute } from "./util/route_util";
 import SearchContainer from "./components/search_map/search_container";
 import UserContainer from "./components/users/user_container";
+import TrailShowContainer from "./components/trails/trail_show_container";
 
 
 // TEST CODE ----------------------------------------
@@ -28,9 +29,11 @@ const App = () => (
         {/* ABOVE PAGE = show all users (users index page) */}
         {/* must be signed in to view all users */}
 
-        <Route path="/trails" component={SearchContainer} />
+        <Route exact path="/trails" component={SearchContainer} />
 
         {/* // TEST CODE ---------------------------------------- */}
+
+        <Route path="/trails/:trailId" component={TrailShowContainer} />      
 
         {/* // -------------------------------------------------- */}
     </div>

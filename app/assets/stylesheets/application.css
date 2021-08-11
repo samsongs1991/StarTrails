@@ -14,6 +14,10 @@
  *= require_self
  */
 
+ body {
+     text-decoration: none;
+ }
+
 /* #################################### */
 /* ############ N A V B A R ########### */
 /* ############ ----------- ########### */
@@ -254,6 +258,11 @@ nav .profile-icon ul {
     margin: 30px;
 }
 
+.trail-index-item {
+    text-decoration: inherit;
+    color: inherit;
+}
+
 /* Trails map */
 #map-container {
     width: 75%;
@@ -275,5 +284,14 @@ nav .profile-icon ul {
 /* #################################### */
 
 .user-show {
+    margin-top: 65px;
+}
+
+/* #################################### */
+/* ############ T R A I L ############# */
+/* ######## S H O W - P A G E ######### */
+/* #################################### */
+
+.trail-show {
     margin-top: 65px;
 }

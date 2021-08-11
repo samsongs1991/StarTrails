@@ -4,10 +4,16 @@ class List < ApplicationRecord
     validates :user_id, presence: true
     
     belongs_to :user
+
+    has_many :lists_trails, 
+        primary_key: :id, 
+        foreign_key: :list_id, 
+        class_name: :ListsTrail
+        
     has_many :trails,
         through: :lists_trails, 
+        source: :trail,
         dependent: :destroy
-    # has_many :lists_trails
 
     # -------------------------------------------------------
 
