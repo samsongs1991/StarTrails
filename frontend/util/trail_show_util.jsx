@@ -12,10 +12,10 @@ export const difficultyLabel = trail => {
 
 export const trailTime = trail => {
     let time = "";
-    let min = trail.length * 30;
+    let min = trail.length * 40;
     if(min >= 60) {
         let hr = Math.floor(min / 60);
-        min = min % 60;
+        min = Math.floor(min % 60);
         time = `${hr} h ${min} m`
     } else {
         time = `${min} m`

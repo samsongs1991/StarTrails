@@ -31,9 +31,9 @@ const App = () => (
 
         <Route exact path="/trails" component={SearchContainer} />
 
-        {/* // TEST CODE ---------------------------------------- */}
-
         <Route path="/trails/:trailId" component={TrailShowContainer} />      
+
+        {/* // TEST CODE ---------------------------------------- */}
 
         {/* // -------------------------------------------------- */}
     </div>
