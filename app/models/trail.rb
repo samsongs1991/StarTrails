@@ -5,6 +5,9 @@ class Trail < ApplicationRecord
     # validates :country, presence: true
     validates :difficulty, inclusion: { in: ["easy", "moderate", "hard"]}, allow_nil: true
 
+    has_many :lists, 
+        through: :lists_trails
+    
     # -----------------------------------------------------------------------------
 
     def self.in_bounds(bounds)
