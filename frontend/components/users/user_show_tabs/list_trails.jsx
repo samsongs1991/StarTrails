@@ -1,6 +1,6 @@
 import React from "react";
 import { trailLocation } from "../../../util/trail_show_util";
-import { Link } from "";
+import { Link } from "react-router-dom";
 
 const ListTrails = props => {
     
@@ -12,10 +12,8 @@ const ListTrails = props => {
                 <h3>{list.title}</h3>
                 <ul>
                     {Object.values(list.trails).map(trail => (
-                        <li key={trail.id} >{trail.name} - {trailLocation(trail)}</li>
-                        // when clicked, trail li should reroute to show page
+                        <Link to={`/trails/${trail.id}`} key={trail.id} ><li>{trail.name} - {trailLocation(trail)}</li></Link>
                     ))}
-                        {/* <Route path="/trails/:trailId" component={TrailShowContainer} /> */}
                 </ul>
                 <button onClick={hideListTrailsModal} >Close</button>
             </div>
