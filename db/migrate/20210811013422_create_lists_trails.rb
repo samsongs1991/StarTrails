@@ -6,7 +6,6 @@ class CreateListsTrails < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-
     add_index :lists_trails, [:list_id, :trail_id], unique: true
   end
 end
