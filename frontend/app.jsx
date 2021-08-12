@@ -23,11 +23,7 @@ const App = () => (
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <AuthRoute path="/signin" component={SigninFormContainer} />
 
-
-        <Route path="/users" component={UserContainer} />
-        {/* <ProtectedRoute path="/users" component={UsersContainer} /> */}
-        {/* ABOVE PAGE = show all users (users index page) */}
-        {/* must be signed in to view all users */}
+        <ProtectedRoute path="/users" component={UserContainer} />
 
         <Route exact path="/trails" component={SearchContainer} />
 
