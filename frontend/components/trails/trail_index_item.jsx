@@ -9,7 +9,7 @@ class TrailIndexItem extends React.Component {
     }
 
     render() {
-        const { trail } = this.props.trail;
+        const { trail } = this.props;
         return (
             <Link to={`/trails/${trail.id}`} className="trail-index-item" > 
                 <li>

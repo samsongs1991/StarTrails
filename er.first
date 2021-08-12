@@ -1,0 +1,19 @@
+=> [32m#<Trail:0x00007fa60ce34978[0m
+ id: [1;34m1[0m,
+ name: [31m[1;31m"[0m[31mTin Mines Trail[1;31m"[0m[31m[0m,
+ latitude: [1;35m31.93248[0m,
+ longitude: [1;35m-106.44919[0m,
+ location: [31m[1;31m"[0m[31mFranklin Mountains State Park[1;31m"[0m[31m[0m,
+ city: [31m[1;31m"[0m[31mEl Paso[1;31m"[0m[31m[0m,
+ state: [31m[1;31m"[0m[31mTexas[1;31m"[0m[31m[0m,
+ country: [31m[1;31m"[0m[31mUnited States[1;31m"[0m[31m[0m,
+ difficulty: [31m[1;31m"[0m[31measy[1;31m"[0m[31m[0m,
+ description:
+  [31m[1;31m"[0m[31mEl Paso Tin Mines Trail is a 6.6 mile heavily trafficked out and back trail located near El Paso, Texas that features beautiful wild flowers and is good for all skill levels. The trail offers a number of activity options and is best used from March until October. Dogs are also able to use this trail.[1;31m"[0m[31m[0m,
+ length: [1;35m6.6[0m,
+ gain: [1;34m1023[0m,
+ category: [31m[1;31m"[0m[31moutAndBack[1;31m"[0m[31m[0m,
+ directions:
+  [31m[1;31m"[0m[31mOn eastern side of the Franklin Mountains, go to the western end of Jon Cunningham Blvd to reach the trail head. There is a parking lot right at the trail head.[1;31m"[0m[31m[0m,
+ created_at: [1;34;4mThu[0m, [1;34m12[0m [1;34;4mAug[0m [1;34m2021[0m [1;34m04[0m:[1;34m31[0m:[1;34m10[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+ updated_at: [1;34;4mThu[0m, [1;34m12[0m [1;34;4mAug[0m [1;34m2021[0m [1;34m04[0m:[1;34m31[0m:[1;34m10[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m
