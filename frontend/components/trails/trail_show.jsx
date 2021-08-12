@@ -8,6 +8,7 @@ class TrailShow extends React.Component {
         this.state = { show: false};
         this.showFormModal = this.showFormModal.bind(this);
         this.hideFormModal = this.hideFormModal.bind(this);
+        this.showAddTrailButton = this.showAddTrailButton.bind(this);
     }
 
     componentDidMount() {
