@@ -19,17 +19,10 @@ const Navbar = ({ currentUser, signout }) => {
             {/* ^^^ when profile pic is clicked, a drop down menu will appear with the below list */}
             <ul>
                 <li><Link to={`/users/${currentUser.id}`} >Profile</Link></li>
-                {/* ^^^ Profile link will render user show page and go to the profile tab --> rendering user info */}
-                {/* <li><Link to={`/users/${currentUser.id}/reviews`} >Reviews</Link></li> */}
-                {/* ^^^ Reviews link will render user show page and go to the reviews tab */}
                 <li><Link to={`/users/${currentUser.id}/photos`} >Photos</Link></li>
-                {/* ^^^ Photos link will render user show page and go to the photos tab */}
                 <li><Link to="/users" >Members</Link></li>
-                {/* ^^^ Members link will render index page showing all members */}
                 <li><Link to={`/users/${currentUser.id}/settings`} >Settings</Link></li>
-                {/* ^^^ Settings link will render user show page and go to the profile tab --> rendering edit profile form */}
                 <li><Link to="/" ><button onClick={() => signout()} >Logout</button></Link></li>
-                {/* ^^^ Logout button will trigger signout onClick and reroute to home page */}
             </ul>
         </div>
     )

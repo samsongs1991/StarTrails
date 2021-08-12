@@ -7,8 +7,7 @@ const mapStateToProps = ({ entities: { users } }, ownProps ) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    // updateUser: user => dispatch(updateUser(user)), 
-    // destroyUser: userId => dispatch(destroyUser(userId))
+    
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

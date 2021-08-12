@@ -8,7 +8,6 @@ const UserIndexItem = props => (
         </Link>
     </li>
     // email will be replaced by profile pic later
-    // and will also become a Link to the user's show page 
 )
 
 export default UserIndexItem;

@@ -4,7 +4,7 @@ import Root from "./root"
 import configureStore from "./store/store";
 
 // for testing only
-import { fetchTrails, fetchTrail } from "./actions/trail_actions";
+
 // ^^^^^^^^^^^^^^^^
 
 
@@ -34,8 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // for testing only
     window.store = store;
     window.dispatch = store.dispatch;
-    window.fetchTrails = fetchTrails;
-    window.fetchTrail = fetchTrail;
     // ^^^^^^^^^^^^^^^^
 
   });

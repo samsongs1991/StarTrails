@@ -12,7 +12,7 @@ class TrailsMap extends React.Component {
 
         google.maps.event.addListener(this.map, 'idle', () => {
             let bounds =  this.map.getBounds();
-            // getBounds returns a LatLngBounds google object
+
             let n = bounds.getNorthEast().lat();
             let e = bounds.getNorthEast().lng();
             let s = bounds.getSouthWest().lat();
