@@ -1,1 +1,1 @@
-json.extract! @trail_list, :id, :list_id, :trail_id
+json.extract! @list_trail, :id, :list_id, :trail_id

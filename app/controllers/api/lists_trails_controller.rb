@@ -2,7 +2,6 @@ class Api::ListsTrailsController < ApplicationController
 
     def create
         @list_trail = ListsTrail.new(list_trail_params)
-
         if @list_trail.save
             render :show
         else
