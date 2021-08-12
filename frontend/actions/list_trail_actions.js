@@ -13,9 +13,9 @@ export const receiveListTrailRelation = listTrailRelation => ({
 })
 
 export const REMOVE_LIST_TRAIL_RELATION = "REMOVE_LIST_TRAIL_RELATION";
-const removeListTrailRelation = listTrailRelationId => ({
+const removeListTrailRelation = listTrailRelation => ({
     type: REMOVE_LIST_TRAIL_RELATION, 
-    listTrailRelationId
+    listTrailRelation
 })
 
 // -------------------------------------------------
@@ -37,5 +37,5 @@ export const createListTrailRelation = (listId, trailId) => dispatch => (
 
 export const destroyListTrailRelation = listTrailRelationId => dispatch => (
     ListTrailApiUtils.destroyListTrailRelation(listTrailRelationId)
-        .then(listTrailRelation => dispatch(removeListTrailRelation(listTrailRelation.id)))
+        .then(listTrailRelation => dispatch(removeListTrailRelation(listTrailRelation)))
 )

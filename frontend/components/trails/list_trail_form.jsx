@@ -17,14 +17,23 @@ class ListTrailForm extends React.Component {
         this.props.createListTrailRelation(listId, trailId);
     }
 
-    handleDestroyListTrailRelation(listTrailRelationId) {
+    handleDestroyListTrailRelation(listId, trailId) {
+        const { listTrailRelations } = this.props.lists[listId];
+        const relationsArr = Object.values(listTrailRelations);
+        let listTrailRelationId = null;
+        for(let i = 0; i < relationsArr.length; i++) {
+            if(relationsArr[i].trail_id === trailId) {
+                listTrailRelationId = relationsArr[i].id;
+                break;
+            }
+        }
         this.props.destroyListTrailRelation(listTrailRelationId);
     }
 
-    addRemoveButton(list, trail, listTrailRelationId) {
+    addRemoveButton(list, trail) {
         if(list.trails[trail.id]) {
             return (
-                <button onClick={() => this.handleDestroyListTrailRelation(listTrailRelationId)} >Remove from list</button>
+                <button onClick={() => this.handleDestroyListTrailRelation(list.id, trail.id)} >Remove from list</button>
             );
         } else {
             return (
@@ -42,16 +51,12 @@ class ListTrailForm extends React.Component {
                     <h3>Save to list</h3>
                     <button onClick={hideFormModal} >Close</button>
                     <ul>
-                        {Object.values(lists).map(list => {
-                            // fetchListTrailRelations(list.id);
-                        
-                            return (
-                                <li key={list.id} >
-                                    <div>{list.title}</div>
-                                    {this.addRemoveButton(list, trail)}
-                                </li>
-                            );
-                        })}
+                        {Object.values(lists).map(list => (
+                            <li key={list.id} >
+                                <div>{list.title}</div>
+                                {this.addRemoveButton(list, trail)}
+                            </li>
+                        ))}
                     </ul>
                 </div>
             );
