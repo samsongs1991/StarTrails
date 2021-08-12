@@ -9,6 +9,7 @@ class ListIndex extends React.Component {
         this.showCreateListButton = this.showCreateListButton.bind(this);
         this.showFormModal = this.showFormModal.bind(this);
         this.hideFormModal = this.hideFormModal.bind(this);
+        this.showLists = this.showLists.bind(this);
     }
 
     showFormModal() {
@@ -31,8 +32,21 @@ class ListIndex extends React.Component {
         }
     }
 
+    showLists() {
+        if(this.props.lists === {} || this.props.lists === undefined) {
+            return null;
+        } else {
+            return (
+                Object.values(this.props.lists).map(list => (
+                    <ListIndexItem destroyList={this.props.destroyList} list={list} key={list.id} />
+                ))
+            );
+        }
+    }
+
+
     render() {
-        const { userId, currentUserId, lists, createList, destroyList } = this.props
+        const { userId, currentUserId, createList } = this.props
         return (
             <div>
                 <div>
@@ -44,9 +58,7 @@ class ListIndex extends React.Component {
 
                 <div>
                     <ul>
-                        {Object.values(lists).map(list => (
-                            <ListIndexItem destroyList={destroyList} list={list} key={list.id} />
-                        ))}
+                        {this.showLists()}
                     </ul>
                 </div>
             </div>

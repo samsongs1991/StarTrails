@@ -2,26 +2,36 @@ import React from "react";
 import { trailLocation } from "../../../util/trail_show_util";
 import { Link } from "react-router-dom";
 
-const ListTrails = props => {
+class ListTrails extends React.Component {
     
-    const { list, hideListTrailsModal, show } = props;
+    showTrails() {
+        if(this.props.list.trails === {} || this.props.list.trails === undefined) {
+            return null;
+        } else {
+            return (
+                Object.values(this.props.list.trails).map(trail => (
+                    <Link to={`/trails/${trail.id}`} key={trail.id} ><li>{trail.name} - {trailLocation(trail)}</li></Link>
+                ))
+            );
+        }
+    }
+    
 
-    if(show) {
-        return (
-            <div>
-                <h3>{list.title}</h3>
-                <ul>
-                {console.log(list)}
-                {console.log(list.trails)}
-                    {Object.values(list.trails).map(trail => (
-                        <Link to={`/trails/${trail.id}`} key={trail.id} ><li>{trail.name} - {trailLocation(trail)}</li></Link>
-                    ))}
-                </ul>
-                <button onClick={hideListTrailsModal} >Close</button>
-            </div>
-        );
-    } else {
-        return null;
+    render() {
+        const { list, hideListTrailsModal, show } = this.props;
+        if(show) {
+            return (
+                <div>
+                    <h3>{list.title}</h3>
+                    <ul>
+                        {this.showTrails()}
+                    </ul>
+                    <button onClick={hideListTrailsModal} >Close</button>
+                </div>
+            );
+        } else {
+            return null;
+        }
     }
 }
 
