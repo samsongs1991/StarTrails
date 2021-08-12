@@ -77,7 +77,6 @@ class Navbar extends React.Component {
     )
 
     render() {
-        console.log(this.state.show);
         return (
             this.navbarHeader(this.state.show)
         );

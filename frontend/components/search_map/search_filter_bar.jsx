@@ -4,15 +4,25 @@ class SearchFilterBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            difficulty: { easy: false, moderate: false, hard: false }, 
-            length: { min: "", max: "" },
-            gain: { min: "", max: "" },
-            time: { 
-                min: { hrs: "", mins: "" }, 
-                max: { hrs: "", mins: "" }
+            filterState: {
+                difficulty: { easy: false, moderate: false, hard: false }, 
+                length: { min: "", max: "" },
+                gain: { min: "", max: "" },
+                time: { 
+                    min: { hrs: "", mins: "" }, 
+                    max: { hrs: "", mins: "" }
+                },
+                category: { loop: false, outAndBack: false, pointToPoint: false },
+                rating: 0
             },
-            category: { loop: false, outAndBack: false, pointToPoint: false },
-            rating: 0
+            modalState: {
+                difficulty: false, 
+                length: false, 
+                gain: false, 
+                time: false, 
+                category: false, 
+                rating: false
+            }
         };
         this.modal = this.modal.bind(this);
         this.handleDifficultyClick = this.handleDifficultyClick.bind(this);
@@ -24,38 +34,28 @@ class SearchFilterBar extends React.Component {
     }
     // ----------------------------------------------
     handleFilterClick(filterType) {
-        // show modal with appropriate filters loaded
-        // implement by doing a setAttribute method to show vs hide
-        // can hide/show using the class in css
-        return
+        let modalState = Object.assign({}, this.state.modalState);
+        modalState[filterType] = !this.state.modalState[filterType];
+        this.setState({ modalState: modalState });
     }
 
     modal(type) {
-        switch(type) {
-            case "difficulty":
-                return this.difficulty();
-            case "length":
-                return this.length();
-            case "gain":
-                return this.gain();
-            case "time":
-                return this.time();
-            case "category":
-                return this.category();
-            case "rating":
-                return this.rating();
+        if(this.state.modalState[type]) {
+            return this[type]();
+        } else {
+            return null;
         }
     }
     // ----------------------------------------------
     handleDifficultyClick(e) {
-        let difficulty = Object.assign({}, this.state.difficulty);
-        difficulty[e.currentTarget.value] = !this.state.difficulty[e.currentTarget.value];
-        this.setState({ difficulty: difficulty });
+        let difficulty = Object.assign({}, this.state.filterState.difficulty);
+        difficulty[e.currentTarget.value] = !this.state.filterState.difficulty[e.currentTarget.value];
+        this.setState({ filterState: { difficulty: difficulty } });
     }
 
     difficulty() {
         return (
-            <div>
+            <div id="difficulty">
                 <input onClick={this.handleDifficultyClick} type="checkbox" value="easy" />
                 <label>Easy</label>
                 <input onClick={this.handleDifficultyClick} type="checkbox" value="moderate" />
@@ -69,20 +69,20 @@ class SearchFilterBar extends React.Component {
     updateLength(field) {
         return (
             e => {
-                let length = Object.assign({}, this.state.length);
+                let length = Object.assign({}, this.state.filterState.length);
                 length[field] = e.currentTarget.value;
-                this.setState({ length: length })
+                this.setState({ filterState: { length: length } })
             }
         );
     }
 
     length() {
         return (
-            <div>
+            <div id="length">
                 <label>Min: </label>
-                <input onChange={this.updateLength("min")} type="text" placeholder="min miles" value={this.state.length.min} />           
+                <input onChange={this.updateLength("min")} type="text" placeholder="min miles" value={this.state.filterState.length.min} />           
                 <label>Max: </label>             
-                <input onChange={this.updateLength("max")} type="text" placeholder="max miles" value={this.state.length.max} />                        
+                <input onChange={this.updateLength("max")} type="text" placeholder="max miles" value={this.state.filterState.length.max} />                        
             </div>
         );
     }
@@ -90,20 +90,20 @@ class SearchFilterBar extends React.Component {
     updateGain(field) {
         return (
             e => {
-                let gain = Object.assign({}, this.state.gain);
+                let gain = Object.assign({}, this.state.filterState.gain);
                 gain[field] = e.currentTarget.value;
-                this.setState({ gain: gain })
+                this.setState({ filterState: { gain: gain } })
             }
         );
     }
 
     gain() {
         return (
-            <div>
+            <div id="gain">
                 <label>Min: </label>
-                <input onChange={this.updateGain("min")} type="text" placeholder="min ft" />           
+                <input onChange={this.updateGain("min")} type="text" placeholder="min ft" value={this.state.filterState.gain.min} />           
                 <label>Max: </label>             
-                <input onChange={this.updateGain("max")}type="text" placeholder="max ft" />                        
+                <input onChange={this.updateGain("max")}type="text" placeholder="max ft" value={this.state.filterState.gain.max}/>                        
             </div>
         );
     }
@@ -111,35 +111,35 @@ class SearchFilterBar extends React.Component {
     updateTime(field1, field2) {
         return (
             e => {
-                let time = Object.assign({}, this.state.time);
+                let time = Object.assign({}, this.state.filterState.time);
                 time[field1][field2] = e.currentTarget.value;
-                this.setState({ time: time })
+                this.setState({ filterState: { time: time } })
             }
         );  
     }
     
     time() {
         return (
-            <div>
+            <div id="time">
                 <label>Min: </label>
-                <input onChange={this.updateTime("min", "hrs")} type="text" placeholder="hours" />           
-                <input onChange={this.updateTime("min", "mins")} type="text" placeholder="minutes" />   
+                <input onChange={this.updateTime("min", "hrs")} type="text" placeholder="hours" value={this.state.filterState.time.min.hrs} />           
+                <input onChange={this.updateTime("min", "mins")} type="text" placeholder="minutes" value={this.state.filterState.time.min.mins} />   
                 <label>Max: </label>         
-                <input onChange={this.updateTime("max", "hrs")} type="text" placeholder="hours" />               
-                <input onChange={this.updateTime("max", "mins")} type="text" placeholder="minutes" />                        
+                <input onChange={this.updateTime("max", "hrs")} type="text" placeholder="hours" value={this.state.filterState.time.min.hrs} />               
+                <input onChange={this.updateTime("max", "mins")} type="text" placeholder="minutes" value={this.state.filterState.time.max.mins} />                        
             </div>
         );
     }
     // ----------------------------------------------
     handleCategoryClick(e) {
-        let category = Object.assign({}, this.state.category);
-        category[e.currentTarget.value] = !this.state.category[e.currentTarget.value];
-        this.setState({ category: category });
+        let category = Object.assign({}, this.state.filterState.category);
+        category[e.currentTarget.value] = !this.state.filterState.category[e.currentTarget.value];
+        this.setState({ filterState: { category: category } });
     }
     
     category() {
         return (
-            <div>
+            <div id="category">
                 <input onClick={this.handleCategoryClick} type="checkbox" value="loop" />
                 <label>Loop</label>
                 <input onClick={this.handleCategoryClick} type="checkbox" value="outAndBack" />
@@ -159,9 +159,9 @@ class SearchFilterBar extends React.Component {
         }
 
         if(rating === this.state.rating) {
-            this.setState(() => ({ rating: 0 }));
+            this.setState(() => ({ filterState: { rating: 0 } }));
         } else {
-            this.setState(() => ({ rating: rating }));
+            this.setState(() => ({ filterState: { rating: rating } }));
             for(let i = 0; i < 5; i++) {
                 if(parseInt(stars[i].name) <= rating) {
                     stars[i].setAttribute("src", "images/YellowRatingStar.png");
@@ -199,7 +199,7 @@ class SearchFilterBar extends React.Component {
 
     rating() {
         return (
-            <div>
+            <div id="rating">
                 <img className="star" name="1" src="images/GreyRatingStar.png" alt="Star" onClick={this.handleRatingClick} onMouseEnter={this.handleRatingHover} onMouseLeave={this.handleRatingOff} />
                 <img className="star" name="2" src="images/GreyRatingStar.png" alt="Star" onClick={this.handleRatingClick} onMouseEnter={this.handleRatingHover} onMouseLeave={this.handleRatingOff} />
                 <img className="star" name="3" src="images/GreyRatingStar.png" alt="Star" onClick={this.handleRatingClick} onMouseEnter={this.handleRatingHover} onMouseLeave={this.handleRatingOff} />
@@ -237,7 +237,7 @@ class SearchFilterBar extends React.Component {
                     <button onClick={() => this.handleFilterClick("rating")} >Rating</button>
                     {this.modal("rating")}
                 </div>
-                <button onClick={() => this.props.updateFilters(Object.assign({}, this.props.filters, this.state)) } >Apply Filters</button>
+                <button onClick={() => this.props.updateFilters(Object.assign({}, this.props.filters, this.state.filterState)) } >Apply Filters</button>
             </div>
         );
     }

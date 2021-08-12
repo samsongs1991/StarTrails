@@ -239,8 +239,8 @@ nav .profile-icon ul {
 }
 
 /* Search filter modals */
-.search-filter-bar div > div {
-    visibility: hidden;
+#difficulty, #length, #gain, #time, #category, #rating {
+    /* display: none; */
 }
 
 
