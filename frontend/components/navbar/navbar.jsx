@@ -9,6 +9,7 @@ class Navbar extends React.Component {
         this.hideFormModal = this.hideFormModal.bind(this);
         this.profileIconModal = this.profileIconModal.bind(this);
         this.handleImgClick = this.handleImgClick.bind(this);
+        this.handleLogoutClick = this.handleLogoutClick.bind(this);
     }
 
     showFormModal() {
@@ -27,6 +28,11 @@ class Navbar extends React.Component {
         }
     }
 
+    handleLogoutClick() {
+        this.props.signout();
+        this.hideFormModal();
+    }
+
     navbarHeader = show => (
         <nav>
             <Link to="/trails" ><div>Explore</div></Link>
@@ -36,7 +42,7 @@ class Navbar extends React.Component {
     )
 
     profileIconModal(show) {
-        const { currentUser, signout } = this.props;
+        const { currentUser } = this.props;
         if(show) {
             return (
                 <ul>
@@ -44,7 +50,7 @@ class Navbar extends React.Component {
                     <li><Link to={`/users/${currentUser.id}/photos`} >Photos</Link></li>
                     <li><Link to="/users" >Members</Link></li>
                     <li><Link to={`/users/${currentUser.id}/settings`} >Settings</Link></li>
-                    <li><Link to="/" ><button onClick={() => signout()} >Logout</button></Link></li>
+                    <li><Link to="/" ><button onClick={this.handleLogoutClick} >Logout</button></Link></li>
                 </ul>
             );
         } else {
@@ -58,16 +64,7 @@ class Navbar extends React.Component {
                 <button onClick={this.handleImgClick} >
                     <img src="images/BlankProfilePic.png" alt="Profile picture" />
                 </button>
-                {/* ^^^ image above will by default show a blank profile pic until i get the AWS to work */}
-                {/* <ul>
-                    <li><Link to={`/users/${currentUser.id}`} >Profile</Link></li>
-                    <li><Link to={`/users/${currentUser.id}/photos`} >Photos</Link></li>
-                    <li><Link to="/users" >Members</Link></li>
-                    <li><Link to={`/users/${currentUser.id}/settings`} >Settings</Link></li>
-                    <li><Link to="/" ><button onClick={() => signout()} >Logout</button></Link></li>
-                </ul> */}
                 {this.profileIconModal(show)}
-                {/* above ul will be a MODAL */}
             </div>
         );
     }
@@ -80,6 +77,7 @@ class Navbar extends React.Component {
     )
 
     render() {
+        console.log(this.state.show);
         return (
             this.navbarHeader(this.state.show)
         );
