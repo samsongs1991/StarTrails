@@ -24,7 +24,7 @@ trails_seed = [
     ["Lost Dog Trail Loop", 31.7722, -106.54934, "Franklin Mountains State Park", "El Paso", "Texas", "United States", "moderate", "Lost Dog Trail Loop is a 7.7 mile moderately trafficked loop trail located near El Paso, Texas that offers the chance to see wildlife and is rated as moderate. The trail offers a number of activity options. Dogs are also able to use this trail but must be kept on leash.", 7.7, 987, "loop", ""], 
     ["Palisades Canyon Loop", 31.78775, -106.48726, "Arroyo Park", "El Paso", "Texas", "United States", "moderate", "Palisades Canyon Loop is a 5 mile moderately trafficked loop trail located near El Paso, Texas that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options and is accessible year-round. Dogs are also able to use this trail.", 5.0, 1079, "loop", "This trail is part of a series of trails that head towards Bliss Army and up into Franklin Mountain Park offering you the ability to connect with other trails."], 
     ["Palisades Canyon to Crazy Cat Loop", 31.78859, -106.48709, "Arroyo Park", "El Paso", "Texas", "United States", "easy", "Palisades Canyon to Crazy Cat Loop is a 2.8 mile moderately trafficked loop trail located near El Paso, Texas that offers the chance to see wildlife and is good for all skill levels. The trail is primarily used for hiking and mountain biking.", 2.8, 518, "loop", ""], 
-    ["Schaeffer Shuffle Trail", 31.93106, -106.51326, "Franklin Mountains State Park", "El Paso", "Texas", "United States", "moderate", "Schaeffer Shuffle Trail is a 2.6 mile moderately trafficked loop trail located near El Paso, Texas that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options and is best used from March until October. Dogs are also able to use this trail but must be kept on leash.", 2.6, 698, "loop", "Start downhill from the trailhead.  Several plants are marked with signs, and benches are provided to rest on at several points on the hike.   Proceed 0.43 mi downhill to the junction marked with a sign.  Take the trail left.  Follow the trail into the canyon, up over the hilltop, and back down and around into the main valley.  When you rejoin the main trail at 1.90 mi, follow it southeast and up-hill, past the previous junction, and back up to the starting point."], 
+    ["Schaeffer Shuffle Trail", 31.93106, -106.51326, "Franklin Mountains State Park", "El Paso", "Texas", "United States", "moderate", "Schaeffer Shuffle Trail is a 2.6 mile moderately trafficked loop trail located near El Paso, Texas that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options and is best used from March until October. Dogs are also able to use this trail but must be kept on leash.", 2.6, 698, "loop", "Start downhill from the trailhead.  Several plants are marked with signs, and benches are provided to rest on at several points on the hike.   Proceed 0.43 mi downhill to the junction marked with a sign.  Take the trail left.  Follow the trail into the canyon, up over the hilltop, and back down and around into the main valley.  When you rejoin the main trail at 1.90 mi, follow it southeast and up-hill, past the previous junction, and back up to the starting point."]
 ]
 
 trails_seed.each do |name, latitude, longitude, location, city, state, country, difficulty, description, length, gain, category, directions|
@@ -82,14 +82,14 @@ List.create(
 # ***** L I S T S - T R A I L S *******
 # *************************************
 
-lists_trails_seed = [
-    [1, 0], [1, 2], [1, 4], [1, 6],
-    [2, 1], [2, 3], [2, 6]
-]
+# lists_trails_seed = [
+#     [1, 0], [1, 2], [1, 4], [1, 6],
+#     [2, 1], [2, 3], [2, 6]
+# ]
 
-lists_trails_seed.each do |list_id, trail_id|
-    ListsTrail.create(
-        list_id: list_id, 
-        trail_id: trail_id
-    )
-end
+# lists_trails_seed.each do |list_id, trail_id|
+#     ListsTrail.create(
+#         list_id: list_id, 
+#         trail_id: trail_id
+#     )
+# end

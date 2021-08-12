@@ -8,7 +8,7 @@ const EntitiesReducer = combineReducers({
     users: UsersReducer, 
     trails: TrailsReducer, 
     lists: ListsReducer, 
-    listTrailRelations: ListsTrailsReducer
+    // listTrailRelations: ListsTrailsReducer
 });
 
 export default EntitiesReducer;

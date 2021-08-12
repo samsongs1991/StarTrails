@@ -34,6 +34,9 @@ const receiveFilters = filters => ({
 //     }
 // }
 export const updateFilters = filters => dispatch => {
+
+    console.log("UPDATE FILTERS IS FIRING");
+
     // dispatching receiveFilter will update the local store
     // with the current bounds info
     dispatch(receiveFilters(filters));
