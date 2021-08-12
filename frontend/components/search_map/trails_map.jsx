@@ -1,12 +1,27 @@
 import React from "react";
 import MarkerManager from "../../util/marker_manager";
 
+
+// --------------------------------------------------
+// SETS MAP CENTER TO BE THE USER'S DEVICE LOCATION
 const mapOptions = {
-    center: { lat: 31.8124, lng: -106.4213 }, 
+    center: { lat: 0, lng: 0 }, 
     zoom: 13
 };
 
+const success = (pos) => {
+    let userLatitude = pos.coords.latitude;
+    let userLongitude = pos.coords.longitude;
+    mapOptions.center.lat = userLatitude;
+    mapOptions.center.lng = userLongitude;
+}
+
+navigator.geolocation.getCurrentPosition(success);
+// --------------------------------------------------
+
+
 class TrailsMap extends React.Component {
+
     componentDidMount() {
         this.map = new google.maps.Map(this.mapNode, mapOptions);
 
