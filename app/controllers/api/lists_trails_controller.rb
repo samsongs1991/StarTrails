@@ -11,7 +11,13 @@ class Api::ListsTrailsController < ApplicationController
 
     def destroy
         @list_trail = ListsTrail.find_by(id: params[:id])
+
         if @list_trail.delete
+
+            puts "-------------------------"
+            puts "RELATION DESTROYED"
+            puts "-------------------------"
+
             render :show 
         else
 
@@ -19,7 +25,9 @@ class Api::ListsTrailsController < ApplicationController
     end
 
     def index 
-        @lists_trails = ListsTrail.byList(params[:list_id])
+
+        @lists_trails = ListsTrail.byList(params[:listId])
+
         if @lists_trails
             render :index
         else

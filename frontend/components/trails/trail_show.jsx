@@ -1,6 +1,6 @@
 import React from "react";
 import * as TrailShowUtil from "../../util/trail_show_util";
-import ListTrailForm from "./list_trail_form";
+import ListTrailFormContainer from "./list_trail_form_container";
 
 class TrailShow extends React.Component {
     constructor(props) {
@@ -26,13 +26,13 @@ class TrailShow extends React.Component {
     showAddTrailButton(currentUserId) {
         if(currentUserId) {
             return (
-                <button onClick={this.showFormModal} >Add to list</button>
+                <button onClick={this.showFormModal} >Add to a list</button>
                 );
         }
     }
 
     render() {
-        const { trail, currentUserId, lists, createListTrailRelation, fetchLists } = this.props
+        const { trail, currentUserId } = this.props
         return (
             <div className="trail-show" >
                 <div>
@@ -54,7 +54,18 @@ class TrailShow extends React.Component {
                     {this.showAddTrailButton(currentUserId)}
                 </div>
 
-                <ListTrailForm currentUserId={currentUserId} fetchLists={fetchLists} hideFormModal={this.hideFormModal} show={this.state.show} lists={lists} createListTrailRelation={createListTrailRelation} trail={trail} />
+                <ListTrailFormContainer
+                    hideFormModal={this.hideFormModal} 
+                    show={this.state.show} 
+                    trail={trail} 
+                    // -----------------
+                    // currentUserId={currentUserId}
+                    // lists={lists}
+                    // fetchLists={fetchLists}
+                    // createListTrailRelation={createListTrailRelation}
+                    // destroyListTrailRelation={destroyListTrailRelation}
+                    // fetchListTrailRelations={fetchListTrailRelations}
+                />
 
                 <div>
                     {/* vvv SAVE THIS FOR LATER vvv */}

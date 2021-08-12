@@ -4,7 +4,7 @@ import Root from "./root"
 import configureStore from "./store/store";
 
 // for testing only
-
+import { createListTrailRelation, destroyListTrailRelation, fetchListTrailRelations } from "./util/list_trail_api_util";
 // ^^^^^^^^^^^^^^^^
 
 
@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // for testing only
     window.store = store;
     window.dispatch = store.dispatch;
+    window.fetchListTrailRelations = fetchListTrailRelations
     // ^^^^^^^^^^^^^^^^
 
   });

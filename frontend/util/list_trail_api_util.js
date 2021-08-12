@@ -8,7 +8,8 @@ export const fetchListTrailRelation = listTrailRelationId => dispatch => (
 export const fetchListTrailRelations = listId => dispatch => (
     $.ajax({
         url: `/api/lists_trails`, 
-        method: "GET"
+        method: "GET", 
+        data: { listId }
     })
 )
 

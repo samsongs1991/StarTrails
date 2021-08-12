@@ -4,7 +4,7 @@ const ListsTrailsReducer = (oldState={}, action) => {
     Object.freeze(oldState);
     switch(action.type) {
         case RECEIVE_LIST_TRAIL_RELATIONS:
-            return action.listTrailRelations; 
+            return Object.assign({}, oldState, action.listTrailRelations);
         case RECEIVE_LIST_TRAIL_RELATION:
             return Object.assign({}, oldState, { [action.listTrailRelation.id]: action.listTrailRelation });
         case REMOVE_LIST_TRAIL_RELATION:

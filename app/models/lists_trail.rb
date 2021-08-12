@@ -16,7 +16,7 @@ class ListsTrail < ApplicationRecord
     # ----------------------------------------------
 
     def self.byList(list_id)
-        self.where("list_id === ?", list_id)
+        self.where("list_id = ?", list_id)
     end
 
 end
