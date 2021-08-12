@@ -5,8 +5,6 @@ class Trail < ApplicationRecord
     # validates :country, presence: true
     validates :difficulty, inclusion: { in: ["easy", "moderate", "hard"]}, allow_nil: true
 
-    belongs_to :list
-
     has_many :lists_trails,
         primary_key: :id, 
         foreign_key: :trail_id, 

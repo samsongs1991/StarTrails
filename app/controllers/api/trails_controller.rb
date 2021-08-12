@@ -1,5 +1,5 @@
 class Api::TrailsController < ApplicationController
-    before_action :require_signed_in, only: [:create]
+    # before_action :require_signed_in, only: [:create]
 
     def index
         if params[:bounds]
@@ -26,7 +26,7 @@ class Api::TrailsController < ApplicationController
 
     def create
         @trail = Trail.new(trail_params)
-        if @trail.save 
+        if @trail.save
             # if the trail can be saved to db after all validations
             # then take user to the new trail
             # (for now, only admins can make trails)
