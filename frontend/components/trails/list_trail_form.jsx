@@ -42,12 +42,14 @@ class ListTrailForm extends React.Component {
                 );
             }
         } else {
-            return null;
+            return (
+                <button onClick={() => this.handleCreateListTrailRelation(list.id, trail.id)} >Add to list</button>
+            );
         }
     }
     
     render() {
-        const { show, lists, trail, hideFormModal, fetchListTrailRelations } = this.props;
+        const { show, lists, trail, hideFormModal } = this.props;
         
         if(show) {
             return (
@@ -55,12 +57,12 @@ class ListTrailForm extends React.Component {
                     <h3>Save to list</h3>
                     <button onClick={hideFormModal} >Close</button>
                     <ul>
-                        {/* {Object.values(lists).map(list => (
+                        {Object.values(lists).map(list => (
                             <li key={list.id} >
                                 <div>{list.title}</div>
                                 {this.addRemoveButton(list, trail)}
                             </li>
-                        ))} */}
+                        ))}
                         {/* Above code has bug. List of user lists is not rendering. */}
                     </ul>
                 </div>

@@ -58,13 +58,6 @@ class TrailShow extends React.Component {
                     hideFormModal={this.hideFormModal} 
                     show={this.state.show} 
                     trail={trail} 
-                    // -----------------
-                    // currentUserId={currentUserId}
-                    // lists={lists}
-                    // fetchLists={fetchLists}
-                    // createListTrailRelation={createListTrailRelation}
-                    // destroyListTrailRelation={destroyListTrailRelation}
-                    // fetchListTrailRelations={fetchListTrailRelations}
                 />
 
                 <div>

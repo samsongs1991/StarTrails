@@ -15,6 +15,4 @@ if @list
             end
         end
     end
-    
-
 end

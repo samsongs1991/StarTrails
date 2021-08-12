@@ -7,10 +7,24 @@ export const receiveList = list => ({
 })
 
 export const RECEIVE_LISTS = "RECEIVE_LISTS";
-const receiveLists = lists => ({
-    type: RECEIVE_LISTS, 
-    lists
-})
+const receiveLists = lists => {
+    for(let listId in lists) {
+        if(lists[listId].listTrailRelations === undefined) {
+            lists[listId].listTrailRelations = {};
+        }
+    }
+
+    for(let listId in lists) {
+        if(lists[listId].trails === undefined) {
+            lists[listId].trails = {};
+        }
+    }
+
+    return ({
+        type: RECEIVE_LISTS, 
+        lists
+    });
+}
 
 export const REMOVE_LIST = "REMOVE_LIST";
 const removeList = listId => ({

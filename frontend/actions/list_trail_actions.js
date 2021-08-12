@@ -32,6 +32,7 @@ export const fetchListTrailRelations = listId => dispatch => (
 
 export const createListTrailRelation = (listId, trailId) => dispatch => (
     ListTrailApiUtils.createListTrailRelation(listId, trailId) 
+        // .then(listTrailRelation => console.log("I AM IN THE LIST TRAIL ACTIONS"))
         .then(listTrailRelation => dispatch(receiveListTrailRelation(listTrailRelation)))
 )
 
