@@ -22,7 +22,7 @@ class ListIndexItem extends React.Component {
             <li>
                 <button onClick={this.showListTrailsModal} >{this.props.list.title}</button>
                 <button onClick={() => this.props.destroyList(this.props.list.id)} >Delete list</button>
-                <ListTrails list={this.props.list} hideListTrailsModal={this.hideListTrailsModal} show={this.state.show} />
+                <ListTrails destroyListTrailRelation={this.props.destroyListTrailRelation} lists={this.props.lists} list={this.props.list} hideListTrailsModal={this.hideListTrailsModal} show={this.state.show} />
             </li>
         );
     }

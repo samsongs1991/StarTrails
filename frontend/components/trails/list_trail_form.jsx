@@ -31,14 +31,18 @@ class ListTrailForm extends React.Component {
     }
 
     addRemoveButton(list, trail) {
-        if(list.trails[trail.id]) {
-            return (
-                <button onClick={() => this.handleDestroyListTrailRelation(list.id, trail.id)} >Remove from list</button>
-            );
+        if(list.trails) {
+            if(list.trails[trail.id]) {
+                return (
+                    <button onClick={() => this.handleDestroyListTrailRelation(list.id, trail.id)} >Remove from list</button>
+                );
+            } else {
+                return (
+                    <button onClick={() => this.handleCreateListTrailRelation(list.id, trail.id)} >Add to list</button>
+                );
+            }
         } else {
-            return (
-                <button onClick={() => this.handleCreateListTrailRelation(list.id, trail.id)} >Add to list</button>
-            );
+            return null;
         }
     }
     
@@ -51,12 +55,13 @@ class ListTrailForm extends React.Component {
                     <h3>Save to list</h3>
                     <button onClick={hideFormModal} >Close</button>
                     <ul>
-                        {Object.values(lists).map(list => (
+                        {/* {Object.values(lists).map(list => (
                             <li key={list.id} >
                                 <div>{list.title}</div>
                                 {this.addRemoveButton(list, trail)}
                             </li>
-                        ))}
+                        ))} */}
+                        {/* Above code has bug. List of user lists is not rendering. */}
                     </ul>
                 </div>
             );
