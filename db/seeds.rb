@@ -82,14 +82,14 @@ List.create(
 # ***** L I S T S - T R A I L S *******
 # *************************************
 
-# lists_trails_seed = [
-#     [1, 0], [1, 2], [1, 4], [1, 6],
-#     [2, 1], [2, 3], [2, 6]
-# ]
+lists_trails_seed = [
+    [1, 0], [1, 2], [1, 4], [1, 6],
+    [2, 1], [2, 3], [2, 6]
+]
 
-# lists_trails_seed.each do |list_id, trail_id|
-#     ListsTrail.create(
-#         list_id: list_id, 
-#         trail_id: trail_id
-#     )
-# end
+lists_trails_seed.each do |list_id, trail_id|
+    ListsTrail.create(
+        list_id: list_id, 
+        trail_id: trail_id
+    )
+end
