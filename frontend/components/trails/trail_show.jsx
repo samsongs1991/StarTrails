@@ -1,22 +1,39 @@
 import React from "react";
 import * as TrailShowUtil from "../../util/trail_show_util";
+import ListTrailForm from "./list_trail_form";
 
 class TrailShow extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = { show: false};
+        this.showFormModal = this.showFormModal.bind(this);
+        this.hideFormModal = this.hideFormModal.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchTrail(this.props.trailId);
     }
 
+    showFormModal() {
+        this.setState({ show: true });
+    } 
+
+    hideFormModal() {
+        this.setState({ show: false });
+    }
+
+    showAddTrailButton(currentUserId) {
+        if(currentUserId) {
+            return (
+                <button onClick={this.showFormModal} >Add to list</button>
+                );
+        }
+    }
+
     render() {
-        const { trail } = this.props
+        const { trail, currentUserId, lists, createListTrailRelation, fetchLists } = this.props
         return (
             <div className="trail-show" >
-                Trail Show component is working
-
                 <div>
                     {/* location header bar */}
                     {/* country > state > city/location > trail name */}
@@ -33,8 +50,10 @@ class TrailShow extends React.Component {
                         {TrailShowUtil.numReviews(trail)} */}
                     </div>
                     <div>{TrailShowUtil.trailLocation(trail)}</div>
-                    {/* <button></button> THIS BUTTON WILL ADD THE TRAIL TO A USER LIST - open a save to list modal*/}
+                    {this.showAddTrailButton(currentUserId)}
                 </div>
+
+                <ListTrailForm currentUserId={currentUserId} fetchLists={fetchLists} hideFormModal={this.hideFormModal} show={this.state.show} lists={lists} createListTrailRelation={createListTrailRelation} trail={trail} />
 
                 <div>
                     {/* vvv SAVE THIS FOR LATER vvv */}
@@ -45,27 +64,22 @@ class TrailShow extends React.Component {
                 </div>
 
                 <div>
-                    {/* description */}
                     <p>{trail.description}</p>
                 </div>
 
                 <div>
-                    {/* length */}
                     <div>
                         <p>Length</p>
                         <p>{trail.length} mi</p>
                     </div>
-                    {/* elevation gain */}
                     <div>
                         <p>Elevation gain</p>
                         <p>{trail.gain} ft</p>
                     </div>
-                    {/* route type */}
                     <div>
                         <p>Route type</p>
                         <p>{trail.category}</p>
                     </div>
-                    {/* time */}
                     <div>
                         <p>Time</p>
                         <p>{TrailShowUtil.trailTime(trail)}</p>

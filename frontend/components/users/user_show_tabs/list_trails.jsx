@@ -11,6 +11,8 @@ const ListTrails = props => {
             <div>
                 <h3>{list.title}</h3>
                 <ul>
+                {console.log(list)}
+                {console.log(list.trails)}
                     {Object.values(list.trails).map(trail => (
                         <Link to={`/trails/${trail.id}`} key={trail.id} ><li>{trail.name} - {trailLocation(trail)}</li></Link>
                     ))}
