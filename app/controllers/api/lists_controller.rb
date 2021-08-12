@@ -10,9 +10,7 @@ class Api::ListsController < ApplicationController
         if @list.save 
             render :show
         else
-            puts "-------------------"
-            puts "List did NOT save. Something went wrong."
-            puts "-------------------"
+
         end
     end
 
@@ -21,9 +19,7 @@ class Api::ListsController < ApplicationController
         if @list 
             render :show
         else
-            puts "-------------------"
-            puts "List wasn't found. Something went wrong."
-            puts "-------------------" 
+
         end
     end
 
@@ -32,9 +28,7 @@ class Api::ListsController < ApplicationController
         if @list.update(edit_list_params)
             render :show
         else
-            puts "-------------------"
-            puts "List wasn't updated. Something went wrong."
-            puts "-------------------" 
+            
         end    
     end
 
