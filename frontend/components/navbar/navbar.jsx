@@ -45,12 +45,12 @@ class Navbar extends React.Component {
         const { currentUser } = this.props;
         if(show) {
             return (
-                <ul>
-                    <li><Link to={`/users/${currentUser.id}`} >Profile</Link></li>
-                    <li><Link to={`/users/${currentUser.id}/photos`} >Photos</Link></li>
-                    <li><Link to="/users" >Members</Link></li>
-                    <li><Link to={`/users/${currentUser.id}/settings`} >Settings</Link></li>
-                    <li><Link to="/" ><button onClick={this.handleLogoutClick} >Logout</button></Link></li>
+                <ul className="profile-icon-modal" >
+                    <Link to={`/users/${currentUser.id}`} >Profile</Link>
+                    <Link to={`/users/${currentUser.id}/photos`} >Photos</Link>
+                    <Link to="/users" >Members</Link>
+                    <Link to={`/users/${currentUser.id}/settings`} >Settings</Link>
+                    <Link to="/" ><button onClick={this.handleLogoutClick} >Logout</button></Link>
                 </ul>
             );
         } else {
