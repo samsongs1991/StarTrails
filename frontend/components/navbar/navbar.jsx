@@ -71,8 +71,8 @@ class Navbar extends React.Component {
 
     sessionLinks = () => (
         <ul className="session-links" >
-            <li><Link to="/signup" >Sign Up</Link></li>
-            <li><Link to="/signin" >Log In</Link></li>
+            <Link to="/signup" >Sign Up</Link>
+            <Link to="/signin" >Log In</Link> 
         </ul>
     )
 

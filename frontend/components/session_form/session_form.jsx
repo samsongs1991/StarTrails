@@ -59,7 +59,7 @@ class SessionForm extends React.Component {
 
     loginDemo() {
         const demoUser = { email: "demo@gmail.com", password: "123456" }
-        this.props.processForm(demoUser);
+        this.props.demoUserLogin(demoUser);
     }
 
     render() {

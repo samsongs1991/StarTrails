@@ -67,14 +67,14 @@ nav .session-links {
     margin-right: 0px;
 }
 
-nav .session-links li {
+nav .session-links a {
     border: 2px solid rgb(41, 156, 190);
     border-radius: 10px;
     padding: 10px;
     margin: 6px;
 }
 
-nav .session-links li:hover {
+nav .session-links a:hover {
     opacity: 0.7;
 }
 
@@ -82,15 +82,15 @@ nav .session-links a {
     text-decoration: none;
 }
 
-nav .session-links li:first-child {
+nav .session-links a:first-child {
     background-color: rgb(41, 156, 190);
 }
 
-nav .session-links li a {
+nav .session-links a {
     color: rgb(41, 156, 190);
 }
 
-nav .session-links li:first-child a {
+nav .session-links a:first-child {
     color: white;
 }
 
@@ -101,7 +101,8 @@ nav .profile-icon img {
 
 nav .profile-icon ul {
     /* visibility: hidden; */
-    visibility: visible;
+    /* visibility: visible; */
+    display: block;
 }
 
 /* #################################### */
@@ -117,7 +118,7 @@ nav .profile-icon ul {
     border-radius: 20px;
     padding: 24px;
     width: 420px;
-    height: 350px;
+    height: 420px;
     box-shadow: 0 0 15px 0.2px rgb(211, 211, 211);
     margin: auto;
     margin-top: 10%;
