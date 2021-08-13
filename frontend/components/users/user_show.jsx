@@ -15,13 +15,15 @@ class UserShow extends React.Component {
     render() {
         return (
             <div className="user-show" >
-                <ul>
-                    <li><Link to={`/users/${this.props.userId}`} >Profile</Link></li>
-                    <li><Link to={`/users/${this.props.userId}/lists`} >Lists</Link></li>
-                    <li><Link to={`/users/${this.props.userId}/activities`} >Activities</Link></li>
-                    <li><Link to={`/users/${this.props.userId}/reviews`} >Reviews</Link></li>
-                    <li><Link to={`/users/${this.props.userId}/photos`} >Photos</Link></li>
-                </ul>
+                <div className="user-show-navbar" >
+                    <ul>
+                        <li><Link to={`/users/${this.props.userId}`} >Profile</Link></li>
+                        <li><Link to={`/users/${this.props.userId}/lists`} >Lists</Link></li>
+                        <li><Link to={`/users/${this.props.userId}/activities`} >Activities</Link></li>
+                        <li><Link to={`/users/${this.props.userId}/reviews`} >Reviews</Link></li>
+                        <li><Link to={`/users/${this.props.userId}/photos`} >Photos</Link></li>
+                    </ul>
+                </div>
 
                 <Switch>
                     <Route exact path="/users/:userId" component={ProfileContainer} />
