@@ -13,8 +13,8 @@ class TrailIndexItem extends React.Component {
         return (
             <Link to={`/trails/${trail.id}`} className="trail-index-item" > 
                 <li>
+                    <img src="/images/StockHikeImage.jpg" alt={"Image of " + trail.name} />
                     <div>
-                        <img src="" alt={"Image of " + trail.name} />
                         <h3>{trail.name}</h3>
                         <div>{TrailShowUtil.trailLocation(trail)}</div>
                         <div>
@@ -24,9 +24,9 @@ class TrailIndexItem extends React.Component {
                             {TrailShowUtil.numReviews(trail)} */}
                         </div>
                         <div>
-                            <p>Length: {trail.length} mi</p>
-                            <p> - </p>
-                            <p>Est. {TrailShowUtil.trailTime(trail)}</p>
+                            <p>Length: {trail.length} mi  -  Est. {TrailShowUtil.trailTime(trail)}</p>
+                            {/* <p> - </p>
+                            <p>Est. {TrailShowUtil.trailTime(trail)}</p> */}
                         </div>
                     </div>
 

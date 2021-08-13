@@ -24,13 +24,14 @@ class Profile extends React.Component {
         const { user } = this.props;
         console.log(this.props);
         return (
-            <div>
-                <div>
+            <div className="profile-page" >
+                <div >
                     <h3>Profile</h3>
-                    <div>
+                    <div id="profile">
                         <div>
+                            <img src="/images/BlankProfilePic.png" alt="Profile image" />
                             {/* Profile pic */}
-                            <p>Member Since</p>
+                            <p className="profile-member" >Member Since</p>
                             <p>{this.convertDate(user.created_at)}</p>
                         </div>
                         <div>

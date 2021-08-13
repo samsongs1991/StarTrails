@@ -17,6 +17,21 @@
  body {
      text-decoration: none;
  }
+/* #################################### */
+/* ############# H O M E ############## */
+/* ############# P A G E ############## */
+/* #################################### */
+
+.home {
+    height: 100%;
+    width: 100%;
+}
+
+.home img {
+    padding-top: 12px;
+    width: 100%;
+    opacity: 0.9;
+}
 
 /* #################################### */
 /* ############ N A V B A R ########### */
@@ -159,8 +174,17 @@ nav .profile-icon-modal a:hover {
 /* ########## -- F O R M -- ########### */
 /* #################################### */
 
+.session-background {
+    background: linear-gradient(217deg, #428a13, rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, #85c958, rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(255, 255, 255, 0.8), rgba(0,0,255,0) 70.71%);
+    /* background-image: url("../../../public/images/HomeImage.jpg"); */
+    height: 793px;
+}
+
 /* Session form container */
 .session-form {
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -388,11 +412,44 @@ nav .profile-icon-modal a:hover {
     border-radius: 10px;
     box-shadow: 0 0 10px 1px rgb(190, 190, 190);
     margin: 30px;
+    height: 225px;
 }
 
 .trail-index-item {
     text-decoration: inherit;
-    color: inherit;
+    color: gray;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.trail-index-item li {
+    transition: all 0.15s ease-in-out;
+}
+
+.trail-index-item li:hover {
+    opacity: 0.85;
+}
+
+.trail-index-item h3 {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+.trail-index-item > li > div {
+    padding: 5px 15px 15px 15px;
+}
+
+.trail-index-item > li > div:last-child img {
+    height: 25px;
+}
+
+.trail-index-item > li > img {
+    height: 120px;
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
 }
 
 /* Trails map */
@@ -428,7 +485,7 @@ nav .profile-icon-modal a:hover {
 .user-show .user-show-navbar {
     width: 800px;
     height: 60px;
-    border-bottom: 0.5px solid rgb(235, 235, 235);
+    /* border-bottom: 0.5px solid rgb(235, 235, 235); */
 }
 
 /* List within navbar container */
@@ -451,6 +508,48 @@ nav .profile-icon-modal a:hover {
 .user-show .user-show-navbar a:hover {
     color: #428a13;
     border-bottom: 3px solid #428a13;
+}
+
+/* Profile page */
+.profile-page {
+    width: 800px;
+    height: 600px;
+    border: 2px solid rgb(207, 207, 207);
+}
+
+.profile-page h3 {
+    background-color: rgb(236, 236, 236);
+    height: 35px;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(61, 61, 61);
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+#profile {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: rgb(61, 61, 61);
+}
+
+#profile div {
+    margin: 10px;
+}
+
+#profile div:first-child p {
+    padding: 5px;
+    font-weight: bold;
+}
+
+#profile div:last-child {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* #################################### */

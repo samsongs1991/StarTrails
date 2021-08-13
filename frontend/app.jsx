@@ -8,7 +8,7 @@ import { AuthRoute, ProtectedRoute } from "./util/route_util";
 import SearchContainer from "./components/search_map/search_container";
 import UserContainer from "./components/users/user_container";
 import TrailShowContainer from "./components/trails/trail_show_container";
-
+import Home from "./components/home/home";
 
 // TEST CODE ----------------------------------------
 // --------------------------------------------------
@@ -20,6 +20,8 @@ const App = () => (
             <NavbarContainer />
         </header>
         
+        <Route exact path="/" component={Home}/>
+
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <AuthRoute path="/signin" component={SigninFormContainer} />
 

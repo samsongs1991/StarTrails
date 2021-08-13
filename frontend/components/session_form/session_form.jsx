@@ -64,21 +64,25 @@ class SessionForm extends React.Component {
 
     render() {
         return (
-            <div className="session-form">
-                <h3>{this.sessionFormMessage()}</h3>
-                <form onSubmit={this.handleSubmit} >
-                    <input onChange={this.update("email")} value={this.state.email} type="email" placeholder="Email" />
-                    <div>{this.props.errors.email}</div>
-                
-                    <input onChange={this.update("password")} value={this.state.password} type="password" placeholder="Password" />
-                    <div>{this.props.errors.password}</div>
-
-                    <div>{this.props.errors.signin}</div> 
+            <div className="session-background" >
+                <img src="" alt="" />
+                <div className="session-form">
+                    <h3>{this.sessionFormMessage()}</h3>
+                    <form onSubmit={this.handleSubmit} >
+                        <input onChange={this.update("email")} value={this.state.email} type="email" placeholder="Email" />
+                        <div>{this.props.errors.email}</div>
                     
-                    <button type="submit">{this.buttonText()}</button>
-                </form>
-                <button onClick={this.loginDemo} >Demo User Log In</button>
-                {this.props.navLink}
+                        <input onChange={this.update("password")} value={this.state.password} type="password" placeholder="Password" />
+                        <div>{this.props.errors.password}</div>
+
+                        <div>{this.props.errors.signin}</div> 
+                        
+                        <button type="submit">{this.buttonText()}</button>
+                    </form>
+                    <button onClick={this.loginDemo} >Demo User Log In</button>
+                    {this.props.navLink}
+                </div>
+                <img src="" alt="" />
             </div>
         );
     }
