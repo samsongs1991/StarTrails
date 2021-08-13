@@ -48,8 +48,8 @@ class ListIndex extends React.Component {
     render() {
         const { userId, currentUserId, createList } = this.props
         return (
-            <div>
-                <div>
+            <div className="lists-page" >
+                <div id="lists-header" >
                     <h3>Lists</h3>
                     {this.showCreateListButton(userId, currentUserId)}
                 </div>

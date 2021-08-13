@@ -15,7 +15,7 @@ class ListTrails extends React.Component {
         } else {
             return (
                 Object.values(this.props.list.trails).map(trail => (
-                    <div key={trail.id} >
+                    <div className="list-trail-item" key={trail.id} >
                         <Link to={`/trails/${trail.id}`} ><li>{trail.name} - {trailLocation(trail)}</li></Link>
                         <button onClick={() => this.handleDestroyListTrailRelation(this.props.list.id, trail.id)} >Remove from list</button>
                     </div>
@@ -42,7 +42,6 @@ class ListTrails extends React.Component {
         if(show) {
             return (
                 <div>
-                    <h3>{list.title}</h3>
                     <ul>
                         {this.showTrails()}
                     </ul>
