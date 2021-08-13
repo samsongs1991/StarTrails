@@ -56,12 +56,18 @@ class SearchFilterBar extends React.Component {
     difficulty() {
         return (
             <div id="difficulty">
-                <input onClick={this.handleDifficultyClick} type="checkbox" value="easy" />
-                <label>Easy</label>
-                <input onClick={this.handleDifficultyClick} type="checkbox" value="moderate" />
-                <label>Moderate</label>
-                <input onClick={this.handleDifficultyClick} type="checkbox" value="hard" />
-                <label>Hard</label>
+                <div>
+                    <input onClick={this.handleDifficultyClick} type="checkbox" value="easy" />
+                    <label>Easy</label>
+                </div>
+                <div>
+                    <input onClick={this.handleDifficultyClick} type="checkbox" value="moderate" />
+                    <label>Moderate</label>
+                </div>
+                <div>
+                    <input onClick={this.handleDifficultyClick} type="checkbox" value="hard" />
+                    <label>Hard</label>
+                </div>
             </div>
         );
     }
@@ -79,10 +85,10 @@ class SearchFilterBar extends React.Component {
     length() {
         return (
             <div id="length">
-                <label>Min: </label>
-                <input onChange={this.updateLength("min")} type="text" placeholder="min miles" value={this.state.filterState.length.min} />           
-                <label>Max: </label>             
-                <input onChange={this.updateLength("max")} type="text" placeholder="max miles" value={this.state.filterState.length.max} />                        
+                {/* <label>Min: </label> */}
+                <input onChange={this.updateLength("min")} type="text" placeholder="min miles" />           
+                {/* <label>Max: </label>              */}
+                <input onChange={this.updateLength("max")} type="text" placeholder="max miles" />                        
             </div>
         );
     }
@@ -100,10 +106,10 @@ class SearchFilterBar extends React.Component {
     gain() {
         return (
             <div id="gain">
-                <label>Min: </label>
-                <input onChange={this.updateGain("min")} type="text" placeholder="min ft" value={this.state.filterState.gain.min} />           
-                <label>Max: </label>             
-                <input onChange={this.updateGain("max")}type="text" placeholder="max ft" value={this.state.filterState.gain.max}/>                        
+                {/* <label>Min: </label> */}
+                <input onChange={this.updateGain("min")} type="text" placeholder="min ft" />           
+                {/* <label>Max: </label>              */}
+                <input onChange={this.updateGain("max")}type="text" placeholder="max ft" />                        
             </div>
         );
     }
@@ -121,12 +127,12 @@ class SearchFilterBar extends React.Component {
     time() {
         return (
             <div id="time">
-                <label>Min: </label>
-                <input onChange={this.updateTime("min", "hrs")} type="text" placeholder="hours" value={this.state.filterState.time.min.hrs} />           
-                <input onChange={this.updateTime("min", "mins")} type="text" placeholder="minutes" value={this.state.filterState.time.min.mins} />   
-                <label>Max: </label>         
-                <input onChange={this.updateTime("max", "hrs")} type="text" placeholder="hours" value={this.state.filterState.time.min.hrs} />               
-                <input onChange={this.updateTime("max", "mins")} type="text" placeholder="minutes" value={this.state.filterState.time.max.mins} />                        
+                {/* <label>Min: </label> */}
+                <input onChange={this.updateTime("min", "hrs")} type="text" placeholder="min hours" />           
+                <input onChange={this.updateTime("min", "mins")} type="text" placeholder="min minutes" />   
+                {/* <label>Max: </label>          */}
+                <input onChange={this.updateTime("max", "hrs")} type="text" placeholder="max hours" />               
+                <input onChange={this.updateTime("max", "mins")} type="text" placeholder="max minutes" />                        
             </div>
         );
     }
@@ -140,12 +146,18 @@ class SearchFilterBar extends React.Component {
     category() {
         return (
             <div id="category">
-                <input onClick={this.handleCategoryClick} type="checkbox" value="loop" />
-                <label>Loop</label>
-                <input onClick={this.handleCategoryClick} type="checkbox" value="outAndBack" />
-                <label>Out and Back</label>
-                <input onClick={this.handleCategoryClick} type="checkbox" value="pointToPoint" />
-                <label>Point to Point</label>
+                <div>
+                    <input onClick={this.handleCategoryClick} type="checkbox" value="loop" />
+                    <label>Loop</label>
+                </div>
+                <div>
+                    <input onClick={this.handleCategoryClick} type="checkbox" value="outAndBack" />
+                    <label>Out and Back</label>
+                </div>
+                <div>
+                    <input onClick={this.handleCategoryClick} type="checkbox" value="pointToPoint" />
+                    <label>Point to Point</label>
+                </div>
             </div>
         );
     }

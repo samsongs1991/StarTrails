@@ -5,7 +5,7 @@ import MarkerManager from "../../util/marker_manager";
 // --------------------------------------------------
 // SETS MAP CENTER TO BE THE USER'S DEVICE LOCATION
 const mapOptions = {
-    center: { lat: 0, lng: 0 }, 
+    center: { lat: 47.6062, lng: -122.3321 }, 
     zoom: 13
 };
 
