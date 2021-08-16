@@ -1,7 +1,4 @@
 # README
-* Discussion of technologies used
-* Delve deep into ~2 features that show off your technical abilities. Discuss both the challenges faced and your brilliant solutions.
-* Code snippets to highlight your best code (markdown code snippets, NOT screenshots)
 
 # [StarTrails](https://star-trails-9001.herokuapp.com/#/)
 [StarTrails](https://star-trails-9001.herokuapp.com/#/) is an [AllTrails](https://www.alltrails.com/) clone project.
@@ -18,11 +15,11 @@ To save a trail for later, a user can create a list and add trails to it.
 
 ## Technologies Used
 * Rails
-* * Ruby on Rails was used for the project's backend.
+    * Ruby on Rails was used for the project's backend.
 * React / Redux
-* * The React library and Redux library for JavaScript were used in conjunction for the project's frontend.
+    * The React library and Redux library for JavaScript were used in conjunction for the project's frontend.
 * PostgreSQL
-* * PostgreSQL was used for the project's database. It is a relational database that uses tables store data. 
+    * PostgreSQL was used for the project's database. It is a relational database that uses tables to store data. 
 
 ## Features 
 * [Map](#map)
@@ -35,5 +32,3 @@ In addition to grabbing the hiking trails based on the bounds of the map, a user
 
 ## Lists
 Users can create lists of trails like creating a playlist of songs. Once a list is created, a user can enter the details page of any hiking trail and click a button to add it to any of the lists the user has created. If the trail is already on the list, then a remove button will replace the add button to remove it from the list. Any list can be deleted by the user and trails can be removed from any list in the user's list management page. 
-
-Code snippets
