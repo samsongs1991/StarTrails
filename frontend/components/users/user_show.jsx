@@ -6,7 +6,7 @@ import Activities from "./user_show_tabs/activities";
 import Reviews from "./user_show_tabs/reviews";
 import Photos from "./user_show_tabs/photos";
 import SettingsContainer from "./user_show_tabs/settings_container";
-import { AuthRoute } from "../../util/route_util";
+import { ProtectedRoute } from "../../util/route_util";
 
 class UserShow extends React.Component {
     componentDidMount() {
@@ -32,7 +32,7 @@ class UserShow extends React.Component {
                     <Route path="/users/:userId/activities" component={Activities} />
                     <Route path="/users/:userId/reviews" component={Reviews} />
                     <Route path="/users/:userId/photos" component={Photos} />
-                    <AuthRoute path="/users/:userId/settings" component={SettingsContainer} />
+                    <ProtectedRoute path="/users/:userId/settings" component={SettingsContainer} />
                 </Switch>
             </div>
         );
