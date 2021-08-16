@@ -7,8 +7,17 @@ class ListTrails extends React.Component {
         super(props);
         this.showTrails = this.showTrails.bind(this);
         this.handleDestroyListTrailRelation = this.handleDestroyListTrailRelation.bind(this);
+        this.deleteTrailButton = this.deleteTrailButton.bind(this);
     }
     
+    deleteTrailButton(trail) {
+        if(this.props.authUser) {
+            return (
+                <button onClick={() => this.handleDestroyListTrailRelation(this.props.list.id, trail.id)} >Remove from list</button>
+            );
+        }
+    }
+
     showTrails() {
         if(this.props.list.trails === {} || this.props.list.trails === undefined) {
             return null;
@@ -17,7 +26,7 @@ class ListTrails extends React.Component {
                 Object.values(this.props.list.trails).map(trail => (
                     <div className="list-trail-item" key={trail.id} >
                         <Link to={`/trails/${trail.id}`} ><li>{trail.name} - {trailLocation(trail)}</li></Link>
-                        <button onClick={() => this.handleDestroyListTrailRelation(this.props.list.id, trail.id)} >Remove from list</button>
+                        {this.deleteTrailButton(trail)}
                     </div>
                 ))
             );

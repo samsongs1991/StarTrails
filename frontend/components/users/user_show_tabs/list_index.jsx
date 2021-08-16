@@ -38,7 +38,7 @@ class ListIndex extends React.Component {
         } else {
             return (
                 Object.values(this.props.lists).map(list => (
-                    <ListIndexItem destroyListTrailRelation={this.props.destroyListTrailRelation} lists={this.props.lists} destroyList={this.props.destroyList} list={list} key={list.id} />
+                    <ListIndexItem authUser={this.props.currentUserId === this.props.userId} destroyListTrailRelation={this.props.destroyListTrailRelation} lists={this.props.lists} destroyList={this.props.destroyList} list={list} key={list.id} />
                 ))
             );
         }
