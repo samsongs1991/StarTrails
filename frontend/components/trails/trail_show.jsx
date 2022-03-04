@@ -26,7 +26,7 @@ class TrailShow extends React.Component {
     showAddTrailButton(currentUserId) {
         if(currentUserId) {
             return (
-                <button onClick={this.showFormModal} >Add to a list</button>
+                <button onClick={this.showFormModal} >+</button>
                 );
         }
     }
@@ -35,24 +35,24 @@ class TrailShow extends React.Component {
         const { trail, currentUserId } = this.props
         return (
             <div className="trail-show" >
-                <div>
-                    {/* location header bar */}
-                    {/* country > state > city/location > trail name */}
-                    {/* search trail bar */}
-                </div>
-
-                <div>
-                    <img src="" alt={"Image of " + trail.name} />
-                    <h3>{trail.name}</h3>
-                    <div>
-                        {TrailShowUtil.difficultyLabel(trail)}
-                        {/* --- BELOW --- uncomment after reviews portion of DB is built */}
-                        {/* {TrailShowUtil.starRating(trail)}
-                        {TrailShowUtil.numReviews(trail)} */}
-                    </div>
-                    <div>{TrailShowUtil.trailLocation(trail)}</div>
+                <section id="trail-overview">
                     {this.showAddTrailButton(currentUserId)}
-                </div>
+                    <div>
+                        <h3>{trail.name}</h3>
+                        <div>
+                            <label className={trail.difficulty}>{trail.difficulty}</label>
+                            {/* --- BELOW --- uncomment after reviews portion of DB is built */}
+                            {/* {TrailShowUtil.starRating(trail)}
+                            {TrailShowUtil.numReviews(trail)} */}
+                        </div>
+                        <div>
+                            <div>{TrailShowUtil.trailLocation(trail)}</div>
+                        </div>
+                        <div className="divider">
+                            {/* Green dividing bar for css/styling only */}
+                        </div>
+                    </div>
+                </section>
 
                 <ListTrailFormContainer
                     hideFormModal={this.hideFormModal} 
@@ -60,54 +60,30 @@ class TrailShow extends React.Component {
                     trail={trail} 
                 />
 
-                <div>
-                    {/* vvv SAVE THIS FOR LATER vvv */}
-                    {/* trail show nav */}
-                    {/* - photos show page*/}
-                    {/* - directions (google maps) */}
-                    {/* - print/pdf map */}
+                <div id="trail-details">
+                    <div>
+                        <div>
+                            <p>Length</p>
+                            <p>{trail.length} mi</p>
+                        </div>
+                        <div>
+                            <p>Elevation gain</p>
+                            <p>{trail.gain} ft</p>
+                        </div>
+                        <div>
+                            <p>Route type</p>
+                            <p>{trail.category}</p>
+                        </div>
+                        <div>
+                            <p>Time</p>
+                            <p>{TrailShowUtil.trailTime(trail)}</p>
+                        </div>
+                    </div>
+                    <div id="mini-map">
+                        {/* MAP */}
+                    </div>
                 </div>
 
-                <div>
-                    <p>{trail.description}</p>
-                </div>
-
-                <div>
-                    <div>
-                        <p>Length</p>
-                        <p>{trail.length} mi</p>
-                    </div>
-                    <div>
-                        <p>Elevation gain</p>
-                        <p>{trail.gain} ft</p>
-                    </div>
-                    <div>
-                        <p>Route type</p>
-                        <p>{trail.category}</p>
-                    </div>
-                    <div>
-                        <p>Time</p>
-                        <p>{TrailShowUtil.trailTime(trail)}</p>
-                    </div>
-                </div>
-                
-                <div>
-                    {/* description */}
-                    {/* contact */}
-                    {/* getting there */}
-                    <ul>
-                        <li>Description</li>
-                        <li>Getting There</li>
-                    </ul>
-                    <p>{trail.directions}</p>
-                    {/* the ul will eventually be a tabs bar */}
-                    {/* the tabs will conditionally render corresponding data */}
-                </div>
-
-                <div>
-                    {/* weather widget */}
-                </div>
-                
                 <div>
                     <div>
                         {/* tabs bar with reviews / photos */}

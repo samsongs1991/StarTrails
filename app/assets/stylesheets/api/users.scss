@@ -1,3 +1,309 @@
 // Place all the styles related to the api/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* #################################### */
+/* ############ N A V B A R ########### */
+/* ############ ----------- ########### */
+/* #################################### */
+
+nav {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 65px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 1px 0px rgb(211, 211, 211);
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+/* Explore link */
+nav > a:first-child {
+    text-decoration: none;
+    color: rgb(73, 73, 73);
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 60px;
+}
+
+nav > a:hover {
+    color: #428a13;
+}
+
+/* Logo */
+nav img {
+    height: 65px;
+    margin-left: 30px;
+}
+
+nav img:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+/* Session links */
+nav .session-links {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 0px;
+}
+
+nav .session-links a {
+    border: 2px solid rgb(41, 156, 190);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 6px;
+}
+
+nav .session-links a:hover {
+    opacity: 0.7;
+}
+
+nav .session-links a {
+    text-decoration: none;
+}
+
+nav .session-links a:first-child {
+    background-color: rgb(41, 156, 190);
+}
+
+nav .session-links a {
+    color: rgb(41, 156, 190);
+}
+
+nav .session-links a:first-child {
+    color: white;
+}
+
+/* Profile icon */
+nav .profile-icon button {
+    border: none;
+    background: none;
+    padding-left: 75.5px;
+}
+
+nav .profile-icon img {
+    border-radius: 50%;
+}
+
+/* Profile icon modal */
+nav .profile-icon-modal {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: white;
+    box-shadow: 0 0 15px 0.2px rgb(231, 231, 231);
+    border-radius: 15px;
+    height: 200px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: left;
+    z-index: 9999;
+}
+
+nav .profile-icon-modal button {
+    padding: 0px 0px 0px 0px;
+}
+
+nav .profile-icon-modal a {
+    text-decoration: none;
+    color: rgb(148, 148, 148);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 5;
+    font-size: 14px;
+    padding: 10px;
+}
+
+nav .profile-icon-modal button {
+    text-decoration: none;
+    color: rgb(148, 148, 148);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 5;
+    font-size: 14px;
+    padding: 0px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+nav .profile-icon-modal a:hover {
+    background-color: rgb(245, 245, 245);;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* #################################### */
+/* ### U S E R - S H O W - P A G E #### */
+/* ###### D A S H - B O A R D ######### */
+/* #################################### */
+
+/* Dashboard container */
+.user-show {
+    margin-top: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Navbar container */
+.user-show .user-show-navbar {
+    width: 800px;
+    height: 60px;
+    /* border-bottom: 0.5px solid rgb(235, 235, 235); */
+}
+
+/* List within navbar container */
+.user-show .user-show-navbar ul {
+    margin-top: 1.5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Navbar Tabs */
+.user-show .user-show-navbar a {
+    text-decoration: none;
+    color: rgb(73, 73, 73);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.user-show .user-show-navbar a:hover {
+    color: #428a13;
+    border-bottom: 3px solid #428a13;
+}
+
+/* Profile page */
+.profile-page {
+    width: 800px;
+    height: 600px;
+    border: 2px solid rgb(207, 207, 207);
+}
+
+.profile-page h3 {
+    background-color: rgb(236, 236, 236);
+    height: 35px;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(61, 61, 61);
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+#profile {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: rgb(61, 61, 61);
+}
+
+#profile div {
+    margin: 10px;
+}
+
+#profile div:first-child p {
+    padding: 5px;
+    font-weight: bold;
+}
+
+#profile div:last-child {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Lists page */
+.lists-page {
+    width: 800px;
+    height: 600px;
+    border: 2px solid rgb(207, 207, 207);
+}
+
+#lists-header {
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: rgb(61, 61, 61);
+}
+
+#lists-header h3 {
+    background-color: rgb(236, 236, 236);
+    height: 35px;
+    width: 100%;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(61, 61, 61);
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+#lists-header button {
+    font-size: 16px;
+    color: rgb(51, 51, 51);
+    border-radius: 5px;
+}
+
+.lists-page > button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.lists-page a {
+    text-decoration: none;
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.lists-page li {
+    margin: 5px;
+}
+
+.lists-page li button {
+    background-color: #428a13;
+    border-radius: 5px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    height: 1.8em;
+}
+
+.lists-page li button:first-child:hover {
+    opacity: 0.8;
+}
+
+.lists-page li button:first-child {
+    background-color: #428a13;
+    border-radius: 5px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    height: 1.8em;
+    width: 85%;
+}
+
+.lists-page li button:first-child:hover {
+    opacity: 0.8;
+}
+
+.list-trail-item {
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-trail-item a:hover {
+    color: rgb(58, 58, 58);
+}

@@ -1,10 +1,11 @@
 x Remove "activities"
 x Remove "photos"
 x Remove "members"
+x Refactor css files
 Complete trail show page
+    x - Remove trail description and directions
     - Add review section
     - Add ratings
-    - Remove trail description and directions
 Learn AWS to use correct trail photos
 Save filters applied when going back to Explore page
 Make profile dropdown on hover only

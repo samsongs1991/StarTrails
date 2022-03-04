@@ -1,3 +1,319 @@
 // Place all the styles related to the api/trails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* #################################### */
+/* ########## E X P L O R E ########### */
+/* ########## -- P A G E -- ########### */
+/* #################################### */
+
+/* Search page */
+.search-page {
+    z-index: 0;
+}
+
+/* Explore page container */
+.index-map {
+    display: flex;
+    z-index: 0;
+}
+
+/* Search filter bar */
+.search-filter-bar {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 65px;
+    padding: 12px 0px 20px 0px;
+    background-color: rgb(248, 248, 248);
+    width: 100%;
+    height: 20px;
+    z-index: 100;
+}
+
+/* Search filter buttons */
+.search-filter-bar button {
+    border-radius: 6px;
+    border: 1px solid white;
+    box-shadow: 0 0 2px 0.2px rgb(190, 190, 190);
+    color: gray;
+    background-color: white;
+    transition: all 0.5s ease;
+    font-size: 14px;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 5px 15px 5px 15px;
+    z-index: 100;
+}
+
+.search-filter-bar button:hover {
+    border: 1.5px solid #428a13;
+    color: #428a13;
+    cursor: pointer;
+}
+
+/* Search filter modals */
+#difficulty, #length, #gain, #time, #category {
+    position: absolute;
+    z-index: 100;
+    height: 120px;
+    width: 180px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 0 15px 0.2px rgb(190, 190, 190);
+    font-size: 16px;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-around
+}
+
+#time input, #gain input, #length input {
+    border-radius: 7px;
+    border: 1px solid rgb(211, 211, 211);
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+}
+
+#time input:hover, #gain input:hover, #length input:hover {
+    border: 1.5px solid #428a13;
+}
+
+#time ::placeholder, #gain ::placeholder, #length ::placeholder {
+    color: rgb(180, 180, 180);
+}
+
+#time input:focus-within, #gain input:focus-within, #length input:focus-within {
+    color: gray;
+    outline: none;
+    border: 2px solid #428a13;
+}
+
+#category input, #difficulty input {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#category input:hover, #difficulty input:hover {
+    box-shadow: 0 0 10px 0.2px #438a13ad;
+}
+
+#rating {
+    height: 60px;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    z-index: 100;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 0 15px 0.2px rgb(190, 190, 190);
+}
+
+#rating img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#rating img:hover {
+    height: 50px;
+    width: 50px;
+}
+
+.search-filter-bar > button:last-child {
+    height: 30px;
+    width: 200px;
+}
+
+/* Trail index  */
+.index-map > div:first-child {
+    width: 25%;
+    height: 676px;
+    overflow: scroll;
+}
+
+/* Trail index item */
+.index-map ul li {
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgb(190, 190, 190);
+    margin: 30px;
+    height: 225px;
+}
+
+.trail-index-item {
+    text-decoration: inherit;
+    color: gray;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.trail-index-item li {
+    transition: all 0.15s ease-in-out;
+}
+
+.trail-index-item li:hover {
+    opacity: 0.85;
+}
+
+.trail-index-item h3 {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+.trail-index-item > li > div {
+    padding: 5px 15px 15px 15px;
+}
+
+.trail-index-item > li > div:last-child img {
+    height: 25px;
+}
+
+.trail-index-item > li > img {
+    height: 120px;
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+}
+
+/* Trails map */
+#map-container {
+    width: 75%;
+    height: 676px;
+    z-index: 0;
+}
+
+/* #################################### */
+/* ############ T R A I L ############# */
+/* ######## S H O W - P A G E ######### */
+/* #################################### */
+
+.trail-show {
+    margin-top: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(236, 236, 236);
+    
+    * {
+        border: 1px solid black;
+    }
+
+    #trail-overview {
+        background-image: url("https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067__340.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 40vh;
+        width: 60vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        font-family: Arial, Helvetica, sans-serif;
+        position: relative;
+        border: 1px solid rgb(184, 184, 184);
+
+        > button {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            border-radius: 50%;
+            background-color: white;
+            color: #428a13;
+            border: none;
+            height: 50px;
+            width: 50px;
+            opacity: 0.9;
+            font-size: 30px;
+            margin: 10px;
+        }
+
+        > button:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+        
+        > div {
+            color: white;
+            h3 {
+                font-size: 30px;
+                font-weight: 700;
+                padding-left: 20px;
+            }
+            > div {
+                display: flex;
+                padding: 5px 0px 5px 25px;
+                > div {
+                    font-size: 14px;
+                }
+            }
+            div.divider {
+                height: 50px;
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+                background-color: #428a13;
+            }
+        }
+
+    }
+
+    .hard {
+        background-color: rgb(51, 51, 51);
+        padding: 3px 15px 3px 15px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+
+    .moderate {
+        background-color: rgb(17, 120, 255);
+        padding: 3px 15px 3px 15px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+
+    .easy {
+        background-color: #428a13;
+        padding: 3px 15px 3px 15px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+
+    #list-trail-form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 200px;
+        width: 400px;
+        background: white;
+        z-index: 3;
+    }
+
+    #trail-details {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        height: fit-content;
+        width: 60vw;
+        > div:first-child {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            > div {
+                margin: 0px 20px 0px 20px;
+            }
+        }
+        #mini-map {
+            height: 250px;
+            width: 250px;
+            background: black;
+        }
+    }
+}
+

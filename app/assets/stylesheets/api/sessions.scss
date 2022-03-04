@@ -2,3 +2,107 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+/* #################################### */
+/* ########## S E S S I O N ########### */
+/* ########## -- F O R M -- ########### */
+/* #################################### */
+
+.session-background {
+    background: linear-gradient(217deg, #428a13, rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, #85c958, rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(255, 255, 255, 0.8), rgba(0,0,255,0) 70.71%);
+    /* background-image: url("../../../public/images/HomeImage.jpg"); */
+    height: 793px;
+}
+
+/* Session form container */
+.session-form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    padding: 24px;
+    width: 420px;
+    height: 420px;
+    box-shadow: 0 0 15px 0.2px rgb(211, 211, 211);
+    margin: auto;
+    margin-top: 10%;
+}
+
+/* Log in / Sign up header message */
+.session-form h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: rgb(73, 73, 73);
+    margin: 24px;
+}
+
+/* Input areas for email and password */
+.session-form input {
+    width: 350px;
+    height: 3em;;
+    border-radius: 7px;
+    border: 1px solid rgb(211, 211, 211);
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+    margin: 8px;
+    padding: 0px 20px 0px 20px;
+}
+
+.session-form input:hover {
+    border: 1.5px solid #428a13;
+}
+
+.session-form ::placeholder {
+    color: rgb(180, 180, 180);
+}
+
+.session-form input:focus-within {
+    color: gray;
+    outline: none;
+    border: 2px solid #428a13;
+}
+
+/* Error messages */
+.session-form form div {
+    color: red;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 15px;
+}
+
+/* Log in / Sign up button */
+.session-form button {
+    width: 395px;
+    height: 3.2em;;
+    border-radius: 7px;
+    border: 1px solid rgb(211, 211, 211);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background: #428a13;
+    margin: 8px;
+    padding: 0px 20px 0px 20px;
+}
+
+.session-form button:hover, .session-form div:last-child a:hover {
+    opacity: 0.85;
+}
+
+/* Switch forms message - Log in <--> Sign up */
+.session-form div:last-child {
+    color: gray;  
+    font-family: Arial, Helvetica, sans-serif; 
+    margin: 15px;
+}
+
+.session-form div:last-child a {
+    text-decoration: none;
+    color: #428a13;
+    font-weight: bold;
+}

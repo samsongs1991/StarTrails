@@ -53,7 +53,7 @@ class ListTrailForm extends React.Component {
         
         if(show) {
             return (
-                <div>
+                <div id="list-trail-form">
                     <h3>Save to list</h3>
                     <button onClick={hideFormModal} >Close</button>
                     <ul>
