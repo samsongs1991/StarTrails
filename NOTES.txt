@@ -1,0 +1,12 @@
+x Remove "activities"
+x Remove "photos"
+x Remove "members"
+Complete trail show page
+    - Add review section
+    - Add ratings
+    - Remove trail description and directions
+Learn AWS to use correct trail photos
+Save filters applied when going back to Explore page
+Make profile dropdown on hover only
+Make filter dropdown on hover only
+Seed database with more trails

@@ -47,8 +47,8 @@ class Navbar extends React.Component {
             return (
                 <ul className="profile-icon-modal" >
                     <Link to={`/users/${currentUser.id}`} >Profile</Link>
-                    <Link to={`/users/${currentUser.id}/photos`} >Photos</Link>
-                    <Link to="/users" >Members</Link>
+                    {/* <Link to={`/users/${currentUser.id}/photos`} >Photos</Link> */}
+                    {/* <Link to="/users" >Members</Link> */}
                     <Link to={`/users/${currentUser.id}/settings`} >Settings</Link>
                     <Link to="/" ><button onClick={this.handleLogoutClick} >Logout</button></Link>
                 </ul>
