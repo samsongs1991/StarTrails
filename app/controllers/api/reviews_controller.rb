@@ -4,17 +4,12 @@ class Api::ReviewsController < ApplicationController
 
     def create
         @review = Review.new(review_params)
-        # if @review.save
-        #     puts "--------------------------------"   
-        #     puts "SUCCESSFUL SAVE OF REVIEW"
-        #     puts "--------------------------------"   
-        # else
-        #     puts "--------------------------------"   
-        #     puts "FLASH ERRORS BELOW"         
-        #     puts flash.errors
-        #     puts "--------------------------------"            
-        # end
-        render json: "REVIEW CREATE FIRED"
+        if @review.save
+            render json: @review
+        else
+            flash[:errors] = @review.errors.full_messages
+            render json: flash[:errors]
+        end
     end
 
     def destroy
