@@ -5,6 +5,13 @@ x Refactor css files
 Complete trail show page
     x - Remove trail description and directions
     - Add review section
+        - Create backend for REVIEW
+            x - Add table to DB
+            - Add model
+            - Add controller
+            - Add routes
+            - Add view:jbuilder to format data coming from DB
+
     - Add ratings
 Learn AWS to use correct trail photos
 Save filters applied when going back to Explore page
