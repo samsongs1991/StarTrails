@@ -7,9 +7,9 @@ Complete trail show page
     - Add review section
         - Create backend for REVIEW
             x - Add table to DB
+            - Add routes
             - Add model
             - Add controller
-            - Add routes
             - Add view:jbuilder to format data coming from DB
 
     - Add ratings

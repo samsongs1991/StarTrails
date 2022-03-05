@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :trails, only: [:index, :create, :show]
     resources :lists, only: [:index, :create, :show, :update, :destroy]
     resources :lists_trails, only: [:index, :show, :create, :destroy]
+    resources :reviews, only: [:index, :create, :destroy]
   end
   
   root "static_pages#root"
