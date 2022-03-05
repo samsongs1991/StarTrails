@@ -32,7 +32,7 @@ class TrailShow extends React.Component {
     }
 
     render() {
-        const { trail, currentUserId } = this.props
+        const { trail, currentUserId } = this.props;
         return (
             <div className="trail-show" >
                 <section id="trail-overview">
@@ -53,51 +53,56 @@ class TrailShow extends React.Component {
                         </div>
                     </div>
                 </section>
-
+                <section id="trail-main">
+                    <section id="trail-content">
+                        <section id="trail-details">
+                            <div>
+                                <p>Length</p>
+                                <p>{trail.length} mi</p>
+                            </div>
+                            <div>
+                                <p>Elevation gain</p>
+                                <p>{trail.gain} ft</p>
+                            </div>
+                            <div>
+                                <p>Route type</p>
+                                <p>{trail.category}</p>
+                            </div>
+                            <div>
+                                <p>Time</p>
+                                <p>{TrailShowUtil.trailTime(trail)}</p>
+                            </div>
+                        </section>
+                        <section id="trail-user-content">
+                            <div id="trail-tabs">
+                                <div>Reviews</div>
+                                <div>Photos</div>
+                            </div>
+                            <div id="trail-reviews-photos">
+                                <div>reviews / photos content</div>
+                                {/* ratings breakdown w/ avg */}
+                                {/* button for write review */}
+                                {/* list of reviews */}
+                                {/* OR */}
+                                {/* button for upload photos */}
+                                {/* list of photos */}
+                            </div>
+                        </section>
+                    </section>
+                    <section id="trail-sidebar">                
+                        <div id="mini-map">
+                            {/* MAP */}
+                        </div>
+                        <div>
+                            {/* list of nearby trails */}
+                        </div>
+                    </section>
+                </section> 
                 <ListTrailFormContainer
                     hideFormModal={this.hideFormModal} 
                     show={this.state.show} 
                     trail={trail} 
-                />
-
-                <div id="trail-details">
-                    <div>
-                        <div>
-                            <p>Length</p>
-                            <p>{trail.length} mi</p>
-                        </div>
-                        <div>
-                            <p>Elevation gain</p>
-                            <p>{trail.gain} ft</p>
-                        </div>
-                        <div>
-                            <p>Route type</p>
-                            <p>{trail.category}</p>
-                        </div>
-                        <div>
-                            <p>Time</p>
-                            <p>{TrailShowUtil.trailTime(trail)}</p>
-                        </div>
-                    </div>
-                    <div id="mini-map">
-                        {/* MAP */}
-                    </div>
-                </div>
-
-                <div>
-                    <div>
-                        {/* tabs bar with reviews / photos */}
-                    </div>
-                    <div>
-                        {/* ratings breakdown w/ avg */}
-                        {/* button for write review */}
-                        {/* list of reviews */}
-                        {/* OR */}
-                        {/* button for upload photos */}
-                        {/* list of photos */}
-                    </div>
-                </div>
-                
+                />               
             </div>
         );
     }

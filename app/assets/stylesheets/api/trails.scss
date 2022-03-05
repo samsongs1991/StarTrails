@@ -200,10 +200,6 @@
     flex-direction: column;
     align-items: center;
     background-color: rgb(236, 236, 236);
-    
-    * {
-        border: 1px solid black;
-    }
 
     #trail-overview {
         background-image: url("https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067__340.png");
@@ -250,7 +246,7 @@
                 display: flex;
                 padding: 5px 0px 5px 25px;
                 > div {
-                    font-size: 14px;
+                    font-size: 12px;
                 }
             }
             div.divider {
@@ -295,25 +291,68 @@
         z-index: 3;
     }
 
-    #trail-details {
+    #trail-main {
         display: flex;
-        justify-content: space-around;
-        text-align: center;
-        height: fit-content;
-        width: 60vw;
-        > div:first-child {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            > div {
-                margin: 0px 20px 0px 20px;
+        #trail-content {
+            #trail-details {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                box-sizing: border-box;
+                text-align: center;
+                height: 100px;
+                width: 100%;
+                border: 1px solid rgb(184, 184, 184);
+                background-color: white;
+                > div {
+                    margin: 0px 20px 0px 20px;
+                }
+                #mini-map {
+                    height: 250px;
+                    width: 250px;
+                    background: black;
+                }
+            }
+            #trail-user-content {
+                width: 60vw;
+                #trail-tabs {
+                    display: flex;
+                    justify-content: space-around;
+                    background-color: rgb(236, 236, 236);
+                    border: 1px solid rgb(184, 184, 184);
+                    border-top: none;
+                    border-bottom: none;
+                    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                    > div {
+                        padding: 1vh 0px 1vh 0px;
+                        font-size: 20px;
+                        font-weight: bold;
+                        color: #428a13;
+                    }
+                    > div:hover {
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
+                }
+                #trail-reviews-photos {
+                    display: flex;
+                    flex-direction: column;
+                    border: 1px solid rgb(184, 184, 184);
+                    background-color: white;
+                    #trail-reviews {
+                        // styling for reviews component
+                    }
+                    #trail-photos {
+                        // styling for photos component
+                    }
+                }
             }
         }
-        #mini-map {
-            height: 250px;
-            width: 250px;
-            background: black;
+        #trail-sidebar {
+
         }
     }
+
+
 }
 
