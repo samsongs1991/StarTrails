@@ -10,6 +10,8 @@ class Trail < ApplicationRecord
         through: :lists_trails, 
         source: :list,
         dependent: :destroy
+
+    has_many :reviews
     
     # -----------------------------------------------------------------------------
 

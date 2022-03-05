@@ -9,6 +9,8 @@ class User < ApplicationRecord
     attr_reader :password
 
     has_many :lists
+
+    has_many :reviews
     
     # AWS ------------------------------------
     has_one_attached :photo
