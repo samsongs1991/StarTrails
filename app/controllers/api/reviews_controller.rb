@@ -13,30 +13,22 @@ class Api::ReviewsController < ApplicationController
     end
 
     def destroy
-        render json: "REVIEW DESTROY FIRED"
-        # @list_trail = ListsTrail.find_by(id: params[:id])
+        @review = Review.find(params[:id])
+        
+        if @review.delete
+            render json: @review
+        else
 
-        # if @list_trail.delete
-
-        #     puts "-------------------------"
-        #     puts "RELATION DESTROYED"
-        #     puts "-------------------------"
-
-        #     render :show 
-        # else
-
-        # end
+        end
     end
 
     def index 
-        render json: "REVIEW INDEX FIRED"
-        # @lists_trails = ListsTrail.byList(params[:listId])
-
-        # if @lists_trails
-        #     render :index
-        # else
-
-        # end
+        if params[:user_id]
+            @reviews = User.find(params[:user_id]).reviews
+        elsif params[:trail_id]
+            @reviews = Trail.find(params[:trail_id]).reviews
+        end
+        render json: @reviews
     end
 
     def show
