@@ -79,13 +79,11 @@ class TrailShow extends React.Component {
                                 <div>Photos</div>
                             </div>
                             <div id="trail-reviews-photos">
-                                <div>reviews / photos content</div>
-                                {/* ratings breakdown w/ avg */}
-                                {/* button for write review */}
-                                {/* list of reviews */}
-                                {/* OR */}
-                                {/* button for upload photos */}
-                                {/* list of photos */}
+                                {/* COMPONENT - avg rating + write review button */}
+                                {/* COMPONENT - all reviews for trail */}
+
+                                {/* COMPONENT - add photos to this trail + add photo button */}
+                                {/* COMPONENT - all photos for trail */}
                             </div>
                         </section>
                     </section>
@@ -101,8 +99,8 @@ class TrailShow extends React.Component {
                 <ListTrailFormContainer
                     hideFormModal={this.hideFormModal} 
                     show={this.state.show} 
-                    trail={trail} 
-                />               
+                    trail={trail}
+                />
             </div>
         );
     }
