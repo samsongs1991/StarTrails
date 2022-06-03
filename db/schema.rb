@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2022_03_05_010533) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["title", "user_id"], name: "index_lists_on_title_and_user_id", unique: true
   end
 
   create_table "lists_trails", force: :cascade do |t|
@@ -69,11 +70,9 @@ ActiveRecord::Schema.define(version: 2022_03_05_010533) do
     t.string "state"
     t.string "country"
     t.string "difficulty"
-    t.text "description"
     t.float "length"
     t.integer "gain"
     t.string "category"
-    t.text "directions"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

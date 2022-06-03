@@ -9,11 +9,9 @@ class CreateTrails < ActiveRecord::Migration[5.2]
       t.string :state
       t.string :country
       t.string :difficulty
-      t.text :description
       t.float :length
       t.integer :gain
       t.string :category
-      t.text :directions
       t.timestamps
     end
   end
