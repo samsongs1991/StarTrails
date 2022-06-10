@@ -21,7 +21,10 @@ const receiveUser = user => ({
 
 export const fetchUser = userId => dispatch => {
     UserApiUtils.fetchUser(userId)
-        .then(user => dispatch(receiveUser(user)))
+        .then(user => {
+            console.log("RECEIVED USER = ", user); // TEST CODE for jbuilder
+            dispatch(receiveUser(user))
+        })
 }
 
 

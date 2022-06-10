@@ -22,14 +22,16 @@ class Profile extends React.Component {
 
     render() {
         const { user } = this.props;
-        console.log(this.props);
+        console.log("========================");
+        console.log("THIS.PROPS", this.props);
+        console.log("========================");
         return (
             <div className="profile-page" >
                 <div >
                     <h3>Profile</h3>
                     <div id="profile">
                         <div>
-                            <img src="/images/BlankProfilePic.png" alt="Profile image" />
+                            <img src={`${user.profile_pic_url}`} alt="Profile image" />
                             {/* Profile pic */}
                             <p className="profile-member" >Member Since</p>
                             <p>{this.convertDate(user.created_at)}</p>
