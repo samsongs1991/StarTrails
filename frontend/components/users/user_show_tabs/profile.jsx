@@ -1,5 +1,3 @@
-import React from "react";
-
 class Profile extends React.Component {
     convertDate(date) {
         let yr = date.slice(0, 4);
@@ -31,7 +29,7 @@ class Profile extends React.Component {
                     <h3>Profile</h3>
                     <div id="profile">
                         <div>
-                            <img src={`${user.profile_pic_url}`} alt="Profile image" />
+                            <img src={user.profile_pic_url} alt="Profile image" />
                             {/* Profile pic */}
                             <p className="profile-member" >Member Since</p>
                             <p>{this.convertDate(user.created_at)}</p>
